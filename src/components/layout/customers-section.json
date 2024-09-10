@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_customers_sections",
+  "info": {
+    "displayName": "Customers Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Customers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

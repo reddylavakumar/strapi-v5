@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Login": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "JoinUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "Navigation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link-menu"
+    }
+  }
+}
