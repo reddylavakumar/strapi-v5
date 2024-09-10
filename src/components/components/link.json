@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_components_links",
+  "info": {
+    "displayName": "Link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Style": {
+      "type": "enumeration",
+      "enum": [
+        "link",
+        "button"
+      ],
+      "default": "link"
+    }
+  }
+}

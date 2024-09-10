@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "Stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.metrics-section"
+    },
+    "Customers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.customers-section"
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.features-section"
+    },
+    "Trust": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.trust-section"
+    },
+    "GetStarted": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.get-started"
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.testimonials"
+    },
+    "HowItWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.how-it-works-section"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    }
+  }
+}

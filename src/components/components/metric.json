@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_metrics",
+  "info": {
+    "displayName": "Stat",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Number": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    }
+  }
+}

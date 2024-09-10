@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_features",
+  "info": {
+    "displayName": "Feature",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

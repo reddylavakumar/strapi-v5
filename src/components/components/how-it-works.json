@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_how_it_works",
+  "info": {
+    "displayName": "How It Works",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Tab": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Bullets": {
+      "displayName": "Bullets",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    }
+  }
+}

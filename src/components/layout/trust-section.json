@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_trust_sections",
+  "info": {
+    "displayName": "Trust Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.trust-card"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

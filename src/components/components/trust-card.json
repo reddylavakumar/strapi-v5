@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_trust_cards",
+  "info": {
+    "displayName": "Trust Card"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_how_it_works_sections",
+  "info": {
+    "displayName": "How It Works Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.how-it-works"
+    }
+  }
+}

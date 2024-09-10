@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_metrics_sections",
+  "info": {
+    "displayName": "Stats Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.metric"
+    },
+    "Description": {
+      "type": "string"
+    }
+  }
+}

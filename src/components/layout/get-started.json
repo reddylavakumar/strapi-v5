@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_layout_get_starteds",
+  "info": {
+    "displayName": "Get Started Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description_1": {
+      "type": "string"
+    },
+    "Description_2": {
+      "type": "string"
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    },
+    "TextDetails": {
+      "type": "string"
+    }
+  }
+}

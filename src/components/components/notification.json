@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_notifications",
+  "info": {
+    "displayName": "Notification"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "Show": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
