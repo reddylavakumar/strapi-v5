@@ -1002,7 +1002,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     siteName: Attribute.String & Attribute.Required;
     favicon: Attribute.Media;
     siteDescription: Attribute.Text & Attribute.Required;
-    defaultSeo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1066,6 +1065,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
+    seo: Attribute.Component<'shared.seo'>;
     Hero: Attribute.Component<'layout.hero'>;
     Stats: Attribute.Component<'layout.metrics-section'>;
     Customers: Attribute.Component<'layout.customers-section'>;
