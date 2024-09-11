@@ -209,6 +209,8 @@ export interface LayoutGetStarted extends Schema.Component {
     Description_2: Attribute.String;
     Buttons: Attribute.Component<'components.link', true>;
     TextDetails: Attribute.String;
+    Image: Attribute.Media;
+    ImageMobile: Attribute.Media;
   };
 }
 
