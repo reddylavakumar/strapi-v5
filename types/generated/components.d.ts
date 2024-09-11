@@ -317,17 +317,38 @@ export interface SharedRichText extends Schema.Component {
 }
 
 export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
+  collectionName: 'components_seo_seos';
   info: {
-    name: 'Seo';
-    icon: 'allergies';
-    displayName: 'Seo';
+    displayName: 'seo';
+    icon: 'search';
     description: '';
   };
   attributes: {
-    metaTitle: Attribute.String & Attribute.Required;
-    metaDescription: Attribute.Text & Attribute.Required;
-    shareImage: Attribute.Media;
+    title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    canonical: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
+    keywords: Attribute.String &
+      Attribute.DefaultTo<'coderabbit, ai, code, git, gitlab, github'>;
+    og_url: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
+    og_title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    og_description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    og_sitename: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    og_locale: Attribute.String & Attribute.DefaultTo<'en_US'>;
+    og_type: Attribute.String & Attribute.DefaultTo<'website'>;
+    og_image: Attribute.Media;
+    twitter_card: Attribute.String & Attribute.DefaultTo<'summary_large_image'>;
+    twitter_title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    twitter_description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    twitter_image: Attribute.Media;
+    twitter_site: Attribute.String;
+    twitter_creator: Attribute.String;
   };
 }
 

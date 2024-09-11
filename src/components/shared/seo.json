@@ -1,28 +1,85 @@
 {
-  "collectionName": "components_shared_seos",
+  "collectionName": "components_seo_seos",
   "info": {
-    "name": "Seo",
-    "icon": "allergies",
-    "displayName": "Seo",
+    "displayName": "seo",
+    "icon": "search",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
+    "title": {
       "type": "string",
-      "required": true
+      "default": "AI Code Reviews | CodeRabbit | Try for Free"
     },
-    "metaDescription": {
+    "description": {
       "type": "text",
-      "required": true
+      "default": "AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat."
     },
-    "shareImage": {
+    "canonical": {
+      "type": "string",
+      "default": "https://coderabbit.ai/"
+    },
+    "keywords": {
+      "type": "string",
+      "default": "coderabbit, ai, code, git, gitlab, github"
+    },
+    "og_url": {
+      "type": "string",
+      "default": "https://coderabbit.ai/"
+    },
+    "og_title": {
+      "type": "string",
+      "default": "AI Code Reviews | CodeRabbit | Try for Free"
+    },
+    "og_description": {
+      "type": "text",
+      "default": "AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat."
+    },
+    "og_sitename": {
+      "type": "string",
+      "default": "AI Code Reviews | CodeRabbit | Try for Free"
+    },
+    "og_locale": {
+      "type": "string",
+      "default": "en_US"
+    },
+    "og_type": {
+      "type": "string",
+      "default": "website"
+    },
+    "og_image": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
       ]
+    },
+    "twitter_card": {
+      "type": "string",
+      "default": "summary_large_image"
+    },
+    "twitter_title": {
+      "type": "string",
+      "default": "AI Code Reviews | CodeRabbit | Try for Free"
+    },
+    "twitter_description": {
+      "type": "text",
+      "default": "AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat."
+    },
+    "twitter_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "twitter_site": {
+      "type": "string"
+    },
+    "twitter_creator": {
+      "type": "string"
     }
   }
 }
