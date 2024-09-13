@@ -8,17 +8,20 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Cut Code Review Time & Bugs in Half"
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "default": "Supercharge your entire team with AI-driven contextual feedback. Supports all languages."
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Buttons": {
       "type": "component",

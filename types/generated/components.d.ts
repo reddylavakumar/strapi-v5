@@ -7,7 +7,8 @@ export interface ComponentsBullets extends Schema.Component {
     description: '';
   };
   attributes: {
-    Text: Attribute.String;
+    Text: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
   };
 }
 
@@ -18,8 +19,9 @@ export interface ComponentsFeature extends Schema.Component {
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
     Bullets: Attribute.Component<'components.bullets', true>;
     Image: Attribute.Media;
   };
@@ -32,9 +34,11 @@ export interface ComponentsHowItWorks extends Schema.Component {
     description: '';
   };
   attributes: {
-    Tab: Attribute.String;
-    Title: Attribute.String;
-    Description: Attribute.Text;
+    Tab: Attribute.String & Attribute.DefaultTo<'SaaS'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Effortless Scaling with SaaS'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'This is placeholder content. Leverage the power of CodeRabbit\u2019s cloud-based solution with SaaS. Access real-time code reviews, automated suggestions, and seamless integration with your development pipeline\u2014all without the need to manage your own infrastructure. '>;
     Image: Attribute.Media;
     Bullets: Attribute.Component<'components.bullets', true>;
   };
@@ -59,8 +63,8 @@ export interface ComponentsLink extends Schema.Component {
     description: '';
   };
   attributes: {
-    Text: Attribute.String;
-    Url: Attribute.String;
+    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    Url: Attribute.String & Attribute.DefaultTo<'/'>;
     isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
     Image: Attribute.Media;
     Style: Attribute.Enumeration<['link', 'button']> &
@@ -72,9 +76,10 @@ export interface ComponentsLinksColumn extends Schema.Component {
   collectionName: 'components_components_links_columns';
   info: {
     displayName: 'Links Column';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String;
+    Title: Attribute.String & Attribute.DefaultTo<'Column title'>;
     Links: Attribute.Component<'components.link', true>;
   };
 }
@@ -98,8 +103,9 @@ export interface ComponentsMetric extends Schema.Component {
     description: '';
   };
   attributes: {
-    Number: Attribute.String;
-    Description: Attribute.String;
+    Number: Attribute.String & Attribute.DefaultTo<'10k'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Repositories in review'>;
   };
 }
 
@@ -107,10 +113,11 @@ export interface ComponentsNewsletter extends Schema.Component {
   collectionName: 'components_components_newsletters';
   info: {
     displayName: 'Newsletter';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Placeholder: Attribute.String;
+    Title: Attribute.String & Attribute.DefaultTo<'Sign up for our newsletter'>;
+    Placeholder: Attribute.String & Attribute.DefaultTo<'Your email'>;
   };
 }
 
@@ -118,9 +125,11 @@ export interface ComponentsNotification extends Schema.Component {
   collectionName: 'components_components_notifications';
   info: {
     displayName: 'Notification';
+    description: '';
   };
   attributes: {
-    Text: Attribute.String;
+    Text: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
     Link: Attribute.Component<'components.link'>;
     Show: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
@@ -140,12 +149,15 @@ export interface ComponentsTestimonial extends Schema.Component {
   collectionName: 'components_components_testimonials';
   info: {
     displayName: 'Testimonial';
+    description: '';
   };
   attributes: {
-    Name: Attribute.String;
+    Name: Attribute.String & Attribute.DefaultTo<'Marguerite Bergnaum'>;
     Avatar: Attribute.Media;
-    Job: Attribute.String;
-    Opinion: Attribute.Text;
+    Job: Attribute.String &
+      Attribute.DefaultTo<'Marketing Director @Metadata.io '>;
+    Opinion: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
   };
 }
 
@@ -153,11 +165,14 @@ export interface ComponentsTrustCard extends Schema.Component {
   collectionName: 'components_components_trust_cards';
   info: {
     displayName: 'Trust Card';
+    description: '';
   };
   attributes: {
     Icon: Attribute.Media;
-    Title: Attribute.String;
-    Description: Attribute.Text;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur.Reviews only the essential code'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
   };
 }
 
@@ -168,7 +183,7 @@ export interface LayoutContactUsSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
+    Title: Attribute.String & Attribute.DefaultTo<'Still have questions?'>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -181,7 +196,8 @@ export interface LayoutCustomersSection extends Schema.Component {
   };
   attributes: {
     Customers: Attribute.Component<'components.link', true>;
-    Title: Attribute.String;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
   };
 }
 
@@ -204,11 +220,13 @@ export interface LayoutGetStarted extends Schema.Component {
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Description_1: Attribute.String;
-    Description_2: Attribute.String;
+    Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
     Buttons: Attribute.Component<'components.link', true>;
-    TextDetails: Attribute.String;
+    TextDetails: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     Image: Attribute.Media;
     ImageMobile: Attribute.Media;
   };
@@ -222,8 +240,10 @@ export interface LayoutHero extends Schema.Component {
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
     Image: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
   };
@@ -248,9 +268,11 @@ export interface LayoutMetricsSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'The most installed AI App on GitHub & GitLab'>;
     Stats: Attribute.Component<'components.metric', true>;
-    Description: Attribute.String;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Loved by 1000s of developers'>;
   };
 }
 
@@ -262,7 +284,7 @@ export interface LayoutTestimonials extends Schema.Component {
   };
   attributes: {
     Testimonials: Attribute.Component<'components.testimonial', true>;
-    Title: Attribute.String;
+    Title: Attribute.String & Attribute.DefaultTo<'What they say about us'>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -274,8 +296,10 @@ export interface LayoutTrustSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Your data stays confidential'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'We take security, privacy, and compliance seriously.'>;
     Cards: Attribute.Component<'components.trust-card', true>;
     Button: Attribute.Component<'components.link'>;
   };

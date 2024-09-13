@@ -968,7 +968,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
     Socials: Attribute.Component<'components.socials'>;
     Terms: Attribute.Component<'components.link'>;
     Privacy: Attribute.Component<'components.link'>;
-    Copyright: Attribute.String;
+    Copyright: Attribute.String & Attribute.DefaultTo<'CodeRabbit \u00A9 2024'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1032,7 +1032,6 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
   attributes: {
     Login: Attribute.Component<'components.link'>;
-    JoinUs: Attribute.Component<'components.link'>;
     Button: Attribute.Component<'components.link'>;
     Navigation: Attribute.Component<'components.link-menu', true>;
     createdAt: Attribute.DateTime;

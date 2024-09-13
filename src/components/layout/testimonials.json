@@ -12,7 +12,8 @@
       "component": "components.testimonial"
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "What they say about us"
     },
     "Button": {
       "type": "component",

@@ -7,10 +7,12 @@
   "options": {},
   "attributes": {
     "Text": {
-      "type": "string"
+      "type": "string",
+      "default": "Lorem ipsum"
     },
     "Url": {
-      "type": "string"
+      "type": "string",
+      "default": "/"
     },
     "isExternal": {
       "type": "boolean",

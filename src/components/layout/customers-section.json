@@ -12,7 +12,8 @@
       "component": "components.link"
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Trusted by 1000+ organizations"
     }
   }
 }
