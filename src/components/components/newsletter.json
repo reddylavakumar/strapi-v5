@@ -1,15 +1,18 @@
 {
   "collectionName": "components_components_newsletters",
   "info": {
-    "displayName": "Newsletter"
+    "displayName": "Newsletter",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Sign up for our newsletter"
     },
     "Placeholder": {
-      "type": "string"
+      "type": "string",
+      "default": "Your email"
     }
   }
 }

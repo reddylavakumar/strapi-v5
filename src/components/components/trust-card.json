@@ -1,22 +1,26 @@
 {
   "collectionName": "components_components_trust_cards",
   "info": {
-    "displayName": "Trust Card"
+    "displayName": "Trust Card",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet consectetur.Reviews only the essential code"
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "default": "Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage."
     }
   }
 }

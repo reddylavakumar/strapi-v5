@@ -7,7 +7,8 @@
   "options": {},
   "attributes": {
     "Text": {
-      "type": "string"
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac."
     }
   }
 }
