@@ -21,7 +21,10 @@ export interface ComponentsFeature extends Schema.Component {
     Title: Attribute.String;
     Description: Attribute.Text;
     Bullets: Attribute.Component<'components.bullets', true>;
-    Image: Attribute.Media;
+    ImageXL: Attribute.Media;
+    ImageLG: Attribute.Media;
+    ImageMD: Attribute.Media;
+    ImageSM: Attribute.Media;
   };
 }
 
@@ -210,7 +213,7 @@ export interface LayoutGetStarted extends Schema.Component {
     Buttons: Attribute.Component<'components.link', true>;
     TextDetails: Attribute.String;
     Image: Attribute.Media;
-    ImageMobile: Attribute.Media;
+    ImageSM: Attribute.Media;
   };
 }
 

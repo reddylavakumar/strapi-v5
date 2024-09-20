@@ -31,7 +31,7 @@
         "images"
       ]
     },
-    "ImageMobile": {
+    "ImageSM": {
       "type": "media",
       "multiple": false,
       "required": false,
