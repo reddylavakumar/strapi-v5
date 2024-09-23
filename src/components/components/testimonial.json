@@ -1,25 +1,30 @@
 {
   "collectionName": "components_components_testimonials",
   "info": {
-    "displayName": "Testimonial"
+    "displayName": "Testimonial",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Name": {
-      "type": "string"
+      "type": "string",
+      "default": "Marguerite Bergnaum"
     },
     "Avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Job": {
-      "type": "string"
+      "type": "string",
+      "default": "Marketing Director @Metadata.io "
     },
     "Opinion": {
-      "type": "text"
+      "type": "text",
+      "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
     }
   }
 }

@@ -7,7 +7,8 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "The most installed AI App on GitHub & GitLab"
     },
     "Stats": {
       "type": "component",
@@ -15,7 +16,8 @@
       "component": "components.metric"
     },
     "Description": {
-      "type": "string"
+      "type": "string",
+      "default": "Loved by 1000s of developers"
     }
   }
 }

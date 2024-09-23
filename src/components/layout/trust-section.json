@@ -7,10 +7,12 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Your data stays confidential"
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "default": "We take security, privacy, and compliance seriously."
     },
     "Cards": {
       "type": "component",

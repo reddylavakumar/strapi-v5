@@ -7,13 +7,16 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Get started today"
     },
     "Description_1": {
-      "type": "string"
+      "type": "string",
+      "default": "14-day free trial "
     },
     "Description_2": {
-      "type": "string"
+      "type": "string",
+      "default": "No credit card needed."
     },
     "Buttons": {
       "type": "component",
@@ -21,7 +24,8 @@
       "component": "components.link"
     },
     "TextDetails": {
-      "type": "string"
+      "type": "string",
+      "default": "2-click signup with GitHub/GitLab."
     },
     "Image": {
       "type": "media",
@@ -31,7 +35,7 @@
         "images"
       ]
     },
-    "ImageMobile": {
+    "ImageSM": {
       "type": "media",
       "multiple": false,
       "required": false,

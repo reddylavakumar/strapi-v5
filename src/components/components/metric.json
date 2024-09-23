@@ -7,10 +7,12 @@
   "options": {},
   "attributes": {
     "Number": {
-      "type": "string"
+      "type": "string",
+      "default": "10k"
     },
     "Description": {
-      "type": "string"
+      "type": "string",
+      "default": "Repositories in review"
     }
   }
 }

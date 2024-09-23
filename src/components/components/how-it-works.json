@@ -7,13 +7,16 @@
   "options": {},
   "attributes": {
     "Tab": {
-      "type": "string"
+      "type": "string",
+      "default": "SaaS"
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "default": "Effortless Scaling with SaaS"
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "default": "This is placeholder content. Leverage the power of CodeRabbit’s cloud-based solution with SaaS. Access real-time code reviews, automated suggestions, and seamless integration with your development pipeline—all without the need to manage your own infrastructure. "
     },
     "Image": {
       "type": "media",

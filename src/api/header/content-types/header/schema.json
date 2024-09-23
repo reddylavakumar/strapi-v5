@@ -17,11 +17,6 @@
       "repeatable": false,
       "component": "components.link"
     },
-    "JoinUs": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.link"
-    },
     "Button": {
       "type": "component",
       "repeatable": false,

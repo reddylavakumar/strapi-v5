@@ -39,7 +39,8 @@
       "component": "components.link"
     },
     "Copyright": {
-      "type": "string"
+      "type": "string",
+      "default": "CodeRabbit © 2024"
     }
   }
 }

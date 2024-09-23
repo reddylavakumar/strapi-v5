@@ -1,12 +1,14 @@
 {
   "collectionName": "components_components_notifications",
   "info": {
-    "displayName": "Notification"
+    "displayName": "Notification",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Text": {
-      "type": "string"
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac."
     },
     "Link": {
       "type": "component",
