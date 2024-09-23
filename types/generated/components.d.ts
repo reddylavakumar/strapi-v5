@@ -23,7 +23,10 @@ export interface ComponentsFeature extends Schema.Component {
     Description: Attribute.Text &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
     Bullets: Attribute.Component<'components.bullets', true>;
-    Image: Attribute.Media;
+    ImageXL: Attribute.Media;
+    ImageLG: Attribute.Media;
+    ImageMD: Attribute.Media;
+    ImageSM: Attribute.Media;
   };
 }
 
@@ -228,7 +231,7 @@ export interface LayoutGetStarted extends Schema.Component {
     TextDetails: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     Image: Attribute.Media;
-    ImageMobile: Attribute.Media;
+    ImageSM: Attribute.Media;
   };
 }
 
