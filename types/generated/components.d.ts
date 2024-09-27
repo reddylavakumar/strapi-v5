@@ -249,6 +249,7 @@ export interface LayoutHero extends Schema.Component {
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
     Image: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
   };
 }
 
