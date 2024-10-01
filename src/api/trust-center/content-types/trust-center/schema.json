@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "trust_centers",
+  "info": {
+    "singularName": "trust-center",
+    "pluralName": "trust-centers",
+    "displayName": "Trust Center",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "SecureDevelopment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.trust-section"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Security": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.security-section"
+    }
+  }
+}

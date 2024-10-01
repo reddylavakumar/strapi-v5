@@ -138,6 +138,21 @@ export interface ComponentsNotification extends Schema.Component {
   };
 }
 
+export interface ComponentsSecurity extends Schema.Component {
+  collectionName: 'components_components_securities';
+  info: {
+    displayName: 'Security Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media;
+    DownloadText: Attribute.String;
+    DownloadFile: Attribute.Media;
+  };
+}
+
 export interface ComponentsSocials extends Schema.Component {
   collectionName: 'components_components_socials';
   info: {
@@ -249,6 +264,7 @@ export interface LayoutHero extends Schema.Component {
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
     Image: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
   };
 }
 
@@ -276,6 +292,18 @@ export interface LayoutMetricsSection extends Schema.Component {
     Stats: Attribute.Component<'components.metric', true>;
     Description: Attribute.String &
       Attribute.DefaultTo<'Loved by 1000s of developers'>;
+  };
+}
+
+export interface LayoutSecuritySection extends Schema.Component {
+  collectionName: 'components_layout_security_sections';
+  info: {
+    displayName: 'Security Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Securities: Attribute.Component<'components.security', true>;
   };
 }
 
@@ -404,6 +432,7 @@ declare module '@strapi/types' {
       'components.metric': ComponentsMetric;
       'components.newsletter': ComponentsNewsletter;
       'components.notification': ComponentsNotification;
+      'components.security': ComponentsSecurity;
       'components.socials': ComponentsSocials;
       'components.testimonial': ComponentsTestimonial;
       'components.trust-card': ComponentsTrustCard;
@@ -414,6 +443,7 @@ declare module '@strapi/types' {
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
       'layout.metrics-section': LayoutMetricsSection;
+      'layout.security-section': LayoutSecuritySection;
       'layout.testimonials': LayoutTestimonials;
       'layout.trust-section': LayoutTrustSection;
       'shared.media': SharedMedia;

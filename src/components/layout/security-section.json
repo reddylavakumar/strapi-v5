@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_security_sections",
+  "info": {
+    "displayName": "Security Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Securities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.security"
+    }
+  }
+}

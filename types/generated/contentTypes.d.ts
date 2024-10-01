@@ -1092,6 +1092,41 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
+  collectionName: 'trust_centers';
+  info: {
+    singularName: 'trust-center';
+    pluralName: 'trust-centers';
+    displayName: 'Trust Center';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    SecureDevelopment: Attribute.Component<'layout.trust-section'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    Security: Attribute.Component<'layout.security-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::trust-center.trust-center',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::trust-center.trust-center',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1118,6 +1153,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
     }
   }
 }
