@@ -26,6 +26,16 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.contact-us-section"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Security": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.security-section"
     }
   }
 }
