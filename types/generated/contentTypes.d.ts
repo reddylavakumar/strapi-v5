@@ -1109,6 +1109,7 @@ export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
     Contact: Attribute.Component<'layout.contact-us-section'>;
     Seo: Attribute.Component<'shared.seo'>;
     Security: Attribute.Component<'layout.security-section'>;
+    PrivacyPolicy: Attribute.Component<'layout.privacy-policy-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

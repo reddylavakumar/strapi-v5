@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_privacy_policy_sections",
+  "info": {
+    "displayName": "Privacy Policy Section"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Our privacy policy"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.privacy-policy-questions"
+    }
+  }
+}
