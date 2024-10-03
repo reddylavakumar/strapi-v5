@@ -9,6 +9,9 @@
     "Text": {
       "type": "string",
       "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac."
+    },
+    "Description": {
+      "type": "richtext"
     }
   }
 }

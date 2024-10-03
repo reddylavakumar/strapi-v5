@@ -36,6 +36,11 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.security-section"
+    },
+    "PrivacyPolicy": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.privacy-policy-section"
     }
   }
 }
