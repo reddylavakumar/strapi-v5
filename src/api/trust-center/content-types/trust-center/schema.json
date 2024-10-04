@@ -27,7 +27,7 @@
       "repeatable": false,
       "component": "layout.contact-us-section"
     },
-    "Seo": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
