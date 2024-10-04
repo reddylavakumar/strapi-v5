@@ -41,6 +41,11 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.privacy-policy-section"
+    },
+    "Pills": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.pills-section"
     }
   }
 }

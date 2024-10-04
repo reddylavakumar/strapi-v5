@@ -71,8 +71,6 @@ export interface ComponentsLink extends Schema.Component {
     Url: Attribute.String & Attribute.DefaultTo<'/'>;
     isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
     Image: Attribute.Media;
-    Style: Attribute.Enumeration<['link', 'button']> &
-      Attribute.DefaultTo<'link'>;
   };
 }
 
@@ -136,6 +134,19 @@ export interface ComponentsNotification extends Schema.Component {
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
     Link: Attribute.Component<'components.link'>;
     Show: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsPill extends Schema.Component {
+  collectionName: 'components_components_pills';
+  info: {
+    displayName: 'Pill';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media;
+    Link: Attribute.Component<'components.link'>;
   };
 }
 
@@ -308,6 +319,17 @@ export interface LayoutMetricsSection extends Schema.Component {
   };
 }
 
+export interface LayoutPillsSection extends Schema.Component {
+  collectionName: 'components_layout_pills_sections';
+  info: {
+    displayName: 'Pills Section';
+    description: '';
+  };
+  attributes: {
+    Pills: Attribute.Component<'components.pill', true>;
+  };
+}
+
 export interface LayoutPrivacyPolicySection extends Schema.Component {
   collectionName: 'components_layout_privacy_policy_sections';
   info: {
@@ -457,6 +479,7 @@ declare module '@strapi/types' {
       'components.metric': ComponentsMetric;
       'components.newsletter': ComponentsNewsletter;
       'components.notification': ComponentsNotification;
+      'components.pill': ComponentsPill;
       'components.privacy-policy-questions': ComponentsPrivacyPolicyQuestions;
       'components.security': ComponentsSecurity;
       'components.socials': ComponentsSocials;
@@ -469,6 +492,7 @@ declare module '@strapi/types' {
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
       'layout.metrics-section': LayoutMetricsSection;
+      'layout.pills-section': LayoutPillsSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
       'layout.security-section': LayoutSecuritySection;
       'layout.testimonials': LayoutTestimonials;
