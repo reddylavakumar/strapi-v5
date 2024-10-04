@@ -25,14 +25,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "Style": {
-      "type": "enumeration",
-      "enum": [
-        "link",
-        "button"
-      ],
-      "default": "link"
     }
   }
 }
