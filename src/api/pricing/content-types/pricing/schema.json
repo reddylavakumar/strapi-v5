@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "pricings",
+  "info": {
+    "singularName": "pricing",
+    "pluralName": "pricings",
+    "displayName": "Pricing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "OpenSourceProject": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.get-started"
+    }
+  }
+}
