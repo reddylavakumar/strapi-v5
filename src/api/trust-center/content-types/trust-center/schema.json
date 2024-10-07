@@ -27,7 +27,7 @@
       "repeatable": false,
       "component": "layout.contact-us-section"
     },
-    "Seo": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
@@ -36,6 +36,16 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.security-section"
+    },
+    "PrivacyPolicy": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.privacy-policy-section"
+    },
+    "Pills": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.pills-section"
     }
   }
 }

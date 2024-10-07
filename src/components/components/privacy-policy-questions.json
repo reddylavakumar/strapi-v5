@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_components_privacy_policy_questions",
+  "info": {
+    "displayName": "Privacy Policy Questions"
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "string"
+    },
+    "Answer": {
+      "type": "richtext"
+    },
+    "Bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    }
+  }
+}

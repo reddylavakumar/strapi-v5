@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_pills_sections",
+  "info": {
+    "displayName": "Pills Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Pills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.pill"
+    }
+  }
+}
