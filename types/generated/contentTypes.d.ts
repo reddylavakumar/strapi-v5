@@ -1092,6 +1092,40 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiPricingPricing extends Schema.SingleType {
+  collectionName: 'pricings';
+  info: {
+    singularName: 'pricing';
+    pluralName: 'pricings';
+    displayName: 'Pricing';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    OpenSourceProject: Attribute.Component<'layout.get-started'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
   collectionName: 'trust_centers';
   info: {
@@ -1155,6 +1189,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
     }
   }
