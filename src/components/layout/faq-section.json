@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_layout_faq_sections",
+  "info": {
+    "displayName": "FAQ Section"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Frequently asked questions"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "Faqs": {
+      "displayName": "Faq Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.faq-item"
+    }
+  }
+}
