@@ -13,6 +13,17 @@ export interface ComponentsBullets extends Schema.Component {
   };
 }
 
+export interface ComponentsFaqItem extends Schema.Component {
+  collectionName: 'components_components_faq_items';
+  info: {
+    displayName: 'Faq Item';
+  };
+  attributes: {
+    Question: Attribute.String;
+    Answer: Attribute.RichText;
+  };
+}
+
 export interface ComponentsFeature extends Schema.Component {
   collectionName: 'components_components_features';
   info: {
@@ -243,6 +254,18 @@ export interface LayoutCustomersSection extends Schema.Component {
   };
 }
 
+export interface LayoutFaqSection extends Schema.Component {
+  collectionName: 'components_layout_faq_sections';
+  info: {
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
+    Button: Attribute.Component<'components.link'>;
+    Faqs: Attribute.Component<'components.faq-item', true>;
+  };
+}
+
 export interface LayoutFeaturesSection extends Schema.Component {
   collectionName: 'components_layout_features_sections';
   info: {
@@ -470,6 +493,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'components.bullets': ComponentsBullets;
+      'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
       'components.how-it-works': ComponentsHowItWorks;
       'components.link-menu': ComponentsLinkMenu;
@@ -487,6 +511,7 @@ declare module '@strapi/types' {
       'components.trust-card': ComponentsTrustCard;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.customers-section': LayoutCustomersSection;
+      'layout.faq-section': LayoutFaqSection;
       'layout.features-section': LayoutFeaturesSection;
       'layout.get-started': LayoutGetStarted;
       'layout.hero': LayoutHero;
