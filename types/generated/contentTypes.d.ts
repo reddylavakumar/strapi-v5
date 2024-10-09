@@ -1109,6 +1109,7 @@ export interface ApiPricingPricing extends Schema.SingleType {
     Seo: Attribute.Component<'shared.seo'>;
     OpenSourceProject: Attribute.Component<'layout.get-started'>;
     Faqs: Attribute.Component<'layout.faq-section'>;
+    Plans: Attribute.Component<'layout.plans-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
