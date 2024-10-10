@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_plans",
+  "info": {
+    "displayName": "Plan"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "string"
+    },
+    "Detail": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "IncludesTitle": {
+      "type": "string"
+    },
+    "Bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    },
+    "Recommended": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

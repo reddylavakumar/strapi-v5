@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_plans_sections",
+  "info": {
+    "displayName": "Plans Section"
+  },
+  "options": {},
+  "attributes": {
+    "Plans": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.plan"
+    }
+  }
+}

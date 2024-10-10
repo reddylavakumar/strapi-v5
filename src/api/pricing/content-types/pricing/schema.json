@@ -36,6 +36,11 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.faq-section"
+    },
+    "Plans": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.plans-section"
     }
   }
 }

@@ -161,6 +161,23 @@ export interface ComponentsPill extends Schema.Component {
   };
 }
 
+export interface ComponentsPlan extends Schema.Component {
+  collectionName: 'components_components_plans';
+  info: {
+    displayName: 'Plan';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Price: Attribute.String;
+    Detail: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+    IncludesTitle: Attribute.String;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Recommended: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ComponentsPrivacyPolicyQuestions extends Schema.Component {
   collectionName: 'components_components_privacy_policy_questions';
   info: {
@@ -353,6 +370,16 @@ export interface LayoutPillsSection extends Schema.Component {
   };
 }
 
+export interface LayoutPlansSection extends Schema.Component {
+  collectionName: 'components_layout_plans_sections';
+  info: {
+    displayName: 'Plans Section';
+  };
+  attributes: {
+    Plans: Attribute.Component<'components.plan', true>;
+  };
+}
+
 export interface LayoutPrivacyPolicySection extends Schema.Component {
   collectionName: 'components_layout_privacy_policy_sections';
   info: {
@@ -504,6 +531,7 @@ declare module '@strapi/types' {
       'components.newsletter': ComponentsNewsletter;
       'components.notification': ComponentsNotification;
       'components.pill': ComponentsPill;
+      'components.plan': ComponentsPlan;
       'components.privacy-policy-questions': ComponentsPrivacyPolicyQuestions;
       'components.security': ComponentsSecurity;
       'components.socials': ComponentsSocials;
@@ -518,6 +546,7 @@ declare module '@strapi/types' {
       'layout.how-it-works-section': LayoutHowItWorksSection;
       'layout.metrics-section': LayoutMetricsSection;
       'layout.pills-section': LayoutPillsSection;
+      'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
       'layout.security-section': LayoutSecuritySection;
       'layout.testimonials': LayoutTestimonials;
