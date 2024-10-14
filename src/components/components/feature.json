@@ -14,11 +14,6 @@
       "type": "text",
       "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
     },
-    "Bullets": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.bullets"
-    },
     "ImageXL": {
       "type": "media",
       "multiple": false,
@@ -28,25 +23,28 @@
       ]
     },
     "ImageLG": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "ImageMD": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "ImageSM": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
