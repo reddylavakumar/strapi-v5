@@ -31,6 +31,9 @@
     "Tag": {
       "type": "string",
       "default": "Page name"
+    },
+    "Lottie": {
+      "type": "json"
     }
   }
 }
