@@ -945,6 +945,38 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactContact extends Schema.SingleType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.contact-form-section'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCustomerCustomer extends Schema.SingleType {
   collectionName: 'customers';
   info: {
@@ -1000,11 +1032,11 @@ export interface ApiFooterFooter extends Schema.SingleType {
         },
         number
       >;
-    Newsletter: Attribute.Component<'components.newsletter'>;
     Socials: Attribute.Component<'components.socials'>;
     Terms: Attribute.Component<'components.link'>;
     Privacy: Attribute.Component<'components.link'>;
     Copyright: Attribute.String & Attribute.DefaultTo<'CodeRabbit \u00A9 2024'>;
+    Newsletter: Attribute.Component<'components.input-text-field'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1223,6 +1255,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
