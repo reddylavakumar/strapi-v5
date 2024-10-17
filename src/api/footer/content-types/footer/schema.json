@@ -18,11 +18,6 @@
       "component": "components.links-column",
       "max": 3
     },
-    "Newsletter": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.newsletter"
-    },
     "Socials": {
       "type": "component",
       "repeatable": false,
@@ -41,6 +36,11 @@
     "Copyright": {
       "type": "string",
       "default": "CodeRabbit © 2024"
+    },
+    "Newsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
     }
   }
 }
