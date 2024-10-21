@@ -13,6 +13,23 @@ export interface ComponentsBullets extends Schema.Component {
   };
 }
 
+export interface ComponentsContactSuccess extends Schema.Component {
+  collectionName: 'components_components_contact_successes';
+  info: {
+    displayName: 'Contact Success';
+  };
+  attributes: {
+    Image: Attribute.Media;
+    Title: Attribute.String & Attribute.DefaultTo<'Hooray! '>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'Your message has been sent. We\u2019ll get back to you shortly.'>;
+    Button: Attribute.Component<'components.link'>;
+    SocialsTitle: Attribute.String &
+      Attribute.DefaultTo<'In the meantime, follow along:'>;
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
 export interface ComponentsFaqItem extends Schema.Component {
   collectionName: 'components_components_faq_items';
   info: {
@@ -277,6 +294,7 @@ export interface LayoutContactFormSection extends Schema.Component {
     WorkEmail: Attribute.Component<'components.input-text-field'>;
     JobTitle: Attribute.Component<'components.input-text-field'>;
     NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -557,6 +575,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'components.bullets': ComponentsBullets;
+      'components.contact-success': ComponentsContactSuccess;
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
       'components.how-it-works': ComponentsHowItWorks;
