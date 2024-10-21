@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_components_input_text_fields",
+  "info": {
+    "displayName": "Input Text Field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Placeholder": {
+      "type": "string"
+    },
+    "Required": {
+      "type": "boolean",
+      "default": false
+    },
+    "isTextarea": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEmail": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

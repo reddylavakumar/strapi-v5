@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_layout_contact_form_sections",
+  "info": {
+    "displayName": "Contact Form Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Please fill out this form to schedule a demo:"
+    },
+    "FirstName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "LastName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "CompanyName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "WorkEmail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "JobTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "NumberOfDevelopers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-select-field"
+    },
+    "HowCanWeHelp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

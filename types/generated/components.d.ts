@@ -13,6 +13,23 @@ export interface ComponentsBullets extends Schema.Component {
   };
 }
 
+export interface ComponentsContactSuccess extends Schema.Component {
+  collectionName: 'components_components_contact_successes';
+  info: {
+    displayName: 'Contact Success';
+  };
+  attributes: {
+    Image: Attribute.Media;
+    Title: Attribute.String & Attribute.DefaultTo<'Hooray! '>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'Your message has been sent. We\u2019ll get back to you shortly.'>;
+    Button: Attribute.Component<'components.link'>;
+    SocialsTitle: Attribute.String &
+      Attribute.DefaultTo<'In the meantime, follow along:'>;
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
 export interface ComponentsFaqItem extends Schema.Component {
   collectionName: 'components_components_faq_items';
   info: {
@@ -58,6 +75,35 @@ export interface ComponentsHowItWorks extends Schema.Component {
   };
 }
 
+export interface ComponentsInputSelectField extends Schema.Component {
+  collectionName: 'components_components_input_select_fields';
+  info: {
+    displayName: 'Input Select Field';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    Placeholder: Attribute.String & Attribute.DefaultTo<'Placeholder'>;
+    Required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    Options: Attribute.Component<'components.newsletter', true>;
+  };
+}
+
+export interface ComponentsInputTextField extends Schema.Component {
+  collectionName: 'components_components_input_text_fields';
+  info: {
+    displayName: 'Input Text Field';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String;
+    Placeholder: Attribute.String;
+    Required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ComponentsLinkMenu extends Schema.Component {
   collectionName: 'components_components_link_menus';
   info: {
@@ -96,18 +142,6 @@ export interface ComponentsLinksColumn extends Schema.Component {
   };
 }
 
-export interface ComponentsLinksMenu extends Schema.Component {
-  collectionName: 'components_components_links_menus';
-  info: {
-    displayName: 'Links Menu';
-  };
-  attributes: {
-    Link: Attribute.Component<'components.link'>;
-    hasSubmenu: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Submenu: Attribute.Component<'components.link', true>;
-  };
-}
-
 export interface ComponentsMetric extends Schema.Component {
   collectionName: 'components_components_metrics';
   info: {
@@ -124,12 +158,12 @@ export interface ComponentsMetric extends Schema.Component {
 export interface ComponentsNewsletter extends Schema.Component {
   collectionName: 'components_components_newsletters';
   info: {
-    displayName: 'Newsletter';
+    displayName: 'Select Option';
     description: '';
   };
   attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Sign up for our newsletter'>;
-    Placeholder: Attribute.String & Attribute.DefaultTo<'Your email'>;
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    Value: Attribute.String & Attribute.DefaultTo<'Value'>;
   };
 }
 
@@ -245,6 +279,26 @@ export interface ComponentsTrustCard extends Schema.Component {
   };
 }
 
+export interface LayoutContactFormSection extends Schema.Component {
+  collectionName: 'components_layout_contact_form_sections';
+  info: {
+    displayName: 'Contact Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutContactUsSection extends Schema.Component {
   collectionName: 'components_layout_contact_us_sections';
   info: {
@@ -329,6 +383,7 @@ export interface LayoutHero extends Schema.Component {
     Buttons: Attribute.Component<'components.link', true>;
     Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
     Lottie: Attribute.JSON;
+    Bullets: Attribute.Component<'components.bullets', true>;
   };
 }
 
@@ -520,13 +575,15 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'components.bullets': ComponentsBullets;
+      'components.contact-success': ComponentsContactSuccess;
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
       'components.how-it-works': ComponentsHowItWorks;
+      'components.input-select-field': ComponentsInputSelectField;
+      'components.input-text-field': ComponentsInputTextField;
       'components.link-menu': ComponentsLinkMenu;
       'components.link': ComponentsLink;
       'components.links-column': ComponentsLinksColumn;
-      'components.links-menu': ComponentsLinksMenu;
       'components.metric': ComponentsMetric;
       'components.newsletter': ComponentsNewsletter;
       'components.notification': ComponentsNotification;
@@ -537,6 +594,7 @@ declare module '@strapi/types' {
       'components.socials': ComponentsSocials;
       'components.testimonial': ComponentsTestimonial;
       'components.trust-card': ComponentsTrustCard;
+      'layout.contact-form-section': LayoutContactFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.customers-section': LayoutCustomersSection;
       'layout.faq-section': LayoutFaqSection;
