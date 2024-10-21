@@ -382,8 +382,9 @@ export interface LayoutHero extends Schema.Component {
     Image: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
     Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
-    Lottie: Attribute.JSON;
+    LottieLG: Attribute.JSON;
     Bullets: Attribute.Component<'components.bullets', true>;
+    LottieSM: Attribute.JSON;
   };
 }
 
