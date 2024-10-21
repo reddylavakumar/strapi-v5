@@ -32,13 +32,16 @@
       "type": "string",
       "default": "Page name"
     },
-    "Lottie": {
+    "LottieLG": {
       "type": "json"
     },
     "Bullets": {
       "type": "component",
       "repeatable": true,
       "component": "components.bullets"
+    },
+    "LottieSM": {
+      "type": "json"
     }
   }
 }
