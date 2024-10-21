@@ -951,6 +951,7 @@ export interface ApiContactContact extends Schema.SingleType {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: 'Contact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -959,6 +960,7 @@ export interface ApiContactContact extends Schema.SingleType {
     Hero: Attribute.Component<'layout.hero'>;
     Form: Attribute.Component<'layout.contact-form-section'>;
     Seo: Attribute.Component<'shared.seo'>;
+    Success: Attribute.Component<'components.contact-success'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
