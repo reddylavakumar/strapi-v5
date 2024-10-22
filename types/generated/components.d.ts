@@ -358,13 +358,12 @@ export interface LayoutGetStarted extends Schema.Component {
   attributes: {
     Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
     Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
-    Description_2: Attribute.String &
-      Attribute.DefaultTo<'No credit card needed.'>;
     Buttons: Attribute.Component<'components.link', true>;
     TextDetails: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     Image: Attribute.Media;
     ImageSM: Attribute.Media;
+    Description_2: Attribute.String;
   };
 }
 
@@ -386,6 +385,11 @@ export interface LayoutHero extends Schema.Component {
     LottieLG: Attribute.JSON;
     Bullets: Attribute.Component<'components.bullets', true>;
     LottieSM: Attribute.JSON;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
   };
 }
 
