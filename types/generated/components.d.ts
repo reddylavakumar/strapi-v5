@@ -51,6 +51,7 @@ export interface ComponentsFeature extends Schema.Component {
     Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
     Description: Attribute.Text &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
     ImageXL: Attribute.Media;
     ImageLG: Attribute.Media;
     ImageMD: Attribute.Media;
