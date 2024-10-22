@@ -9,4 +9,13 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  {
+    name: 'strapi::body',
+    config: {
+      jsonLimit: '13mb',
+      formLimit: '10mb',
+      textLimit: '256kb',
+      encoding: 'utf-8',
+    },
+  },
 ];
