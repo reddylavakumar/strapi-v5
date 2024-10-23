@@ -12,15 +12,19 @@
     "Placeholder": {
       "type": "string"
     },
-    "Required": {
+    "isRequired": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "isTextarea": {
       "type": "boolean",
       "default": false
     },
     "isEmail": {
+      "type": "boolean",
+      "default": false
+    },
+    "isWebsite": {
       "type": "boolean",
       "default": false
     }

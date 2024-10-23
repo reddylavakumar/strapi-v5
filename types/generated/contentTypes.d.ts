@@ -1198,6 +1198,44 @@ export interface ApiPricingPricing extends Schema.SingleType {
   };
 }
 
+export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
+  collectionName: 'startup_programs';
+  info: {
+    singularName: 'startup-program';
+    pluralName: 'startup-programs';
+    displayName: 'Startup Program';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Stats: Attribute.Component<'layout.metrics-section'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Customers: Attribute.Component<'layout.customers-section'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.startup-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    FormSideSection: Attribute.Component<'components.form-side-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::startup-program.startup-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::startup-program.startup-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
   collectionName: 'trust_centers';
   info: {
@@ -1264,6 +1302,7 @@ declare module '@strapi/types' {
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
     }
   }

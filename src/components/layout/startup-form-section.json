@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_layout_startup_form_sections",
+  "info": {
+    "displayName": "Startup Form Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Complete this form, If your organization qualifies for our Startup program, we'll activate your account."
+    },
+    "FirstName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "LastName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "CompanyWebsite": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "GitOrgName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "JobTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "Email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "TrialCheckbox": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-checkbox-field"
+    }
+  }
+}

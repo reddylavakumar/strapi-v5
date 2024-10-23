@@ -14,9 +14,9 @@
       "type": "string",
       "default": "Placeholder"
     },
-    "Required": {
+    "isRequired": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "Options": {
       "type": "component",

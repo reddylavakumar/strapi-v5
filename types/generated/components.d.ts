@@ -59,6 +59,20 @@ export interface ComponentsFeature extends Schema.Component {
   };
 }
 
+export interface ComponentsFormSideSection extends Schema.Component {
+  collectionName: 'components_components_form_side_sections';
+  info: {
+    displayName: 'Form Side Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    ListTitle: Attribute.String;
+    Bullets: Attribute.Component<'components.bullets', true>;
+  };
+}
+
 export interface ComponentsHowItWorks extends Schema.Component {
   collectionName: 'components_components_how_it_works';
   info: {
@@ -76,6 +90,17 @@ export interface ComponentsHowItWorks extends Schema.Component {
   };
 }
 
+export interface ComponentsInputCheckboxField extends Schema.Component {
+  collectionName: 'components_components_input_checkbox_fields';
+  info: {
+    displayName: 'Input Checkbox Field';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
 export interface ComponentsInputSelectField extends Schema.Component {
   collectionName: 'components_components_input_select_fields';
   info: {
@@ -85,7 +110,7 @@ export interface ComponentsInputSelectField extends Schema.Component {
   attributes: {
     Label: Attribute.String & Attribute.DefaultTo<'Label'>;
     Placeholder: Attribute.String & Attribute.DefaultTo<'Placeholder'>;
-    Required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
     Options: Attribute.Component<'components.newsletter', true>;
   };
 }
@@ -99,9 +124,10 @@ export interface ComponentsInputTextField extends Schema.Component {
   attributes: {
     Label: Attribute.String;
     Placeholder: Attribute.String;
-    Required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
     isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
     isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isWebsite: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -465,6 +491,26 @@ export interface LayoutSecuritySection extends Schema.Component {
   };
 }
 
+export interface LayoutStartupFormSection extends Schema.Component {
+  collectionName: 'components_layout_startup_form_sections';
+  info: {
+    displayName: 'Startup Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<"Complete this form, If your organization qualifies for our Startup program, we'll activate your account.">;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyWebsite: Attribute.Component<'components.input-text-field'>;
+    GitOrgName: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    Email: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+    TrialCheckbox: Attribute.Component<'components.input-checkbox-field'>;
+  };
+}
+
 export interface LayoutTestimonials extends Schema.Component {
   collectionName: 'components_layout_testimonials';
   info: {
@@ -584,7 +630,9 @@ declare module '@strapi/types' {
       'components.contact-success': ComponentsContactSuccess;
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
+      'components.form-side-section': ComponentsFormSideSection;
       'components.how-it-works': ComponentsHowItWorks;
+      'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-text-field': ComponentsInputTextField;
       'components.link-menu': ComponentsLinkMenu;
@@ -613,6 +661,7 @@ declare module '@strapi/types' {
       'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
       'layout.security-section': LayoutSecuritySection;
+      'layout.startup-form-section': LayoutStartupFormSection;
       'layout.testimonials': LayoutTestimonials;
       'layout.trust-section': LayoutTrustSection;
       'shared.media': SharedMedia;
