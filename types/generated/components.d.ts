@@ -67,7 +67,7 @@ export interface ComponentsFormSideSection extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String;
-    Description: Attribute.String;
+    Description: Attribute.Text;
     ListTitle: Attribute.String;
     Bullets: Attribute.Component<'components.bullets', true>;
   };
@@ -375,6 +375,26 @@ export interface LayoutFeaturesSection extends Schema.Component {
   };
 }
 
+export interface LayoutGdprFormSection extends Schema.Component {
+  collectionName: 'components_layout_gdpr_form_sections';
+  info: {
+    displayName: 'GDPR Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to request access:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    UtmSource: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutGetStarted extends Schema.Component {
   collectionName: 'components_layout_get_starteds';
   info: {
@@ -491,6 +511,25 @@ export interface LayoutSecuritySection extends Schema.Component {
   };
 }
 
+export interface LayoutSocFormSection extends Schema.Component {
+  collectionName: 'components_layout_soc_form_sections';
+  info: {
+    displayName: 'SOC Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to request access:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutStartupFormSection extends Schema.Component {
   collectionName: 'components_layout_startup_form_sections';
   info: {
@@ -506,8 +545,8 @@ export interface LayoutStartupFormSection extends Schema.Component {
     GitOrgName: Attribute.Component<'components.input-text-field'>;
     JobTitle: Attribute.Component<'components.input-text-field'>;
     Email: Attribute.Component<'components.input-text-field'>;
-    Button: Attribute.Component<'components.link'>;
     TrialCheckbox: Attribute.Component<'components.input-checkbox-field'>;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -653,6 +692,7 @@ declare module '@strapi/types' {
       'layout.customers-section': LayoutCustomersSection;
       'layout.faq-section': LayoutFaqSection;
       'layout.features-section': LayoutFeaturesSection;
+      'layout.gdpr-form-section': LayoutGdprFormSection;
       'layout.get-started': LayoutGetStarted;
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
@@ -661,6 +701,7 @@ declare module '@strapi/types' {
       'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
       'layout.security-section': LayoutSecuritySection;
+      'layout.soc-form-section': LayoutSocFormSection;
       'layout.startup-form-section': LayoutStartupFormSection;
       'layout.testimonials': LayoutTestimonials;
       'layout.trust-section': LayoutTrustSection;

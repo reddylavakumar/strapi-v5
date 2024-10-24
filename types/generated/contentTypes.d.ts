@@ -1273,6 +1273,75 @@ export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
   };
 }
 
+export interface ApiTrustCenterGdprTrustCenterGdpr extends Schema.SingleType {
+  collectionName: 'trust_center_gdprs';
+  info: {
+    singularName: 'trust-center-gdpr';
+    pluralName: 'trust-center-gdprs';
+    displayName: 'Trust Center GDPR';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    FormSideSection: Attribute.Component<'components.form-side-section'>;
+    Form: Attribute.Component<'layout.gdpr-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::trust-center-gdpr.trust-center-gdpr',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::trust-center-gdpr.trust-center-gdpr',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTrustCenterSocTrustCenterSoc extends Schema.SingleType {
+  collectionName: 'trust_center_socs';
+  info: {
+    singularName: 'trust-center-soc';
+    pluralName: 'trust-center-socs';
+    displayName: 'Trust Center SOC';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    FormSideSection: Attribute.Component<'components.form-side-section'>;
+    Form: Attribute.Component<'layout.soc-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::trust-center-soc.trust-center-soc',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::trust-center-soc.trust-center-soc',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1304,6 +1373,8 @@ declare module '@strapi/types' {
       'api::pricing.pricing': ApiPricingPricing;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
+      'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
+      'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
     }
   }
 }
