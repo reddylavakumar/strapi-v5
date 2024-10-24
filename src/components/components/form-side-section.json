@@ -10,7 +10,7 @@
       "type": "string"
     },
     "Description": {
-      "type": "string"
+      "type": "text"
     },
     "ListTitle": {
       "type": "string"

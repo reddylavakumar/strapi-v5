@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_layout_startup_form_sections",
+  "collectionName": "components_layout_soc_form_sections",
   "info": {
-    "displayName": "Startup Form Section",
+    "displayName": "SOC Form Section",
     "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string",
-      "default": "Complete this form, If your organization qualifies for our Startup program, we'll activate your account."
+      "default": "Please fill out this form to request access:"
     },
     "FirstName": {
       "type": "component",
@@ -20,12 +20,12 @@
       "repeatable": false,
       "component": "components.input-text-field"
     },
-    "CompanyWebsite": {
+    "CompanyName": {
       "type": "component",
       "repeatable": false,
       "component": "components.input-text-field"
     },
-    "GitOrgName": {
+    "WorkEmail": {
       "type": "component",
       "repeatable": false,
       "component": "components.input-text-field"
@@ -35,15 +35,10 @@
       "repeatable": false,
       "component": "components.input-text-field"
     },
-    "Email": {
+    "NumberOfDevelopers": {
       "type": "component",
       "repeatable": false,
-      "component": "components.input-text-field"
-    },
-    "TrialCheckbox": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.input-checkbox-field"
+      "component": "components.input-select-field"
     },
     "Button": {
       "type": "component",
