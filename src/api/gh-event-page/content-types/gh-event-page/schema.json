@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "gh_event_pages",
+  "info": {
+    "singularName": "gh-event-page",
+    "pluralName": "gh-event-pages",
+    "displayName": "GH Event Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "EventCard": {
+      "displayName": "Event Card",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.event-card"
+    },
+    "CalendarTitle": {
+      "type": "string"
+    },
+    "EventIframeTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    }
+  }
+}
