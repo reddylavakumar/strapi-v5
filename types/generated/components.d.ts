@@ -351,6 +351,19 @@ export interface LayoutCustomersSection extends Schema.Component {
   };
 }
 
+export interface LayoutEventCard extends Schema.Component {
+  collectionName: 'components_layout_event_cards';
+  info: {
+    displayName: 'Event Card';
+    icon: 'check';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media;
+  };
+}
+
 export interface LayoutFaqSection extends Schema.Component {
   collectionName: 'components_layout_faq_sections';
   info: {
@@ -651,6 +664,7 @@ declare module '@strapi/types' {
       'layout.contact-form-section': LayoutContactFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.customers-section': LayoutCustomersSection;
+      'layout.event-card': LayoutEventCard;
       'layout.faq-section': LayoutFaqSection;
       'layout.features-section': LayoutFeaturesSection;
       'layout.get-started': LayoutGetStarted;
