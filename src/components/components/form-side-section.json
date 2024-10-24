@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_form_side_sections",
+  "info": {
+    "displayName": "Form Side Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "ListTitle": {
+      "type": "string"
+    },
+    "Bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    }
+  }
+}
