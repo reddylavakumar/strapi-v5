@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_event_cards",
+  "info": {
+    "displayName": "Event Card",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

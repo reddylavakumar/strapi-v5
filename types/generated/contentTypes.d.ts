@@ -1057,6 +1057,41 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
+  collectionName: 'gh_event_pages';
+  info: {
+    singularName: 'gh-event-page';
+    pluralName: 'gh-event-pages';
+    displayName: 'GH Event Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    EventCard: Attribute.Component<'layout.event-card'>;
+    CalendarTitle: Attribute.String;
+    EventIframeTitle: Attribute.String;
+    seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gh-event-page.gh-event-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gh-event-page.gh-event-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -1367,6 +1402,7 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
       'api::footer.footer': ApiFooterFooter;
+      'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
