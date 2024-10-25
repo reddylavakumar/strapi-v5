@@ -4,7 +4,8 @@
   "info": {
     "singularName": "gh-event-page",
     "pluralName": "gh-event-pages",
-    "displayName": "GH Event Page"
+    "displayName": "GH Event Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -37,6 +38,9 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.contact-us-section"
+    },
+    "CalendarDescription": {
+      "type": "text"
     }
   }
 }
