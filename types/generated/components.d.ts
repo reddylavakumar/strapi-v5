@@ -260,8 +260,7 @@ export interface ComponentsSecurity extends Schema.Component {
     Title: Attribute.String;
     Description: Attribute.Text;
     Image: Attribute.Media;
-    DownloadText: Attribute.String;
-    DownloadFile: Attribute.Media;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
