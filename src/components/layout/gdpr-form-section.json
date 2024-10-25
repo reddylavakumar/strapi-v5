@@ -40,11 +40,6 @@
       "repeatable": false,
       "component": "components.input-select-field"
     },
-    "UtmSource": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.input-text-field"
-    },
     "Button": {
       "type": "component",
       "repeatable": false,
