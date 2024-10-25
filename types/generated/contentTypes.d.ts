@@ -1063,6 +1063,7 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
     singularName: 'gh-event-page';
     pluralName: 'gh-event-pages';
     displayName: 'GH Event Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1074,6 +1075,7 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
     EventIframeTitle: Attribute.String;
     seo: Attribute.Component<'shared.seo'>;
     Contact: Attribute.Component<'layout.contact-us-section'>;
+    CalendarDescription: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
