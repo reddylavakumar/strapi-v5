@@ -20,16 +20,10 @@
         "images"
       ]
     },
-    "DownloadText": {
-      "type": "string"
-    },
-    "DownloadFile": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "files"
-      ]
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
     }
   }
 }
