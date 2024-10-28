@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_layout_contact_form_sections",
+  "collectionName": "components_layout_startup_form_sections",
   "info": {
-    "displayName": "Contact Form Section",
+    "displayName": "Startup Form Section",
     "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string",
-      "default": "Please fill out this form to schedule a demo:"
+      "default": "Complete this form, If your organization qualifies for our Startup program, we'll activate your account."
     },
     "FirstName": {
       "type": "component",
@@ -20,12 +20,12 @@
       "repeatable": false,
       "component": "components.input-text-field"
     },
-    "CompanyName": {
+    "CompanyWebsite": {
       "type": "component",
       "repeatable": false,
       "component": "components.input-text-field"
     },
-    "WorkEmail": {
+    "GitOrgName": {
       "type": "component",
       "repeatable": false,
       "component": "components.input-text-field"
@@ -35,12 +35,7 @@
       "repeatable": false,
       "component": "components.input-text-field"
     },
-    "NumberOfDevelopers": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.input-select-field"
-    },
-    "HowCanWeHelp": {
+    "Email": {
       "type": "component",
       "repeatable": false,
       "component": "components.input-text-field"
@@ -49,6 +44,11 @@
       "type": "component",
       "repeatable": false,
       "component": "components.link"
+    },
+    "TrialCheckbox": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-checkbox-field"
     }
   }
 }

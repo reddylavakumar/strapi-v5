@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "startup_programs",
+  "info": {
+    "singularName": "startup-program",
+    "pluralName": "startup-programs",
+    "displayName": "Startup Program",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.metrics-section"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "Customers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.customers-section"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "Form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.startup-form-section"
+    },
+    "Success": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.contact-success"
+    },
+    "FormSideSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.form-side-section"
+    }
+  }
+}

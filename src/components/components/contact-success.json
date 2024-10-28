@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_contact_successes",
+  "info": {
+    "displayName": "Contact Success"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string",
+      "default": "Hooray! "
+    },
+    "Description": {
+      "type": "richtext",
+      "default": "Your message has been sent. We’ll get back to you shortly."
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "SocialsTitle": {
+      "type": "string",
+      "default": "In the meantime, follow along:"
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    }
+  }
+}

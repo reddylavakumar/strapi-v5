@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contacts",
+  "collectionName": "gh_event_pages",
   "info": {
-    "singularName": "contact",
-    "pluralName": "contacts",
-    "displayName": "Contact",
-    "description": ""
+    "singularName": "gh-event-page",
+    "pluralName": "gh-event-pages",
+    "displayName": "GH Event Page"
   },
   "options": {
     "draftAndPublish": true
@@ -17,20 +16,27 @@
       "repeatable": false,
       "component": "layout.hero"
     },
-    "Form": {
+    "EventCard": {
+      "displayName": "Event Card",
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-form-section"
+      "component": "layout.event-card"
     },
-    "Seo": {
+    "CalendarTitle": {
+      "type": "string"
+    },
+    "EventIframeTitle": {
+      "type": "string"
+    },
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
     },
-    "Success": {
+    "Contact": {
       "type": "component",
       "repeatable": false,
-      "component": "components.contact-success"
+      "component": "layout.contact-us-section"
     }
   }
 }

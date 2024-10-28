@@ -951,6 +951,7 @@ export interface ApiContactContact extends Schema.SingleType {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: 'Contact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -959,6 +960,7 @@ export interface ApiContactContact extends Schema.SingleType {
     Hero: Attribute.Component<'layout.hero'>;
     Form: Attribute.Component<'layout.contact-form-section'>;
     Seo: Attribute.Component<'shared.seo'>;
+    Success: Attribute.Component<'components.contact-success'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1048,6 +1050,41 @@ export interface ApiFooterFooter extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
+  collectionName: 'gh_event_pages';
+  info: {
+    singularName: 'gh-event-page';
+    pluralName: 'gh-event-pages';
+    displayName: 'GH Event Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    EventCard: Attribute.Component<'layout.event-card'>;
+    CalendarTitle: Attribute.String;
+    EventIframeTitle: Attribute.String;
+    seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gh-event-page.gh-event-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gh-event-page.gh-event-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1196,6 +1233,44 @@ export interface ApiPricingPricing extends Schema.SingleType {
   };
 }
 
+export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
+  collectionName: 'startup_programs';
+  info: {
+    singularName: 'startup-program';
+    pluralName: 'startup-programs';
+    displayName: 'Startup Program';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Stats: Attribute.Component<'layout.metrics-section'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Customers: Attribute.Component<'layout.customers-section'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.startup-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    FormSideSection: Attribute.Component<'components.form-side-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::startup-program.startup-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::startup-program.startup-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
   collectionName: 'trust_centers';
   info: {
@@ -1258,10 +1333,12 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
       'api::footer.footer': ApiFooterFooter;
+      'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
     }
   }

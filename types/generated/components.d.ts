@@ -13,6 +13,23 @@ export interface ComponentsBullets extends Schema.Component {
   };
 }
 
+export interface ComponentsContactSuccess extends Schema.Component {
+  collectionName: 'components_components_contact_successes';
+  info: {
+    displayName: 'Contact Success';
+  };
+  attributes: {
+    Image: Attribute.Media;
+    Title: Attribute.String & Attribute.DefaultTo<'Hooray! '>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'Your message has been sent. We\u2019ll get back to you shortly.'>;
+    Button: Attribute.Component<'components.link'>;
+    SocialsTitle: Attribute.String &
+      Attribute.DefaultTo<'In the meantime, follow along:'>;
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
 export interface ComponentsFaqItem extends Schema.Component {
   collectionName: 'components_components_faq_items';
   info: {
@@ -34,10 +51,25 @@ export interface ComponentsFeature extends Schema.Component {
     Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
     Description: Attribute.Text &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
     ImageXL: Attribute.Media;
     ImageLG: Attribute.Media;
     ImageMD: Attribute.Media;
     ImageSM: Attribute.Media;
+  };
+}
+
+export interface ComponentsFormSideSection extends Schema.Component {
+  collectionName: 'components_components_form_side_sections';
+  info: {
+    displayName: 'Form Side Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    ListTitle: Attribute.String;
+    Bullets: Attribute.Component<'components.bullets', true>;
   };
 }
 
@@ -58,6 +90,17 @@ export interface ComponentsHowItWorks extends Schema.Component {
   };
 }
 
+export interface ComponentsInputCheckboxField extends Schema.Component {
+  collectionName: 'components_components_input_checkbox_fields';
+  info: {
+    displayName: 'Input Checkbox Field';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
 export interface ComponentsInputSelectField extends Schema.Component {
   collectionName: 'components_components_input_select_fields';
   info: {
@@ -67,7 +110,7 @@ export interface ComponentsInputSelectField extends Schema.Component {
   attributes: {
     Label: Attribute.String & Attribute.DefaultTo<'Label'>;
     Placeholder: Attribute.String & Attribute.DefaultTo<'Placeholder'>;
-    Required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
     Options: Attribute.Component<'components.newsletter', true>;
   };
 }
@@ -81,9 +124,10 @@ export interface ComponentsInputTextField extends Schema.Component {
   attributes: {
     Label: Attribute.String;
     Placeholder: Attribute.String;
-    Required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
     isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
     isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isWebsite: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -277,6 +321,7 @@ export interface LayoutContactFormSection extends Schema.Component {
     WorkEmail: Attribute.Component<'components.input-text-field'>;
     JobTitle: Attribute.Component<'components.input-text-field'>;
     NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -303,6 +348,19 @@ export interface LayoutCustomersSection extends Schema.Component {
     Customers: Attribute.Component<'components.link', true>;
     Title: Attribute.String &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
+  };
+}
+
+export interface LayoutEventCard extends Schema.Component {
+  collectionName: 'components_layout_event_cards';
+  info: {
+    displayName: 'Event Card';
+    icon: 'check';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media;
   };
 }
 
@@ -339,13 +397,12 @@ export interface LayoutGetStarted extends Schema.Component {
   attributes: {
     Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
     Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
-    Description_2: Attribute.String &
-      Attribute.DefaultTo<'No credit card needed.'>;
     Buttons: Attribute.Component<'components.link', true>;
     TextDetails: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     Image: Attribute.Media;
     ImageSM: Attribute.Media;
+    Description_2: Attribute.String;
   };
 }
 
@@ -364,8 +421,14 @@ export interface LayoutHero extends Schema.Component {
     Image: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
     Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
-    Lottie: Attribute.JSON;
+    LottieLG: Attribute.JSON;
     Bullets: Attribute.Component<'components.bullets', true>;
+    LottieSM: Attribute.JSON;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
   };
 }
 
@@ -438,6 +501,26 @@ export interface LayoutSecuritySection extends Schema.Component {
   attributes: {
     Title: Attribute.String;
     Securities: Attribute.Component<'components.security', true>;
+  };
+}
+
+export interface LayoutStartupFormSection extends Schema.Component {
+  collectionName: 'components_layout_startup_form_sections';
+  info: {
+    displayName: 'Startup Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<"Complete this form, If your organization qualifies for our Startup program, we'll activate your account.">;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyWebsite: Attribute.Component<'components.input-text-field'>;
+    GitOrgName: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    Email: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+    TrialCheckbox: Attribute.Component<'components.input-checkbox-field'>;
   };
 }
 
@@ -557,9 +640,12 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'components.bullets': ComponentsBullets;
+      'components.contact-success': ComponentsContactSuccess;
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
+      'components.form-side-section': ComponentsFormSideSection;
       'components.how-it-works': ComponentsHowItWorks;
+      'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-text-field': ComponentsInputTextField;
       'components.link-menu': ComponentsLinkMenu;
@@ -578,6 +664,7 @@ declare module '@strapi/types' {
       'layout.contact-form-section': LayoutContactFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.customers-section': LayoutCustomersSection;
+      'layout.event-card': LayoutEventCard;
       'layout.faq-section': LayoutFaqSection;
       'layout.features-section': LayoutFeaturesSection;
       'layout.get-started': LayoutGetStarted;
@@ -588,6 +675,7 @@ declare module '@strapi/types' {
       'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
       'layout.security-section': LayoutSecuritySection;
+      'layout.startup-form-section': LayoutStartupFormSection;
       'layout.testimonials': LayoutTestimonials;
       'layout.trust-section': LayoutTrustSection;
       'shared.media': SharedMedia;

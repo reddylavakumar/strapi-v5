@@ -14,10 +14,6 @@
       "type": "string",
       "default": "14-day free trial "
     },
-    "Description_2": {
-      "type": "string",
-      "default": "No credit card needed."
-    },
     "Buttons": {
       "type": "component",
       "repeatable": true,
@@ -42,6 +38,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "Description_2": {
+      "type": "string"
     }
   }
 }
