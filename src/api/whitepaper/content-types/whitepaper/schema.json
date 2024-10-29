@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contacts",
+  "collectionName": "whitepapers",
   "info": {
-    "singularName": "contact",
-    "pluralName": "contacts",
-    "displayName": "Contact",
+    "singularName": "whitepaper",
+    "pluralName": "whitepapers",
+    "displayName": "Whitepaper",
     "description": ""
   },
   "options": {
@@ -20,7 +20,7 @@
     "Form": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-form-section"
+      "component": "layout.whitepaper-form-section"
     },
     "Success": {
       "type": "component",

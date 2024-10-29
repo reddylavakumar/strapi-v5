@@ -448,6 +448,7 @@ export interface LayoutHero extends Schema.Component {
       Attribute.DefaultTo<'No credit card needed.'>;
     Description_3: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+    ListTitle: Attribute.String & Attribute.DefaultTo<'Why choose CodeRabbit?'>;
   };
 }
 
@@ -591,6 +592,25 @@ export interface LayoutTrustSection extends Schema.Component {
   };
 }
 
+export interface LayoutWhitepaperFormSection extends Schema.Component {
+  collectionName: 'components_layout_whitepaper_form_sections';
+  info: {
+    displayName: 'Whitepaper Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -718,6 +738,7 @@ declare module '@strapi/types' {
       'layout.startup-form-section': LayoutStartupFormSection;
       'layout.testimonials': LayoutTestimonials;
       'layout.trust-section': LayoutTrustSection;
+      'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
