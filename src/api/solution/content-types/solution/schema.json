@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solutions",
+  "info": {
+    "singularName": "solution",
+    "pluralName": "solutions",
+    "displayName": "Solution",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.hero",
+        "layout.features-section"
+      ]
+    }
+  }
+}
