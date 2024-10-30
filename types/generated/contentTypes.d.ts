@@ -1394,7 +1394,7 @@ export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
     Hero: Attribute.Component<'layout.hero'>;
     Form: Attribute.Component<'layout.whitepaper-form-section'>;
     Success: Attribute.Component<'components.contact-success'>;
-    Seo: Attribute.Component<'shared.seo'>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
