@@ -54,6 +54,10 @@
     "Description_3": {
       "type": "string",
       "default": "2-click signup with GitHub/GitLab."
+    },
+    "ListTitle": {
+      "type": "string",
+      "default": "Why choose CodeRabbit?"
     }
   }
 }

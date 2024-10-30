@@ -959,8 +959,8 @@ export interface ApiContactContact extends Schema.SingleType {
   attributes: {
     Hero: Attribute.Component<'layout.hero'>;
     Form: Attribute.Component<'layout.contact-form-section'>;
-    Seo: Attribute.Component<'shared.seo'>;
     Success: Attribute.Component<'components.contact-success'>;
+    Seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1063,6 +1063,7 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
     singularName: 'gh-event-page';
     pluralName: 'gh-event-pages';
     displayName: 'GH Event Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1074,6 +1075,7 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
     EventIframeTitle: Attribute.String;
     seo: Attribute.Component<'shared.seo'>;
     Contact: Attribute.Component<'layout.contact-us-section'>;
+    CalendarDescription: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1377,6 +1379,40 @@ export interface ApiTrustCenterSocTrustCenterSoc extends Schema.SingleType {
   };
 }
 
+export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
+  collectionName: 'whitepapers';
+  info: {
+    singularName: 'whitepaper';
+    pluralName: 'whitepapers';
+    displayName: 'Whitepaper';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.whitepaper-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::whitepaper.whitepaper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::whitepaper.whitepaper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1411,6 +1447,7 @@ declare module '@strapi/types' {
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
+      'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
     }
   }
 }
