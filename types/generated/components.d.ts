@@ -30,6 +30,40 @@ export interface ComponentsContactSuccess extends Schema.Component {
   };
 }
 
+export interface ComponentsContentWithImage extends Schema.Component {
+  collectionName: 'components_components_content_with_images';
+  info: {
+    displayName: 'Content with Image';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsCustomFeature extends Schema.Component {
+  collectionName: 'components_components_custom_features';
+  info: {
+    displayName: 'Custom Feature';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    ImageXL: Attribute.Media;
+    ImageLG: Attribute.Media;
+    ImageMD: Attribute.Media;
+    ImageSM: Attribute.Media;
+    CardType: Attribute.Enumeration<['medium', 'small', 'big']> &
+      Attribute.DefaultTo<'big'>;
+  };
+}
+
 export interface ComponentsFaqItem extends Schema.Component {
   collectionName: 'components_components_faq_items';
   info: {
@@ -308,6 +342,21 @@ export interface ComponentsTrustCard extends Schema.Component {
   };
 }
 
+export interface LayoutAlternatedContent extends Schema.Component {
+  collectionName: 'components_layout_alternated_contents';
+  info: {
+    displayName: 'Alternated Content';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    ContentWithImages: Attribute.Component<
+      'components.content-with-image',
+      true
+    >;
+  };
+}
+
 export interface LayoutContactFormSection extends Schema.Component {
   collectionName: 'components_layout_contact_form_sections';
   info: {
@@ -336,6 +385,21 @@ export interface LayoutContactUsSection extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String & Attribute.DefaultTo<'Still have questions?'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutCustomFeaturesSection extends Schema.Component {
+  collectionName: 'components_layout_custom_features_sections';
+  info: {
+    displayName: 'Custom Features Section';
+    icon: 'dashboard';
+  };
+  attributes: {
+    CustomLayout: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    Features: Attribute.Component<'components.custom-feature', true>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -466,6 +530,18 @@ export interface LayoutHowItWorksSection extends Schema.Component {
   };
 }
 
+export interface LayoutMarkdownCardSection extends Schema.Component {
+  collectionName: 'components_layout_markdown_card_sections';
+  info: {
+    displayName: 'Markdown Card Section';
+    icon: 'layout';
+    description: '';
+  };
+  attributes: {
+    Body: Attribute.RichText;
+  };
+}
+
 export interface LayoutMetricsSection extends Schema.Component {
   collectionName: 'components_layout_metrics_sections';
   info: {
@@ -523,6 +599,24 @@ export interface LayoutSecuritySection extends Schema.Component {
   attributes: {
     Title: Attribute.String;
     Securities: Attribute.Component<'components.security', true>;
+  };
+}
+
+export interface LayoutSimpleHero extends Schema.Component {
+  collectionName: 'components_layout_simple_heroes';
+  info: {
+    displayName: 'Simple Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Image: Attribute.Media;
+    Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
   };
 }
 
@@ -701,6 +795,8 @@ declare module '@strapi/types' {
     export interface Components {
       'components.bullets': ComponentsBullets;
       'components.contact-success': ComponentsContactSuccess;
+      'components.content-with-image': ComponentsContentWithImage;
+      'components.custom-feature': ComponentsCustomFeature;
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
       'components.form-side-section': ComponentsFormSideSection;
@@ -721,8 +817,10 @@ declare module '@strapi/types' {
       'components.socials': ComponentsSocials;
       'components.testimonial': ComponentsTestimonial;
       'components.trust-card': ComponentsTrustCard;
+      'layout.alternated-content': LayoutAlternatedContent;
       'layout.contact-form-section': LayoutContactFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
+      'layout.custom-features-section': LayoutCustomFeaturesSection;
       'layout.customers-section': LayoutCustomersSection;
       'layout.event-card': LayoutEventCard;
       'layout.faq-section': LayoutFaqSection;
@@ -731,11 +829,13 @@ declare module '@strapi/types' {
       'layout.get-started': LayoutGetStarted;
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
+      'layout.markdown-card-section': LayoutMarkdownCardSection;
       'layout.metrics-section': LayoutMetricsSection;
       'layout.pills-section': LayoutPillsSection;
       'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
       'layout.security-section': LayoutSecuritySection;
+      'layout.simple-hero': LayoutSimpleHero;
       'layout.soc-form-section': LayoutSocFormSection;
       'layout.startup-form-section': LayoutStartupFormSection;
       'layout.testimonials': LayoutTestimonials;
