@@ -24,11 +24,19 @@
       "repeatable": false,
       "component": "shared.seo"
     },
-    "Body": {
+    "Sections": {
       "type": "dynamiczone",
       "components": [
         "layout.hero",
-        "layout.features-section"
+        "layout.get-started",
+        "layout.contact-us-section",
+        "layout.how-it-works-section",
+        "layout.privacy-policy-section",
+        "layout.custom-features-section",
+        "layout.markdown-card-section",
+        "layout.simple-hero",
+        "layout.alternated-content",
+        "layout.trust-section"
       ]
     }
   }

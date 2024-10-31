@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_alternated_contents",
+  "info": {
+    "displayName": "Alternated Content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "ContentWithImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.content-with-image"
+    }
+  }
+}

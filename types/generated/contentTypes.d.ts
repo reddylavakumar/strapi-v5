@@ -1235,6 +1235,53 @@ export interface ApiPricingPricing extends Schema.SingleType {
   };
 }
 
+export interface ApiSolutionSolution extends Schema.CollectionType {
+  collectionName: 'solutions';
+  info: {
+    singularName: 'solution';
+    pluralName: 'solutions';
+    displayName: 'Solution';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    slug: Attribute.UID<'api::solution.solution', 'Title'>;
+    seo: Attribute.Component<'shared.seo'>;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.hero',
+        'layout.get-started',
+        'layout.contact-us-section',
+        'layout.how-it-works-section',
+        'layout.privacy-policy-section',
+        'layout.custom-features-section',
+        'layout.markdown-card-section',
+        'layout.simple-hero',
+        'layout.alternated-content',
+        'layout.trust-section'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
   collectionName: 'startup_programs';
   info: {
@@ -1409,6 +1456,7 @@ declare module '@strapi/types' {
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
