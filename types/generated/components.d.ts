@@ -34,10 +34,13 @@ export interface ComponentsFaqItem extends Schema.Component {
   collectionName: 'components_components_faq_items';
   info: {
     displayName: 'Faq Item';
+    description: '';
   };
   attributes: {
     Question: Attribute.String;
     Answer: Attribute.RichText;
+    Category: Attribute.String &
+      Attribute.DefaultTo<'Popular, Product, Security'>;
   };
 }
 
@@ -402,7 +405,6 @@ export interface LayoutGdprFormSection extends Schema.Component {
     WorkEmail: Attribute.Component<'components.input-text-field'>;
     JobTitle: Attribute.Component<'components.input-text-field'>;
     NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
-    UtmSource: Attribute.Component<'components.input-text-field'>;
     Button: Attribute.Component<'components.link'>;
   };
 }
