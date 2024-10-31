@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_layout_simple_heroes",
+  "info": {
+    "displayName": "Simple Hero Section",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Cut Code Review Time & Bugs in Half"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Supercharge your entire team with AI-driven contextual feedback. Supports all languages."
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    },
+    "Tag": {
+      "type": "string",
+      "default": "Page name"
+    }
+  }
+}

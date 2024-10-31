@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_custom_features_sections",
+  "info": {
+    "displayName": "Custom Features Section",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "CustomLayout": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.custom-feature"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

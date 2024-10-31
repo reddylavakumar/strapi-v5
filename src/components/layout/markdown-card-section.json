@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_markdown_card_sections",
+  "info": {
+    "displayName": "Markdown Card Section",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Body": {
+      "type": "richtext"
+    }
+  }
+}
