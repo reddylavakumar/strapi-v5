@@ -1,0 +1,65 @@
+{
+    "collectionName": "components_components_custom_features",
+    "info": {
+      "displayName": "Custom Feature",
+      "description": ""
+    },
+    "options": {},
+    "attributes": {
+      "Title": {
+        "type": "string",
+        "default": "Feature title"
+      },
+      "Description": {
+        "type": "text",
+        "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+      },
+      "Bullets": {
+        "type": "component",
+        "repeatable": true,
+        "component": "components.bullets"
+      },
+      "ImageXL": {
+        "type": "media",
+        "multiple": false,
+        "required": false,
+        "allowedTypes": [
+          "images"
+        ]
+      },
+      "ImageLG": {
+        "type": "media",
+        "multiple": false,
+        "required": false,
+        "allowedTypes": [
+          "images"
+        ]
+      },
+      "ImageMD": {
+        "type": "media",
+        "multiple": false,
+        "required": false,
+        "allowedTypes": [
+          "images"
+        ]
+      },
+      "ImageSM": {
+        "type": "media",
+        "multiple": false,
+        "required": false,
+        "allowedTypes": [
+          "images"
+        ]
+      },
+      "CardType": {
+        "type": "enumeration",
+        "enum": [
+          "medium",
+          "small",
+          "big"
+        ],
+        "default": "big"
+      }
+    }
+  }
+  

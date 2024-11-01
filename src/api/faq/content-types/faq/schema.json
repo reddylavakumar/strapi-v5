@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contacts",
+  "collectionName": "faqs",
   "info": {
-    "singularName": "contact",
-    "pluralName": "contacts",
-    "displayName": "Contact",
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "FAQ",
     "description": ""
   },
   "options": {
@@ -17,20 +17,20 @@
       "repeatable": false,
       "component": "layout.hero"
     },
-    "Form": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.contact-form-section"
-    },
-    "Success": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.contact-success"
-    },
-    "Seo": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "Faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.faq-item"
     }
   }
 }

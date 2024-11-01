@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_layout_gdpr_form_sections",
+  "collectionName": "components_layout_whitepaper_form_sections",
   "info": {
-    "displayName": "GDPR Form Section",
+    "displayName": "Whitepaper Form Section",
     "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string",
-      "default": "Please fill out this form to request access:"
+      "default": "Please fill out this form to schedule a demo:"
     },
     "FirstName": {
       "type": "component",

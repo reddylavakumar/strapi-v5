@@ -959,8 +959,8 @@ export interface ApiContactContact extends Schema.SingleType {
   attributes: {
     Hero: Attribute.Component<'layout.hero'>;
     Form: Attribute.Component<'layout.contact-form-section'>;
-    Seo: Attribute.Component<'shared.seo'>;
     Success: Attribute.Component<'components.contact-success'>;
+    Seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1011,6 +1011,32 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqFaq extends Schema.SingleType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Faqs: Attribute.Component<'components.faq-item', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1235,6 +1261,53 @@ export interface ApiPricingPricing extends Schema.SingleType {
   };
 }
 
+export interface ApiSolutionSolution extends Schema.CollectionType {
+  collectionName: 'solutions';
+  info: {
+    singularName: 'solution';
+    pluralName: 'solutions';
+    displayName: 'Solution';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    slug: Attribute.UID<'api::solution.solution', 'Title'>;
+    seo: Attribute.Component<'shared.seo'>;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.hero',
+        'layout.get-started',
+        'layout.contact-us-section',
+        'layout.how-it-works-section',
+        'layout.privacy-policy-section',
+        'layout.custom-features-section',
+        'layout.markdown-card-section',
+        'layout.simple-hero',
+        'layout.alternated-content',
+        'layout.trust-section'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
   collectionName: 'startup_programs';
   info: {
@@ -1379,6 +1452,40 @@ export interface ApiTrustCenterSocTrustCenterSoc extends Schema.SingleType {
   };
 }
 
+export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
+  collectionName: 'whitepapers';
+  info: {
+    singularName: 'whitepaper';
+    pluralName: 'whitepapers';
+    displayName: 'Whitepaper';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.whitepaper-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::whitepaper.whitepaper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::whitepaper.whitepaper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1403,16 +1510,19 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
+      'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
+      'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
     }
   }
 }

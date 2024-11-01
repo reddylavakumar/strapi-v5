@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_layout_heroes",
+  "collectionName": "components_layout_simple_heroes",
   "info": {
-    "displayName": "Hero Section",
+    "displayName": "Simple Hero Section",
     "icon": "",
     "description": ""
   },
@@ -31,33 +31,6 @@
     "Tag": {
       "type": "string",
       "default": "Page name"
-    },
-    "LottieLG": {
-      "type": "json"
-    },
-    "Bullets": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.bullets"
-    },
-    "LottieSM": {
-      "type": "json"
-    },
-    "Description_1": {
-      "type": "string",
-      "default": "14-day free trial "
-    },
-    "Description_2": {
-      "type": "string",
-      "default": "No credit card needed."
-    },
-    "Description_3": {
-      "type": "string",
-      "default": "2-click signup with GitHub/GitLab."
-    },
-    "ListTitle": {
-      "type": "string",
-      "default": "Why choose CodeRabbit?"
     }
   }
 }
