@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_hs_embeded_calendars",
+  "info": {
+    "displayName": "HsEmbededCalendar",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "SourceUrl": {
+      "type": "string"
+    }
+  }
+}
