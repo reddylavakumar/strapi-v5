@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "enterprises",
+  "info": {
+    "singularName": "enterprise",
+    "pluralName": "enterprises",
+    "displayName": "Enterprise",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.features-section"
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "Stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.metrics-section"
+    },
+    "Plans": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.plans-section"
+    },
+    "SecureDevelopment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.trust-section"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "GetStarted": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.get-started"
+    },
+    "Security": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.security-section"
+    },
+    "Customers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.customers-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

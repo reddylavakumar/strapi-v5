@@ -339,6 +339,7 @@ export interface ComponentsTrustCard extends Schema.Component {
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur.Reviews only the essential code'>;
     Description: Attribute.Text &
       Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -574,6 +575,7 @@ export interface LayoutPlansSection extends Schema.Component {
     displayName: 'Plans Section';
   };
   attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
     Plans: Attribute.Component<'components.plan', true>;
   };
 }
