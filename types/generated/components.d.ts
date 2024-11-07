@@ -450,6 +450,7 @@ export interface LayoutFeaturesSection extends Schema.Component {
     description: '';
   };
   attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
     Features: Attribute.Component<'components.feature', true>;
     Button: Attribute.Component<'components.link'>;
   };
