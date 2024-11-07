@@ -574,6 +574,7 @@ export interface LayoutPlansSection extends Schema.Component {
     displayName: 'Plans Section';
   };
   attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
     Plans: Attribute.Component<'components.plan', true>;
   };
 }

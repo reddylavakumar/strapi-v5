@@ -5,6 +5,10 @@
   },
   "options": {},
   "attributes": {
+    "Title": {
+      "type": "string",
+      "default": ""
+    },
     "Plans": {
       "type": "component",
       "repeatable": true,
