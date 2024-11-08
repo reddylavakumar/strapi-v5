@@ -339,6 +339,7 @@ export interface ComponentsTrustCard extends Schema.Component {
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur.Reviews only the essential code'>;
     Description: Attribute.Text &
       Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -449,6 +450,7 @@ export interface LayoutFeaturesSection extends Schema.Component {
     description: '';
   };
   attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
     Features: Attribute.Component<'components.feature', true>;
     Button: Attribute.Component<'components.link'>;
   };
@@ -530,6 +532,19 @@ export interface LayoutHowItWorksSection extends Schema.Component {
   };
 }
 
+export interface LayoutHsEmbededCalendar extends Schema.Component {
+  collectionName: 'components_layout_hs_embeded_calendars';
+  info: {
+    displayName: 'HsEmbededCalendar';
+    icon: 'calendar';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    SourceUrl: Attribute.String;
+  };
+}
+
 export interface LayoutMarkdownCardSection extends Schema.Component {
   collectionName: 'components_layout_markdown_card_sections';
   info: {
@@ -574,6 +589,7 @@ export interface LayoutPlansSection extends Schema.Component {
     displayName: 'Plans Section';
   };
   attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
     Plans: Attribute.Component<'components.plan', true>;
   };
 }
@@ -829,6 +845,7 @@ declare module '@strapi/types' {
       'layout.get-started': LayoutGetStarted;
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
+      'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
       'layout.markdown-card-section': LayoutMarkdownCardSection;
       'layout.metrics-section': LayoutMetricsSection;
       'layout.pills-section': LayoutPillsSection;

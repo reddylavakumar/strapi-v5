@@ -1015,6 +1015,46 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
   };
 }
 
+export interface ApiEnterpriseEnterprise extends Schema.SingleType {
+  collectionName: 'enterprises';
+  info: {
+    singularName: 'enterprise';
+    pluralName: 'enterprises';
+    displayName: 'Enterprise';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Features: Attribute.Component<'layout.features-section'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Stats: Attribute.Component<'layout.metrics-section'>;
+    Plans: Attribute.Component<'layout.plans-section'>;
+    SecureDevelopment: Attribute.Component<'layout.trust-section'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    GetStarted: Attribute.Component<'layout.get-started'>;
+    Security: Attribute.Component<'layout.security-section'>;
+    Customers: Attribute.Component<'layout.customers-section'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::enterprise.enterprise',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::enterprise.enterprise',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.SingleType {
   collectionName: 'faqs';
   info: {
@@ -1287,7 +1327,8 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
         'layout.markdown-card-section',
         'layout.simple-hero',
         'layout.alternated-content',
-        'layout.trust-section'
+        'layout.trust-section',
+        'layout.hs-embeded-calendar'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1510,6 +1551,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
+      'api::enterprise.enterprise': ApiEnterpriseEnterprise;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
