@@ -532,6 +532,19 @@ export interface LayoutHowItWorksSection extends Schema.Component {
   };
 }
 
+export interface LayoutHsEmbededCalendar extends Schema.Component {
+  collectionName: 'components_layout_hs_embeded_calendars';
+  info: {
+    displayName: 'HsEmbededCalendar';
+    icon: 'calendar';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    SourceUrl: Attribute.String;
+  };
+}
+
 export interface LayoutMarkdownCardSection extends Schema.Component {
   collectionName: 'components_layout_markdown_card_sections';
   info: {
@@ -832,6 +845,7 @@ declare module '@strapi/types' {
       'layout.get-started': LayoutGetStarted;
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
+      'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
       'layout.markdown-card-section': LayoutMarkdownCardSection;
       'layout.metrics-section': LayoutMetricsSection;
       'layout.pills-section': LayoutPillsSection;

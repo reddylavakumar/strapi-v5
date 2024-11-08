@@ -1327,7 +1327,8 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
         'layout.markdown-card-section',
         'layout.simple-hero',
         'layout.alternated-content',
-        'layout.trust-section'
+        'layout.trust-section',
+        'layout.hs-embeded-calendar'
       ]
     >;
     createdAt: Attribute.DateTime;
