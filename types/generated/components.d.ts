@@ -392,6 +392,24 @@ export interface LayoutContactFormSection extends Schema.Component {
   };
 }
 
+export interface LayoutContactSupportFormSection extends Schema.Component {
+  collectionName: 'components_layout_contact_support_form_sections';
+  info: {
+    displayName: 'Support Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please complete this form so we can assist you more effectively:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutContactUsSection extends Schema.Component {
   collectionName: 'components_layout_contact_us_sections';
   info: {
@@ -850,6 +868,7 @@ declare module '@strapi/types' {
       'components.trust-card': ComponentsTrustCard;
       'layout.alternated-content': LayoutAlternatedContent;
       'layout.contact-form-section': LayoutContactFormSection;
+      'layout.contact-support-form-section': LayoutContactSupportFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.custom-features-section': LayoutCustomFeaturesSection;
       'layout.customers-section': LayoutCustomersSection;

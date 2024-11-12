@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_layout_contact_support_form_sections",
+  "info": {
+    "displayName": "Support Form Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Please complete this form so we can assist you more effectively:"
+    },
+    "FirstName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "LastName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "CompanyName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "WorkEmail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "HowCanWeHelp": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}
