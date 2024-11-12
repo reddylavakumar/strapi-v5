@@ -168,6 +168,20 @@ export interface ComponentsInputTextField extends Schema.Component {
   };
 }
 
+export interface ComponentsLinkCard extends Schema.Component {
+  collectionName: 'components_components_link_card_s';
+  info: {
+    displayName: 'Link Card ';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media;
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface ComponentsLinkMenu extends Schema.Component {
   collectionName: 'components_components_link_menus';
   info: {
@@ -820,6 +834,7 @@ declare module '@strapi/types' {
       'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-text-field': ComponentsInputTextField;
+      'components.link-card': ComponentsLinkCard;
       'components.link-menu': ComponentsLinkMenu;
       'components.link': ComponentsLink;
       'components.links-column': ComponentsLinksColumn;
