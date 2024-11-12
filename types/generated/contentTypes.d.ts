@@ -1225,6 +1225,39 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
 }
 
+export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
+  collectionName: 'help_desks';
+  info: {
+    singularName: 'help-desk';
+    pluralName: 'help-desks';
+    displayName: 'Help Desk';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Cards: Attribute.Component<'components.link-card', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::help-desk.help-desk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::help-desk.help-desk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1557,6 +1590,7 @@ declare module '@strapi/types' {
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
+      'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::pricing.pricing': ApiPricingPricing;
       'api::solution.solution': ApiSolutionSolution;
