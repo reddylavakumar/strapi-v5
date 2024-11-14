@@ -1225,6 +1225,39 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
 }
 
+export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
+  collectionName: 'help_desks';
+  info: {
+    singularName: 'help-desk';
+    pluralName: 'help-desks';
+    displayName: 'Help Desk';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Cards: Attribute.Component<'components.link-card', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::help-desk.help-desk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::help-desk.help-desk',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1380,6 +1413,39 @@ export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::startup-program.startup-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSupportSupport extends Schema.SingleType {
+  collectionName: 'supports';
+  info: {
+    singularName: 'support';
+    pluralName: 'supports';
+    displayName: 'Support';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.contact-support-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support.support',
       'oneToOne',
       'admin::user'
     > &
@@ -1557,10 +1623,12 @@ declare module '@strapi/types' {
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
+      'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::pricing.pricing': ApiPricingPricing;
       'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
+      'api::support.support': ApiSupportSupport;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;

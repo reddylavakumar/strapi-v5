@@ -168,6 +168,20 @@ export interface ComponentsInputTextField extends Schema.Component {
   };
 }
 
+export interface ComponentsLinkCard extends Schema.Component {
+  collectionName: 'components_components_link_card_s';
+  info: {
+    displayName: 'Link Card ';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media;
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface ComponentsLinkMenu extends Schema.Component {
   collectionName: 'components_components_link_menus';
   info: {
@@ -373,6 +387,24 @@ export interface LayoutContactFormSection extends Schema.Component {
     WorkEmail: Attribute.Component<'components.input-text-field'>;
     JobTitle: Attribute.Component<'components.input-text-field'>;
     NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutContactSupportFormSection extends Schema.Component {
+  collectionName: 'components_layout_contact_support_form_sections';
+  info: {
+    displayName: 'Support Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please complete this form so we can assist you more effectively:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
     HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
     Button: Attribute.Component<'components.link'>;
   };
@@ -820,6 +852,7 @@ declare module '@strapi/types' {
       'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-text-field': ComponentsInputTextField;
+      'components.link-card': ComponentsLinkCard;
       'components.link-menu': ComponentsLinkMenu;
       'components.link': ComponentsLink;
       'components.links-column': ComponentsLinksColumn;
@@ -835,6 +868,7 @@ declare module '@strapi/types' {
       'components.trust-card': ComponentsTrustCard;
       'layout.alternated-content': LayoutAlternatedContent;
       'layout.contact-form-section': LayoutContactFormSection;
+      'layout.contact-support-form-section': LayoutContactSupportFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.custom-features-section': LayoutCustomFeaturesSection;
       'layout.customers-section': LayoutCustomersSection;
