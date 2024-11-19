@@ -1095,6 +1095,54 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
   };
 }
 
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    slug: Attribute.UID<'api::event.event', 'Title'>;
+    seo: Attribute.Component<'shared.seo'>;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.hero',
+        'layout.get-started',
+        'layout.contact-us-section',
+        'layout.how-it-works-section',
+        'layout.privacy-policy-section',
+        'layout.custom-features-section',
+        'layout.markdown-card-section',
+        'layout.simple-hero',
+        'layout.alternated-content',
+        'layout.trust-section',
+        'layout.hs-embeded-calendar'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.SingleType {
   collectionName: 'faqs';
   info: {
@@ -1659,6 +1707,7 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
       'api::enterprise.enterprise': ApiEnterpriseEnterprise;
+      'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
