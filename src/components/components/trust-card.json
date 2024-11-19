@@ -21,6 +21,11 @@
     "Description": {
       "type": "text",
       "default": "Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage."
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
     }
   }
 }
