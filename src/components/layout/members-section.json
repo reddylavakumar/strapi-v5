@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_members_sections",
+  "info": {
+    "displayName": "Members Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.member"
+    }
+  }
+}

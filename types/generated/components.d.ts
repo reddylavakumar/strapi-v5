@@ -220,6 +220,18 @@ export interface ComponentsLinksColumn extends Schema.Component {
   };
 }
 
+export interface ComponentsMember extends Schema.Component {
+  collectionName: 'components_components_members';
+  info: {
+    displayName: 'Member';
+  };
+  attributes: {
+    Image: Attribute.Media;
+    Name: Attribute.String;
+    Position: Attribute.String;
+  };
+}
+
 export interface ComponentsMetric extends Schema.Component {
   collectionName: 'components_components_metrics';
   info: {
@@ -549,6 +561,8 @@ export interface LayoutHero extends Schema.Component {
     Description_3: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     ListTitle: Attribute.String & Attribute.DefaultTo<'Why choose CodeRabbit?'>;
+    BackedBy: Attribute.String & Attribute.DefaultTo<'We\u2019re backed by'>;
+    BackedByImages: Attribute.Media;
   };
 }
 
@@ -577,6 +591,18 @@ export interface LayoutHsEmbededCalendar extends Schema.Component {
   };
 }
 
+export interface LayoutJoinUsSection extends Schema.Component {
+  collectionName: 'components_layout_join_us_sections';
+  info: {
+    displayName: 'Join Us Section';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutMarkdownCardSection extends Schema.Component {
   collectionName: 'components_layout_markdown_card_sections';
   info: {
@@ -586,6 +612,19 @@ export interface LayoutMarkdownCardSection extends Schema.Component {
   };
   attributes: {
     Body: Attribute.RichText;
+  };
+}
+
+export interface LayoutMembersSection extends Schema.Component {
+  collectionName: 'components_layout_members_sections';
+  info: {
+    displayName: 'Members Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Members: Attribute.Component<'components.member', true>;
   };
 }
 
@@ -856,6 +895,7 @@ declare module '@strapi/types' {
       'components.link-menu': ComponentsLinkMenu;
       'components.link': ComponentsLink;
       'components.links-column': ComponentsLinksColumn;
+      'components.member': ComponentsMember;
       'components.metric': ComponentsMetric;
       'components.newsletter': ComponentsNewsletter;
       'components.notification': ComponentsNotification;
@@ -880,7 +920,9 @@ declare module '@strapi/types' {
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
       'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
+      'layout.join-us-section': LayoutJoinUsSection;
       'layout.markdown-card-section': LayoutMarkdownCardSection;
+      'layout.members-section': LayoutMembersSection;
       'layout.metrics-section': LayoutMetricsSection;
       'layout.pills-section': LayoutPillsSection;
       'layout.plans-section': LayoutPlansSection;
