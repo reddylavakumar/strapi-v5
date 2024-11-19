@@ -110,6 +110,22 @@ export interface ComponentsFormSideSection extends Schema.Component {
   };
 }
 
+export interface ComponentsHeroCard extends Schema.Component {
+  collectionName: 'components_components_hero_cards';
+  info: {
+    displayName: 'Hero Card';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Reviews only the essential code'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface ComponentsHowItWorks extends Schema.Component {
   collectionName: 'components_components_how_it_works';
   info: {
@@ -887,6 +903,7 @@ declare module '@strapi/types' {
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
       'components.form-side-section': ComponentsFormSideSection;
+      'components.hero-card': ComponentsHeroCard;
       'components.how-it-works': ComponentsHowItWorks;
       'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;

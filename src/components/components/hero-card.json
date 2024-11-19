@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_hero_cards",
+  "info": {
+    "displayName": "Hero Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Title": {
+      "type": "string",
+      "default": "Reviews only the essential code"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage."
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}
