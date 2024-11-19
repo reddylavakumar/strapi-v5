@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_components_trust_cards",
+  "collectionName": "components_components_hero_cards",
   "info": {
-    "displayName": "Trust Card",
+    "displayName": "Hero Card",
     "description": ""
   },
   "options": {},
@@ -16,11 +16,16 @@
     },
     "Title": {
       "type": "string",
-      "default": "Lorem ipsum dolor sit amet consectetur.Reviews only the essential code"
+      "default": "Reviews only the essential code"
     },
     "Description": {
       "type": "text",
       "default": "Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage."
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
     }
   }
 }

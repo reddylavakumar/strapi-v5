@@ -1076,6 +1076,7 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
     Security: Attribute.Component<'layout.security-section'>;
     Customers: Attribute.Component<'layout.customers-section'>;
     seo: Attribute.Component<'shared.seo'>;
+    HeroCards: Attribute.Component<'components.hero-card', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
