@@ -1386,6 +1386,40 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiPartnershipPartnership extends Schema.SingleType {
+  collectionName: 'partnerships';
+  info: {
+    singularName: 'partnership';
+    pluralName: 'partnerships';
+    displayName: 'Partnership';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.partnership-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPricingPricing extends Schema.SingleType {
   collectionName: 'pricings';
   info: {
@@ -1715,6 +1749,7 @@ declare module '@strapi/types' {
       'api::header.header': ApiHeaderHeader;
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
       'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;

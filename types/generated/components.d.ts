@@ -659,6 +659,25 @@ export interface LayoutMetricsSection extends Schema.Component {
   };
 }
 
+export interface LayoutPartnershipFormSection extends Schema.Component {
+  collectionName: 'components_layout_partnership_form_sections';
+  info: {
+    displayName: 'Partnership Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutPillsSection extends Schema.Component {
   collectionName: 'components_layout_pills_sections';
   info: {
@@ -941,6 +960,7 @@ declare module '@strapi/types' {
       'layout.markdown-card-section': LayoutMarkdownCardSection;
       'layout.members-section': LayoutMembersSection;
       'layout.metrics-section': LayoutMetricsSection;
+      'layout.partnership-form-section': LayoutPartnershipFormSection;
       'layout.pills-section': LayoutPillsSection;
       'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;
