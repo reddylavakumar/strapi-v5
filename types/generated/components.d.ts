@@ -553,6 +553,14 @@ export interface LayoutGetStarted extends Schema.Component {
   };
 }
 
+export interface LayoutHeroCardsSection extends Schema.Component {
+  collectionName: 'components_layout_hero_cards_sections';
+  info: {
+    displayName: 'Hero Cards Section';
+  };
+  attributes: {};
+}
+
 export interface LayoutHero extends Schema.Component {
   collectionName: 'components_layout_heroes';
   info: {
@@ -953,6 +961,7 @@ declare module '@strapi/types' {
       'layout.features-section': LayoutFeaturesSection;
       'layout.gdpr-form-section': LayoutGdprFormSection;
       'layout.get-started': LayoutGetStarted;
+      'layout.hero-cards-section': LayoutHeroCardsSection;
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
       'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
