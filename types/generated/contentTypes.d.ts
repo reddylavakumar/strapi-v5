@@ -1122,7 +1122,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
         'layout.simple-hero',
         'layout.alternated-content',
         'layout.trust-section',
-        'layout.hs-embeded-calendar'
+        'layout.hs-embeded-calendar',
+        'layout.metrics-section',
+        'layout.plans-section',
+        'layout.features-section',
+        'layout.testimonials',
+        'layout.customers-section'
       ]
     >;
     createdAt: Attribute.DateTime;
