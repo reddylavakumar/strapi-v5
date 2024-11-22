@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_collapsible_boxes_sections",
+  "info": {
+    "displayName": "Collapsible Boxes Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": ""
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.collapsible"
+    }
+  }
+}

@@ -40,9 +40,11 @@
         "layout.hs-embeded-calendar",
         "layout.metrics-section",
         "layout.plans-section",
-        "layout.features-section",
         "layout.testimonials",
-        "layout.customers-section"
+        "layout.customers-section",
+        "layout.collapsible-boxes-section",
+        "layout.hero-cards-section",
+        "layout.enterprise-hero-with-video"
       ]
     }
   }
