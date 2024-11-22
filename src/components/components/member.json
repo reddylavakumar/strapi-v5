@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_members",
+  "info": {
+    "displayName": "Member"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Position": {
+      "type": "string"
+    }
+  }
+}

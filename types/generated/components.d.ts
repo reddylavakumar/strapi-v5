@@ -110,6 +110,22 @@ export interface ComponentsFormSideSection extends Schema.Component {
   };
 }
 
+export interface ComponentsHeroCard extends Schema.Component {
+  collectionName: 'components_components_hero_cards';
+  info: {
+    displayName: 'Hero Card';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Reviews only the essential code'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface ComponentsHowItWorks extends Schema.Component {
   collectionName: 'components_components_how_it_works';
   info: {
@@ -217,6 +233,18 @@ export interface ComponentsLinksColumn extends Schema.Component {
   attributes: {
     Title: Attribute.String & Attribute.DefaultTo<'Column title'>;
     Links: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface ComponentsMember extends Schema.Component {
+  collectionName: 'components_components_members';
+  info: {
+    displayName: 'Member';
+  };
+  attributes: {
+    Image: Attribute.Media;
+    Name: Attribute.String;
+    Position: Attribute.String;
   };
 }
 
@@ -525,6 +553,14 @@ export interface LayoutGetStarted extends Schema.Component {
   };
 }
 
+export interface LayoutHeroCardsSection extends Schema.Component {
+  collectionName: 'components_layout_hero_cards_sections';
+  info: {
+    displayName: 'Hero Cards Section';
+  };
+  attributes: {};
+}
+
 export interface LayoutHero extends Schema.Component {
   collectionName: 'components_layout_heroes';
   info: {
@@ -549,6 +585,8 @@ export interface LayoutHero extends Schema.Component {
     Description_3: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     ListTitle: Attribute.String & Attribute.DefaultTo<'Why choose CodeRabbit?'>;
+    BackedBy: Attribute.String & Attribute.DefaultTo<'We\u2019re backed by'>;
+    BackedByImages: Attribute.Media;
   };
 }
 
@@ -577,6 +615,18 @@ export interface LayoutHsEmbededCalendar extends Schema.Component {
   };
 }
 
+export interface LayoutJoinUsSection extends Schema.Component {
+  collectionName: 'components_layout_join_us_sections';
+  info: {
+    displayName: 'Join Us Section';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutMarkdownCardSection extends Schema.Component {
   collectionName: 'components_layout_markdown_card_sections';
   info: {
@@ -586,6 +636,19 @@ export interface LayoutMarkdownCardSection extends Schema.Component {
   };
   attributes: {
     Body: Attribute.RichText;
+  };
+}
+
+export interface LayoutMembersSection extends Schema.Component {
+  collectionName: 'components_layout_members_sections';
+  info: {
+    displayName: 'Members Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Members: Attribute.Component<'components.member', true>;
   };
 }
 
@@ -601,6 +664,25 @@ export interface LayoutMetricsSection extends Schema.Component {
     Stats: Attribute.Component<'components.metric', true>;
     Description: Attribute.String &
       Attribute.DefaultTo<'Loved by 1000s of developers'>;
+  };
+}
+
+export interface LayoutPartnershipFormSection extends Schema.Component {
+  collectionName: 'components_layout_partnership_form_sections';
+  info: {
+    displayName: 'Partnership Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -848,6 +930,7 @@ declare module '@strapi/types' {
       'components.faq-item': ComponentsFaqItem;
       'components.feature': ComponentsFeature;
       'components.form-side-section': ComponentsFormSideSection;
+      'components.hero-card': ComponentsHeroCard;
       'components.how-it-works': ComponentsHowItWorks;
       'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;
@@ -856,6 +939,7 @@ declare module '@strapi/types' {
       'components.link-menu': ComponentsLinkMenu;
       'components.link': ComponentsLink;
       'components.links-column': ComponentsLinksColumn;
+      'components.member': ComponentsMember;
       'components.metric': ComponentsMetric;
       'components.newsletter': ComponentsNewsletter;
       'components.notification': ComponentsNotification;
@@ -877,11 +961,15 @@ declare module '@strapi/types' {
       'layout.features-section': LayoutFeaturesSection;
       'layout.gdpr-form-section': LayoutGdprFormSection;
       'layout.get-started': LayoutGetStarted;
+      'layout.hero-cards-section': LayoutHeroCardsSection;
       'layout.hero': LayoutHero;
       'layout.how-it-works-section': LayoutHowItWorksSection;
       'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
+      'layout.join-us-section': LayoutJoinUsSection;
       'layout.markdown-card-section': LayoutMarkdownCardSection;
+      'layout.members-section': LayoutMembersSection;
       'layout.metrics-section': LayoutMetricsSection;
+      'layout.partnership-form-section': LayoutPartnershipFormSection;
       'layout.pills-section': LayoutPillsSection;
       'layout.plans-section': LayoutPlansSection;
       'layout.privacy-policy-section': LayoutPrivacyPolicySection;

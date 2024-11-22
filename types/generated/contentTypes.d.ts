@@ -821,6 +821,45 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiAboutUsAboutUs extends Schema.SingleType {
+  collectionName: 'about_uses';
+  info: {
+    singularName: 'about-us';
+    pluralName: 'about-uses';
+    displayName: 'About Us';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    JoinUs: Attribute.Component<'layout.join-us-section'>;
+    Team: Attribute.Component<'layout.members-section'>;
+    Advisors: Attribute.Component<'layout.members-section'>;
+    Intro1: Attribute.Text;
+    Intro2: Attribute.Text;
+    Intro3: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -1037,6 +1076,7 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
     Security: Attribute.Component<'layout.security-section'>;
     Customers: Attribute.Component<'layout.customers-section'>;
     seo: Attribute.Component<'shared.seo'>;
+    HeroCards: Attribute.Component<'components.hero-card', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1082,7 +1122,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
         'layout.simple-hero',
         'layout.alternated-content',
         'layout.trust-section',
-        'layout.hs-embeded-calendar'
+        'layout.hs-embeded-calendar',
+        'layout.metrics-section',
+        'layout.plans-section',
+        'layout.features-section',
+        'layout.testimonials',
+        'layout.customers-section'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1339,6 +1384,40 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPartnershipPartnership extends Schema.SingleType {
+  collectionName: 'partnerships';
+  info: {
+    singularName: 'partnership';
+    pluralName: 'partnerships';
+    displayName: 'Partnership';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.hero'>;
+    Form: Attribute.Component<'layout.partnership-form-section'>;
+    Success: Attribute.Component<'components.contact-success'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partnership.partnership',
       'oneToOne',
       'admin::user'
     > &
@@ -1660,6 +1739,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
@@ -1674,6 +1754,7 @@ declare module '@strapi/types' {
       'api::header.header': ApiHeaderHeader;
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
       'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;

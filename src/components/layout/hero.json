@@ -58,6 +58,17 @@
     "ListTitle": {
       "type": "string",
       "default": "Why choose CodeRabbit?"
+    },
+    "BackedBy": {
+      "type": "string",
+      "default": "We’re backed by"
+    },
+    "BackedByImages": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

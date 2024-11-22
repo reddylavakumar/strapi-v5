@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "JoinUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.join-us-section"
+    },
+    "Team": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.members-section"
+    },
+    "Advisors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.members-section"
+    },
+    "Intro1": {
+      "type": "text"
+    },
+    "Intro2": {
+      "type": "text"
+    },
+    "Intro3": {
+      "type": "text"
+    }
+  }
+}
