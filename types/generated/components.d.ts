@@ -13,6 +13,23 @@ export interface ComponentsBullets extends Schema.Component {
   };
 }
 
+export interface ComponentsCollapsible extends Schema.Component {
+  collectionName: 'components_components_collapsibles';
+  info: {
+    displayName: 'Collapsible';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    ImageXL: Attribute.Media;
+    ImageLG: Attribute.Media;
+    ImageMD: Attribute.Media;
+    ImageSM: Attribute.Media;
+  };
+}
+
 export interface ComponentsContactSuccess extends Schema.Component {
   collectionName: 'components_components_contact_successes';
   info: {
@@ -400,6 +417,18 @@ export interface LayoutAlternatedContent extends Schema.Component {
   };
 }
 
+export interface LayoutCollapsibleBoxesSection extends Schema.Component {
+  collectionName: 'components_layout_collapsible_boxes_sections';
+  info: {
+    displayName: 'Collapsible Boxes Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
+    Features: Attribute.Component<'components.collapsible', true>;
+  };
+}
+
 export interface LayoutContactFormSection extends Schema.Component {
   collectionName: 'components_layout_contact_form_sections';
   info: {
@@ -475,6 +504,29 @@ export interface LayoutCustomersSection extends Schema.Component {
     Customers: Attribute.Component<'components.link', true>;
     Title: Attribute.String &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
+  };
+}
+
+export interface LayoutEnterpriseHeroWithVideo extends Schema.Component {
+  collectionName: 'components_layout_enterprise_hero_with_videos';
+  info: {
+    displayName: 'Enterprise Hero With Video';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+    YTVideoUrl: Attribute.String;
   };
 }
 
@@ -558,7 +610,9 @@ export interface LayoutHeroCardsSection extends Schema.Component {
   info: {
     displayName: 'Hero Cards Section';
   };
-  attributes: {};
+  attributes: {
+    Cards: Attribute.Component<'components.hero-card', true>;
+  };
 }
 
 export interface LayoutHero extends Schema.Component {
@@ -924,6 +978,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'components.bullets': ComponentsBullets;
+      'components.collapsible': ComponentsCollapsible;
       'components.contact-success': ComponentsContactSuccess;
       'components.content-with-image': ComponentsContentWithImage;
       'components.custom-feature': ComponentsCustomFeature;
@@ -951,11 +1006,13 @@ declare module '@strapi/types' {
       'components.testimonial': ComponentsTestimonial;
       'components.trust-card': ComponentsTrustCard;
       'layout.alternated-content': LayoutAlternatedContent;
+      'layout.collapsible-boxes-section': LayoutCollapsibleBoxesSection;
       'layout.contact-form-section': LayoutContactFormSection;
       'layout.contact-support-form-section': LayoutContactSupportFormSection;
       'layout.contact-us-section': LayoutContactUsSection;
       'layout.custom-features-section': LayoutCustomFeaturesSection;
       'layout.customers-section': LayoutCustomersSection;
+      'layout.enterprise-hero-with-video': LayoutEnterpriseHeroWithVideo;
       'layout.event-card': LayoutEventCard;
       'layout.faq-section': LayoutFaqSection;
       'layout.features-section': LayoutFeaturesSection;

@@ -4,5 +4,11 @@
     "displayName": "Hero Cards Section"
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.hero-card"
+    }
+  }
 }
