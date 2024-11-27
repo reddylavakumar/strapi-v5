@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_hero_cards_sections",
+  "info": {
+    "displayName": "Hero Cards Section"
+  },
+  "options": {},
+  "attributes": {
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.hero-card"
+    }
+  }
+}
