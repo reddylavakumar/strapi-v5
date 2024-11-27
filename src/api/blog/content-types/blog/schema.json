@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.blog-hero-section"
+    },
+    "Newsletter": {
+      "displayName": "Newsletter Blog Section",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.newsletter-blog-section"
+    },
+    "Sliders": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.blog-slider-section"
+    }
+  }
+}

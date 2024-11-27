@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_blog_hero_sections",
+  "info": {
+    "displayName": "Blog Hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit Blog"
+    },
+    "Description": {
+      "type": "string",
+      "default": "Dig into insights about our products, use cases, and POVs."
+    },
+    "SearchPlaceholder": {
+      "type": "string",
+      "default": "Search articles"
+    },
+    "FilterCategories": {
+      "type": "text",
+      "default": "Popular, Featured, Announcements, Product"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_blog_slider_sections",
+  "info": {
+    "displayName": "Blog Slider Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.blog-slider"
+    }
+  }
+}
