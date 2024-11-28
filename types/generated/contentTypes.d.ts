@@ -1413,36 +1413,6 @@ export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
   };
 }
 
-export interface ApiHomeCopyHomeCopy extends Schema.SingleType {
-  collectionName: 'home_copies';
-  info: {
-    singularName: 'home-copy';
-    pluralName: 'home-copies';
-    displayName: 'home-copy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-copy.home-copy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-copy.home-copy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1558,7 +1528,7 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
   info: {
     singularName: 'solution';
     pluralName: 'solutions';
-    displayName: 'Aravind';
+    displayName: 'Solution';
     description: '';
   };
   options: {
@@ -1854,7 +1824,6 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
-      'api::home-copy.home-copy': ApiHomeCopyHomeCopy;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
