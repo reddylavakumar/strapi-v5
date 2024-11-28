@@ -17,10 +17,6 @@
     "SearchPlaceholder": {
       "type": "string",
       "default": "Search articles"
-    },
-    "FilterCategories": {
-      "type": "text",
-      "default": "Popular, Featured, Announcements, Product"
     }
   }
 }

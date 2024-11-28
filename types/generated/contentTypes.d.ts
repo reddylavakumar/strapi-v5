@@ -973,6 +973,40 @@ export interface ApiBlogBlog extends Schema.SingleType {
   };
 }
 
+export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
+  collectionName: 'blog_internals';
+  info: {
+    singularName: 'blog-internal';
+    pluralName: 'blog-internals';
+    displayName: 'Blog Internal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Related: Attribute.String & Attribute.DefaultTo<'Keep reading'>;
+    Socials: Attribute.Component<'components.socials'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-internal.blog-internal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-internal.blog-internal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1778,6 +1812,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
+      'api::blog-internal.blog-internal': ApiBlogInternalBlogInternal;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
