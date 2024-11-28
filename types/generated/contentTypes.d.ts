@@ -834,7 +834,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
   attributes: {
     seo: Attribute.Component<'shared.seo'>;
-    Hero: Attribute.Component<'layout.hero'>;
     Contact: Attribute.Component<'layout.contact-us-section'>;
     JoinUs: Attribute.Component<'layout.join-us-section'>;
     Team: Attribute.Component<'layout.members-section'>;
@@ -943,6 +942,33 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Schema.SingleType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.blog-hero-section'>;
+    Newsletter: Attribute.Component<'layout.newsletter-blog-section'>;
+    Sliders: Attribute.Component<'layout.blog-slider-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1751,6 +1777,7 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;

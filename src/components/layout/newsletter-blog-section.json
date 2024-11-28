@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_newsletter_blog_sections",
+  "info": {
+    "displayName": "Blog Newsletter Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Sign up for our Newsletter"
+    },
+    "Description": {
+      "type": "string",
+      "default": "Don’t miss out on our latest articles"
+    },
+    "Newsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    }
+  }
+}
