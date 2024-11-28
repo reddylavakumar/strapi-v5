@@ -973,6 +973,40 @@ export interface ApiBlogBlog extends Schema.SingleType {
   };
 }
 
+export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
+  collectionName: 'blog_internals';
+  info: {
+    singularName: 'blog-internal';
+    pluralName: 'blog-internals';
+    displayName: 'Blog Internal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Related: Attribute.String & Attribute.DefaultTo<'Keep reading'>;
+    Socials: Attribute.Component<'components.socials'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-internal.blog-internal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-internal.blog-internal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1379,6 +1413,36 @@ export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
   };
 }
 
+export interface ApiHomeCopyHomeCopy extends Schema.SingleType {
+  collectionName: 'home_copies';
+  info: {
+    singularName: 'home-copy';
+    pluralName: 'home-copies';
+    displayName: 'home-copy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-copy.home-copy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-copy.home-copy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1494,7 +1558,7 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
   info: {
     singularName: 'solution';
     pluralName: 'solutions';
-    displayName: 'Solution';
+    displayName: 'Aravind';
     description: '';
   };
   options: {
@@ -1778,6 +1842,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
+      'api::blog-internal.blog-internal': ApiBlogInternalBlogInternal;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
@@ -1789,6 +1854,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
+      'api::home-copy.home-copy': ApiHomeCopyHomeCopy;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
