@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ComponentsBlogSlider extends Schema.Component {
+  collectionName: 'components_components_blog_sliders';
+  info: {
+    displayName: 'Blog Slider';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Category: Attribute.String;
+  };
+}
+
 export interface ComponentsBullets extends Schema.Component {
   collectionName: 'components_components_bullets';
   info: {
@@ -417,6 +428,32 @@ export interface LayoutAlternatedContent extends Schema.Component {
   };
 }
 
+export interface LayoutBlogHeroSection extends Schema.Component {
+  collectionName: 'components_layout_blog_hero_sections';
+  info: {
+    displayName: 'Blog Hero Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'CodeRabbit Blog'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Dig into insights about our products, use cases, and POVs.'>;
+    SearchPlaceholder: Attribute.String &
+      Attribute.DefaultTo<'Search articles'>;
+  };
+}
+
+export interface LayoutBlogSliderSection extends Schema.Component {
+  collectionName: 'components_layout_blog_slider_sections';
+  info: {
+    displayName: 'Blog Slider Section';
+    description: '';
+  };
+  attributes: {
+    Slider: Attribute.Component<'components.blog-slider', true>;
+  };
+}
+
 export interface LayoutCollapsibleBoxesSection extends Schema.Component {
   collectionName: 'components_layout_collapsible_boxes_sections';
   info: {
@@ -721,6 +758,20 @@ export interface LayoutMetricsSection extends Schema.Component {
   };
 }
 
+export interface LayoutNewsletterBlogSection extends Schema.Component {
+  collectionName: 'components_layout_newsletter_blog_sections';
+  info: {
+    displayName: 'Blog Newsletter Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Sign up for our Newsletter'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Don\u2019t miss out on our latest articles'>;
+    Newsletter: Attribute.Component<'components.input-text-field'>;
+  };
+}
+
 export interface LayoutPartnershipFormSection extends Schema.Component {
   collectionName: 'components_layout_partnership_form_sections';
   info: {
@@ -977,6 +1028,7 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'components.blog-slider': ComponentsBlogSlider;
       'components.bullets': ComponentsBullets;
       'components.collapsible': ComponentsCollapsible;
       'components.contact-success': ComponentsContactSuccess;
@@ -1006,6 +1058,8 @@ declare module '@strapi/types' {
       'components.testimonial': ComponentsTestimonial;
       'components.trust-card': ComponentsTrustCard;
       'layout.alternated-content': LayoutAlternatedContent;
+      'layout.blog-hero-section': LayoutBlogHeroSection;
+      'layout.blog-slider-section': LayoutBlogSliderSection;
       'layout.collapsible-boxes-section': LayoutCollapsibleBoxesSection;
       'layout.contact-form-section': LayoutContactFormSection;
       'layout.contact-support-form-section': LayoutContactSupportFormSection;
@@ -1026,6 +1080,7 @@ declare module '@strapi/types' {
       'layout.markdown-card-section': LayoutMarkdownCardSection;
       'layout.members-section': LayoutMembersSection;
       'layout.metrics-section': LayoutMetricsSection;
+      'layout.newsletter-blog-section': LayoutNewsletterBlogSection;
       'layout.partnership-form-section': LayoutPartnershipFormSection;
       'layout.pills-section': LayoutPillsSection;
       'layout.plans-section': LayoutPlansSection;
