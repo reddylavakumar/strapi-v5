@@ -989,6 +989,7 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
     Contact: Attribute.Component<'layout.contact-us-section'>;
     Related: Attribute.String & Attribute.DefaultTo<'Keep reading'>;
     Socials: Attribute.Component<'components.socials'>;
+    Share: Attribute.String & Attribute.DefaultTo<'Share'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -30,6 +30,10 @@
       "type": "component",
       "repeatable": false,
       "component": "components.socials"
+    },
+    "Share": {
+      "type": "string",
+      "default": "Share"
     }
   }
 }
