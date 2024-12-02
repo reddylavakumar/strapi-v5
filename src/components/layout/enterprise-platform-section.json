@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_layout_enterprise_platform_sections",
+  "info": {
+    "displayName": "Enterprise Platform Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Send your reports to any Platform"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageSM": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

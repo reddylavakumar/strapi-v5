@@ -567,6 +567,20 @@ export interface LayoutEnterpriseHeroWithVideo extends Schema.Component {
   };
 }
 
+export interface LayoutEnterprisePlatformSection extends Schema.Component {
+  collectionName: 'components_layout_enterprise_platform_sections';
+  info: {
+    displayName: 'Enterprise Platform Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Send your reports to any Platform'>;
+    Image: Attribute.Media;
+    ImageSM: Attribute.Media;
+  };
+}
+
 export interface LayoutEventCard extends Schema.Component {
   collectionName: 'components_layout_event_cards';
   info: {
@@ -1067,6 +1081,7 @@ declare module '@strapi/types' {
       'layout.custom-features-section': LayoutCustomFeaturesSection;
       'layout.customers-section': LayoutCustomersSection;
       'layout.enterprise-hero-with-video': LayoutEnterpriseHeroWithVideo;
+      'layout.enterprise-platform-section': LayoutEnterprisePlatformSection;
       'layout.event-card': LayoutEventCard;
       'layout.faq-section': LayoutFaqSection;
       'layout.features-section': LayoutFeaturesSection;
