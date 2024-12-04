@@ -1140,6 +1140,7 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
     seo: Attribute.Component<'shared.seo'>;
     HeroCards: Attribute.Component<'components.hero-card', true>;
     Platform: Attribute.Component<'layout.enterprise-platform-section'>;
+    Impact: Attribute.Component<'layout.enterprise-impact-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

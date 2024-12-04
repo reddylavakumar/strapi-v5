@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_components_impact_sliders",
+  "info": {
+    "displayName": "Impact Slider",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Company": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Opinion": {
+      "type": "text"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Job": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}
