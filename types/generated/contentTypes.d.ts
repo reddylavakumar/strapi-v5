@@ -1097,6 +1097,7 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
     Images: Attribute.Media;
     Seo: Attribute.Component<'shared.seo'>;
+    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

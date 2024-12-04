@@ -541,6 +541,7 @@ export interface LayoutCustomersSection extends Schema.Component {
     Customers: Attribute.Component<'components.link', true>;
     Title: Attribute.String &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
+    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
