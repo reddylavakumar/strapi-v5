@@ -38,6 +38,10 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "Grayscale": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

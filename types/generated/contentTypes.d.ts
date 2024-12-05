@@ -1097,6 +1097,7 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
     Images: Attribute.Media;
     Seo: Attribute.Component<'shared.seo'>;
+    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1138,6 +1139,8 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
     Customers: Attribute.Component<'layout.customers-section'>;
     seo: Attribute.Component<'shared.seo'>;
     HeroCards: Attribute.Component<'components.hero-card', true>;
+    Platform: Attribute.Component<'layout.enterprise-platform-section'>;
+    Impact: Attribute.Component<'layout.enterprise-impact-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
