@@ -10,17 +10,23 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Contact": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-us-section"
+      "component": "layout.contact-us-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Related": {
       "type": "string",
@@ -29,11 +35,13 @@
     "Socials": {
       "type": "component",
       "repeatable": false,
-      "component": "components.socials"
+      "component": "components.socials",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Share": {
       "type": "string",
-      "default": "Share"
+      "default": "Share",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

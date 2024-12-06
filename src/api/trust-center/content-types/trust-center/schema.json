@@ -10,42 +10,53 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.hero"
+      "component": "layout.hero",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "SecureDevelopment": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.trust-section"
+      "component": "layout.trust-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Contact": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-us-section"
+      "component": "layout.contact-us-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Security": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.security-section"
+      "component": "layout.security-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "PrivacyPolicy": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.privacy-policy-section"
+      "component": "layout.privacy-policy-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Pills": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.pills-section"
+      "component": "layout.pills-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

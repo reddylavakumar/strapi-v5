@@ -10,62 +10,121 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Features": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.features-section"
+      "component": "layout.features-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.hero"
+      "component": "layout.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Stats": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.metrics-section"
+      "component": "layout.metrics-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Plans": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.plans-section"
+      "component": "layout.plans-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "SecureDevelopment": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.trust-section"
+      "component": "layout.trust-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Contact": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-us-section"
+      "component": "layout.contact-us-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "GetStarted": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.get-started"
+      "component": "layout.get-started",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Security": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.security-section"
+      "component": "layout.security-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Customers": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.customers-section"
+      "component": "layout.customers-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "HeroCards": {
       "type": "component",
       "repeatable": true,
-      "component": "components.hero-card"
+      "component": "components.hero-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Platform": {
       "type": "component",
