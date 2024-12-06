@@ -964,7 +964,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         maxLength: 80;
       }>;
     slug: Attribute.UID<'api::article.article', 'title'>;
-    cover: Attribute.Media &
+    cover: Attribute.Media<'images' | 'files' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1035,7 +1035,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    avatar: Attribute.Media &
+    avatar: Attribute.Media<'images' | 'files' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1364,7 +1364,7 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
-    Images: Attribute.Media &
+    Images: Attribute.Media<'images', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1839,7 +1839,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
-    favicon: Attribute.Media &
+    favicon: Attribute.Media<'images' | 'files' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
