@@ -171,6 +171,22 @@ export interface ComponentsHowItWorks extends Schema.Component {
   };
 }
 
+export interface ComponentsImpactSlider extends Schema.Component {
+  collectionName: 'components_components_impact_sliders';
+  info: {
+    displayName: 'Impact Slider';
+    description: '';
+  };
+  attributes: {
+    Company: Attribute.Media;
+    Opinion: Attribute.Text;
+    Name: Attribute.String;
+    Avatar: Attribute.Media;
+    Job: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface ComponentsInputCheckboxField extends Schema.Component {
   collectionName: 'components_components_input_checkbox_fields';
   info: {
@@ -541,6 +557,7 @@ export interface LayoutCustomersSection extends Schema.Component {
     Customers: Attribute.Component<'components.link', true>;
     Title: Attribute.String &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
+    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
@@ -564,6 +581,18 @@ export interface LayoutEnterpriseHeroWithVideo extends Schema.Component {
     Description_3: Attribute.String &
       Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
     YTVideoUrl: Attribute.String;
+  };
+}
+
+export interface LayoutEnterpriseImpactSection extends Schema.Component {
+  collectionName: 'components_layout_enterprise_impact_sections';
+  info: {
+    displayName: 'Enterprise Impact Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Proven Enterprise Impact'>;
+    Slider: Attribute.Component<'components.impact-slider', true>;
   };
 }
 
@@ -1053,6 +1082,7 @@ declare module '@strapi/types' {
       'components.form-side-section': ComponentsFormSideSection;
       'components.hero-card': ComponentsHeroCard;
       'components.how-it-works': ComponentsHowItWorks;
+      'components.impact-slider': ComponentsImpactSlider;
       'components.input-checkbox-field': ComponentsInputCheckboxField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-text-field': ComponentsInputTextField;
@@ -1081,6 +1111,7 @@ declare module '@strapi/types' {
       'layout.custom-features-section': LayoutCustomFeaturesSection;
       'layout.customers-section': LayoutCustomersSection;
       'layout.enterprise-hero-with-video': LayoutEnterpriseHeroWithVideo;
+      'layout.enterprise-impact-section': LayoutEnterpriseImpactSection;
       'layout.enterprise-platform-section': LayoutEnterprisePlatformSection;
       'layout.event-card': LayoutEventCard;
       'layout.faq-section': LayoutFaqSection;

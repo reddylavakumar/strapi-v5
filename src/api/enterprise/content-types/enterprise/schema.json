@@ -130,6 +130,11 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.enterprise-platform-section"
+    },
+    "Impact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.enterprise-impact-section"
     }
   }
 }

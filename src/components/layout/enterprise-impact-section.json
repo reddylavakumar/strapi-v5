@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_enterprise_impact_sections",
+  "info": {
+    "displayName": "Enterprise Impact Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Proven Enterprise Impact"
+    },
+    "Slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.impact-slider"
+    }
+  }
+}

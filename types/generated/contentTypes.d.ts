@@ -1376,6 +1376,7 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1484,6 +1485,7 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
         };
       }>;
     Platform: Attribute.Component<'layout.enterprise-platform-section'>;
+    Impact: Attribute.Component<'layout.enterprise-impact-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

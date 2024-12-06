@@ -49,9 +49,7 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -67,6 +65,10 @@
           "localized": true
         }
       }
+    },
+    "Grayscale": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
