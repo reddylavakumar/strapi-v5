@@ -799,11 +799,26 @@ export interface ApiAboutAbout extends Schema.SingleType {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     blocks: Attribute.DynamicZone<
       ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -818,6 +833,12 @@ export interface ApiAboutAbout extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::about.about',
+      'oneToMany',
+      'api::about.about'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -832,15 +853,60 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    seo: Attribute.Component<'shared.seo'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    JoinUs: Attribute.Component<'layout.join-us-section'>;
-    Team: Attribute.Component<'layout.members-section'>;
-    Advisors: Attribute.Component<'layout.members-section'>;
-    Intro1: Attribute.Text;
-    Intro2: Attribute.Text;
-    Intro3: Attribute.Text;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    JoinUs: Attribute.Component<'layout.join-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Team: Attribute.Component<'layout.members-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Advisors: Attribute.Component<'layout.members-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Intro1: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Intro2: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Intro3: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -856,6 +922,12 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToMany',
+      'api::about-us.about-us'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -870,14 +942,34 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
     slug: Attribute.UID<'api::article.article', 'title'>;
-    cover: Attribute.Media;
+    cover: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     author: Attribute.Relation<
       'api::article.article',
       'manyToOne',
@@ -890,7 +982,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     >;
     blocks: Attribute.DynamicZone<
       ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -906,6 +1003,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::article.article'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -920,10 +1023,30 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String;
-    avatar: Attribute.Media;
-    email: Attribute.String;
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    avatar: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     articles: Attribute.Relation<
       'api::author.author',
       'oneToMany',
@@ -943,6 +1066,12 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::author.author',
+      'oneToMany',
+      'api::author.author'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -957,12 +1086,42 @@ export interface ApiBlogBlog extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    seo: Attribute.Component<'shared.seo'>;
-    Hero: Attribute.Component<'layout.blog-hero-section'>;
-    Newsletter: Attribute.Component<'layout.newsletter-blog-section'>;
-    Sliders: Attribute.Component<'layout.blog-slider-section'>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.blog-hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Newsletter: Attribute.Component<'layout.newsletter-blog-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Sliders: Attribute.Component<'layout.blog-slider-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -970,6 +1129,12 @@ export interface ApiBlogBlog extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -984,12 +1149,38 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Seo: Attribute.Component<'shared.seo'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Related: Attribute.String & Attribute.DefaultTo<'Keep reading'>;
-    Socials: Attribute.Component<'components.socials'>;
-    Share: Attribute.String & Attribute.DefaultTo<'Share'>;
+    Socials: Attribute.Component<'components.socials'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Share: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Share'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1005,6 +1196,12 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog-internal.blog-internal',
+      'oneToMany',
+      'api::blog-internal.blog-internal'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1019,15 +1216,30 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String;
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID;
     articles: Attribute.Relation<
       'api::category.category',
       'oneToMany',
       'api::article.article'
     >;
-    description: Attribute.Text;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1042,6 +1254,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::category.category'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1056,11 +1274,36 @@ export interface ApiContactContact extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    Form: Attribute.Component<'layout.contact-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    Seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.contact-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1076,6 +1319,12 @@ export interface ApiContactContact extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::contact.contact',
+      'oneToMany',
+      'api::contact.contact'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1090,13 +1339,43 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
-    Images: Attribute.Media;
-    Seo: Attribute.Component<'shared.seo'>;
+    Images: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1112,6 +1391,12 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::customer.customer',
+      'oneToMany',
+      'api::customer.customer'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1126,18 +1411,78 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Features: Attribute.Component<'layout.features-section'>;
-    Hero: Attribute.Component<'layout.hero'>;
-    Stats: Attribute.Component<'layout.metrics-section'>;
-    Plans: Attribute.Component<'layout.plans-section'>;
-    SecureDevelopment: Attribute.Component<'layout.trust-section'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    GetStarted: Attribute.Component<'layout.get-started'>;
-    Security: Attribute.Component<'layout.security-section'>;
-    Customers: Attribute.Component<'layout.customers-section'>;
-    seo: Attribute.Component<'shared.seo'>;
-    HeroCards: Attribute.Component<'components.hero-card', true>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Plans: Attribute.Component<'layout.plans-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SecureDevelopment: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Security: Attribute.Component<'layout.security-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HeroCards: Attribute.Component<'components.hero-card', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Platform: Attribute.Component<'layout.enterprise-platform-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1154,6 +1499,12 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::enterprise.enterprise',
+      'oneToMany',
+      'api::enterprise.enterprise'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1168,10 +1519,25 @@ export interface ApiEventEvent extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::event.event', 'Title'>;
-    seo: Attribute.Component<'shared.seo'>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Sections: Attribute.DynamicZone<
       [
         'layout.hero',
@@ -1193,7 +1559,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
         'layout.hero-cards-section',
         'layout.enterprise-hero-with-video'
       ]
-    >;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1209,6 +1580,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::event.event'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1223,11 +1600,36 @@ export interface ApiFaqFaq extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    seo: Attribute.Component<'shared.seo'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    Faqs: Attribute.Component<'components.faq-item', true>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Faqs: Attribute.Component<'components.faq-item', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1235,6 +1637,12 @@ export interface ApiFaqFaq extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::faq.faq',
+      'oneToMany',
+      'api::faq.faq'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1249,19 +1657,55 @@ export interface ApiFooterFooter extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     Navigation: Attribute.Component<'components.links-column', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Attribute.SetMinMax<
         {
           max: 3;
         },
         number
       >;
-    Socials: Attribute.Component<'components.socials'>;
-    Terms: Attribute.Component<'components.link'>;
-    Privacy: Attribute.Component<'components.link'>;
-    Copyright: Attribute.String & Attribute.DefaultTo<'CodeRabbit \u00A9 2024'>;
-    Newsletter: Attribute.Component<'components.input-text-field'>;
+    Socials: Attribute.Component<'components.socials'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Terms: Attribute.Component<'components.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Privacy: Attribute.Component<'components.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Copyright: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit \u00A9 2024'>;
+    Newsletter: Attribute.Component<'components.input-text-field'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1277,6 +1721,12 @@ export interface ApiFooterFooter extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::footer.footer'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1291,14 +1741,54 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    EventCard: Attribute.Component<'layout.event-card'>;
-    CalendarTitle: Attribute.String;
-    EventIframeTitle: Attribute.String;
-    seo: Attribute.Component<'shared.seo'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    CalendarDescription: Attribute.Text;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    EventCard: Attribute.Component<'layout.event-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CalendarTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    EventIframeTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CalendarDescription: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1314,6 +1804,12 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::gh-event-page.gh-event-page',
+      'oneToMany',
+      'api::gh-event-page.gh-event-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1328,10 +1824,32 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    siteName: Attribute.String & Attribute.Required;
-    favicon: Attribute.Media;
-    siteDescription: Attribute.Text & Attribute.Required;
+    siteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    favicon: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    siteDescription: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1346,6 +1864,12 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::global.global',
+      'oneToMany',
+      'api::global.global'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1360,10 +1884,30 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Login: Attribute.Component<'components.link'>;
-    Button: Attribute.Component<'components.link'>;
-    Navigation: Attribute.Component<'components.link-menu', true>;
+    Login: Attribute.Component<'components.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Button: Attribute.Component<'components.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Navigation: Attribute.Component<'components.link-menu', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1379,6 +1923,12 @@ export interface ApiHeaderHeader extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::header.header',
+      'oneToMany',
+      'api::header.header'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1393,10 +1943,30 @@ export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    seo: Attribute.Component<'shared.seo'>;
-    Hero: Attribute.Component<'layout.hero'>;
-    Cards: Attribute.Component<'components.link-card', true>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Cards: Attribute.Component<'components.link-card', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1412,6 +1982,12 @@ export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::help-desk.help-desk',
+      'oneToMany',
+      'api::help-desk.help-desk'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1426,17 +2002,72 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    seo: Attribute.Component<'shared.seo'>;
-    Hero: Attribute.Component<'layout.hero'>;
-    Stats: Attribute.Component<'layout.metrics-section'>;
-    Customers: Attribute.Component<'layout.customers-section'>;
-    Features: Attribute.Component<'layout.features-section'>;
-    Trust: Attribute.Component<'layout.trust-section'>;
-    GetStarted: Attribute.Component<'layout.get-started'>;
-    Testimonials: Attribute.Component<'layout.testimonials'>;
-    HowItWorks: Attribute.Component<'layout.how-it-works-section'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Trust: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Testimonials: Attribute.Component<'layout.testimonials'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1452,6 +2083,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToMany',
+      'api::home-page.home-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1466,11 +2103,36 @@ export interface ApiPartnershipPartnership extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    Form: Attribute.Component<'layout.partnership-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.partnership-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1486,6 +2148,12 @@ export interface ApiPartnershipPartnership extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToMany',
+      'api::partnership.partnership'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1500,13 +2168,48 @@ export interface ApiPricingPricing extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    Hero: Attribute.Component<'layout.hero'>;
-    Seo: Attribute.Component<'shared.seo'>;
-    OpenSourceProject: Attribute.Component<'layout.get-started'>;
-    Faqs: Attribute.Component<'layout.faq-section'>;
-    Plans: Attribute.Component<'layout.plans-section'>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OpenSourceProject: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Faqs: Attribute.Component<'layout.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Plans: Attribute.Component<'layout.plans-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1522,6 +2225,12 @@ export interface ApiPricingPricing extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToMany',
+      'api::pricing.pricing'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1536,10 +2245,25 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::solution.solution', 'Title'>;
-    seo: Attribute.Component<'shared.seo'>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Sections: Attribute.DynamicZone<
       [
         'layout.hero',
@@ -1561,7 +2285,12 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
         'layout.hero-cards-section',
         'layout.enterprise-hero-with-video'
       ]
-    >;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1577,6 +2306,12 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::solution.solution',
+      'oneToMany',
+      'api::solution.solution'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1591,15 +2326,60 @@ export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Stats: Attribute.Component<'layout.metrics-section'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    Customers: Attribute.Component<'layout.customers-section'>;
-    Seo: Attribute.Component<'shared.seo'>;
-    Hero: Attribute.Component<'layout.hero'>;
-    Form: Attribute.Component<'layout.startup-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    FormSideSection: Attribute.Component<'components.form-side-section'>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.startup-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FormSideSection: Attribute.Component<'components.form-side-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1615,6 +2395,12 @@ export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::startup-program.startup-program',
+      'oneToMany',
+      'api::startup-program.startup-program'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1624,15 +2410,41 @@ export interface ApiSupportSupport extends Schema.SingleType {
     singularName: 'support';
     pluralName: 'supports';
     displayName: 'Support';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    Form: Attribute.Component<'layout.contact-support-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    Seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.contact-support-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1648,6 +2460,12 @@ export interface ApiSupportSupport extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::support.support',
+      'oneToMany',
+      'api::support.support'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1662,14 +2480,54 @@ export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    SecureDevelopment: Attribute.Component<'layout.trust-section'>;
-    Contact: Attribute.Component<'layout.contact-us-section'>;
-    seo: Attribute.Component<'shared.seo'>;
-    Security: Attribute.Component<'layout.security-section'>;
-    PrivacyPolicy: Attribute.Component<'layout.privacy-policy-section'>;
-    Pills: Attribute.Component<'layout.pills-section'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SecureDevelopment: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Security: Attribute.Component<'layout.security-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    PrivacyPolicy: Attribute.Component<'layout.privacy-policy-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Pills: Attribute.Component<'layout.pills-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1685,6 +2543,12 @@ export interface ApiTrustCenterTrustCenter extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::trust-center.trust-center',
+      'oneToMany',
+      'api::trust-center.trust-center'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1698,12 +2562,42 @@ export interface ApiTrustCenterGdprTrustCenterGdpr extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    FormSideSection: Attribute.Component<'components.form-side-section'>;
-    Form: Attribute.Component<'layout.gdpr-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    Seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FormSideSection: Attribute.Component<'components.form-side-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.gdpr-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1719,6 +2613,12 @@ export interface ApiTrustCenterGdprTrustCenterGdpr extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::trust-center-gdpr.trust-center-gdpr',
+      'oneToMany',
+      'api::trust-center-gdpr.trust-center-gdpr'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1733,12 +2633,42 @@ export interface ApiTrustCenterSocTrustCenterSoc extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    FormSideSection: Attribute.Component<'components.form-side-section'>;
-    Form: Attribute.Component<'layout.soc-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    Seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FormSideSection: Attribute.Component<'components.form-side-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.soc-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1754,6 +2684,12 @@ export interface ApiTrustCenterSocTrustCenterSoc extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::trust-center-soc.trust-center-soc',
+      'oneToMany',
+      'api::trust-center-soc.trust-center-soc'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1768,11 +2704,36 @@ export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Hero: Attribute.Component<'layout.hero'>;
-    Form: Attribute.Component<'layout.whitepaper-form-section'>;
-    Success: Attribute.Component<'components.contact-success'>;
-    seo: Attribute.Component<'shared.seo'>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.whitepaper-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1788,6 +2749,12 @@ export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::whitepaper.whitepaper',
+      'oneToMany',
+      'api::whitepaper.whitepaper'
+    >;
+    locale: Attribute.String;
   };
 }
 

@@ -10,37 +10,71 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Navigation": {
       "type": "component",
       "repeatable": true,
       "component": "components.links-column",
-      "max": 3
+      "max": 3,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Socials": {
       "type": "component",
       "repeatable": false,
-      "component": "components.socials"
+      "component": "components.socials",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Terms": {
       "type": "component",
       "repeatable": false,
-      "component": "components.link"
+      "component": "components.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Privacy": {
       "type": "component",
       "repeatable": false,
-      "component": "components.link"
+      "component": "components.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Copyright": {
       "type": "string",
-      "default": "CodeRabbit © 2024"
+      "default": "CodeRabbit © 2024",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Newsletter": {
       "type": "component",
       "repeatable": false,
-      "component": "components.input-text-field"
+      "component": "components.input-text-field",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

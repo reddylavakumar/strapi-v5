@@ -10,37 +10,48 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.hero"
+      "component": "layout.hero",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "EventCard": {
       "displayName": "Event Card",
       "type": "component",
       "repeatable": false,
-      "component": "layout.event-card"
-    },
-    "CalendarTitle": {
-      "type": "string"
-    },
-    "EventIframeTitle": {
-      "type": "string"
+      "component": "layout.event-card",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Contact": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-us-section"
+      "component": "layout.contact-us-section",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "CalendarTitle": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "EventIframeTitle": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "CalendarDescription": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }
