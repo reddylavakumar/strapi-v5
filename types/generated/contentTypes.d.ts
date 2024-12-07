@@ -963,7 +963,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
-    slug: Attribute.UID<'api::article.article', 'title'>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     cover: Attribute.Media<'images' | 'files' | 'videos'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1234,7 +1239,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     articles: Attribute.Relation<
       'api::category.category',
       'oneToMany',
@@ -2280,7 +2290,12 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::solution.solution', 'Title'>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {

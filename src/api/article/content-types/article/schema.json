@@ -34,18 +34,18 @@
       }
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cover": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
+      "allowedTypes": ["images", "files", "videos"],
       "pluginOptions": {
         "i18n": {
           "localized": true
