@@ -28,14 +28,15 @@
       "component": "layout.contact-us-section",
       "pluginOptions": { "i18n": { "localized": true } }
     },
-    "Related": {
-      "type": "string",
-      "default": "Keep reading"
-    },
     "Socials": {
       "type": "component",
       "repeatable": false,
       "component": "components.socials",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Related": {
+      "type": "string",
+      "default": "Keep reading",
       "pluginOptions": { "i18n": { "localized": true } }
     },
     "Share": {
