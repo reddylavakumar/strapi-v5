@@ -129,12 +129,22 @@
     "Platform": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.enterprise-platform-section"
+      "component": "layout.enterprise-platform-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Impact": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.enterprise-impact-section"
+      "component": "layout.enterprise-impact-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
