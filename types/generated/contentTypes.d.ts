@@ -1167,13 +1167,19 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
           localized: true;
         };
       }>;
-    Related: Attribute.String & Attribute.DefaultTo<'Keep reading'>;
     Socials: Attribute.Component<'components.socials'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    Related: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Keep reading'>;
     Share: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1484,8 +1490,18 @@ export interface ApiEnterpriseEnterprise extends Schema.SingleType {
           localized: true;
         };
       }>;
-    Platform: Attribute.Component<'layout.enterprise-platform-section'>;
-    Impact: Attribute.Component<'layout.enterprise-impact-section'>;
+    Platform: Attribute.Component<'layout.enterprise-platform-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Impact: Attribute.Component<'layout.enterprise-impact-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1533,7 +1549,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::event.event', 'Title'>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {
