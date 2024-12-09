@@ -10,22 +10,29 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.hero"
+      "component": "layout.hero",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Cards": {
       "type": "component",
       "repeatable": true,
-      "component": "components.link-card"
+      "component": "components.link-card",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }
