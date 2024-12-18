@@ -10,32 +10,41 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.hero"
+      "component": "layout.hero",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "FormSideSection": {
       "type": "component",
       "repeatable": false,
-      "component": "components.form-side-section"
+      "component": "components.form-side-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Form": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.soc-form-section"
+      "component": "layout.soc-form-section",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Success": {
       "type": "component",
       "repeatable": false,
-      "component": "components.contact-success"
+      "component": "components.contact-success",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "Seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }
