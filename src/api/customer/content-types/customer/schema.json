@@ -26,6 +26,26 @@
         }
       }
     },
+    "Impact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.enterprise-impact-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.testimonials",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "Contact": {
       "type": "component",
       "repeatable": false,
@@ -49,7 +69,9 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -69,6 +91,16 @@
     "Grayscale": {
       "type": "boolean",
       "default": true
+    },
+    "Cases": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "layout.case-study-section"
     }
   }
 }

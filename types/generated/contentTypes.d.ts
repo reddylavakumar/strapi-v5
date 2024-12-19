@@ -969,7 +969,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    cover: Attribute.Media<'images' | 'files' | 'videos'> &
+    cover: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1040,7 +1040,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    avatar: Attribute.Media<'images' | 'files' | 'videos'> &
+    avatar: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1367,6 +1367,18 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Impact: Attribute.Component<'layout.enterprise-impact-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Testimonials: Attribute.Component<'layout.testimonials'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Contact: Attribute.Component<'layout.contact-us-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1380,7 +1392,7 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
-    Images: Attribute.Media<'images', true> &
+    Images: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1393,6 +1405,12 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
         };
       }>;
     Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Cases: Attribute.Component<'layout.case-study-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1870,7 +1888,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
-    favicon: Attribute.Media<'images' | 'files' | 'videos'> &
+    favicon: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

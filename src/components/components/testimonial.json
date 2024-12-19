@@ -25,6 +25,9 @@
     "Opinion": {
       "type": "text",
       "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+    },
+    "Link": {
+      "type": "string"
     }
   }
 }
