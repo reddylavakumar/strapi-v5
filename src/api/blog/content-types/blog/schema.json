@@ -186,6 +186,36 @@
       "type": "string",
       "required": true,
       "default": "Product"
+    },
+    "TitleCaseStudies": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "default": "Case Studies"
+    },
+    "DescriptionCaseStudies": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "default": "Explore our case studies and learn how we help our clients achieve their goals.",
+      "required": true
+    },
+    "SearchPlaceholderCaseStudies": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "default": "Search case studies"
     }
   }
 }
