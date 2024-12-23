@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_case_study_sections",
+  "info": {
+    "displayName": "Case Study Section"
+  },
+  "options": {},
+  "attributes": {
+    "Cases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.case-study",
+      "required": true
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link",
+      "required": true
+    }
+  }
+}
