@@ -199,6 +199,7 @@ export interface ComponentsImpactSlider extends Schema.Component {
     Avatar: Attribute.Media;
     Job: Attribute.String;
     Button: Attribute.Component<'components.link'>;
+    CompanyDark: Attribute.Media;
   };
 }
 
@@ -399,6 +400,7 @@ export interface ComponentsSecurity extends Schema.Component {
     Description: Attribute.Text;
     Image: Attribute.Media;
     Button: Attribute.Component<'components.link'>;
+    ImageDark: Attribute.Media;
   };
 }
 
@@ -635,6 +637,8 @@ export interface LayoutEnterprisePlatformSection extends Schema.Component {
       Attribute.DefaultTo<'Send your reports to any Platform'>;
     Image: Attribute.Media;
     ImageSM: Attribute.Media;
+    ImageDark: Attribute.Media;
+    ImageSMDark: Attribute.Media;
   };
 }
 
@@ -749,6 +753,7 @@ export interface LayoutHero extends Schema.Component {
     ListTitle: Attribute.String & Attribute.DefaultTo<'Why choose CodeRabbit?'>;
     BackedBy: Attribute.String & Attribute.DefaultTo<'We\u2019re backed by'>;
     BackedByImages: Attribute.Media;
+    BackedByImagesDark: Attribute.Media;
   };
 }
 
