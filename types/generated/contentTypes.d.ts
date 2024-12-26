@@ -1404,6 +1404,12 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
           localized: true;
         };
       }>;
+    ImagesDark: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2291,6 +2297,44 @@ export interface ApiPricingPricing extends Schema.SingleType {
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'Privacy Policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSolutionSolution extends Schema.CollectionType {
   collectionName: 'solutions';
   info: {
@@ -2526,6 +2570,56 @@ export interface ApiSupportSupport extends Schema.SingleType {
       'api::support.support',
       'oneToMany',
       'api::support.support'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiTermsOfServiceTermsOfService extends Schema.SingleType {
+  collectionName: 'terms_of_services';
+  info: {
+    singularName: 'terms-of-service';
+    pluralName: 'terms-of-services';
+    displayName: 'Terms of Service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section'>;
+    Content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-of-service.terms-of-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-of-service.terms-of-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::terms-of-service.terms-of-service',
+      'oneToMany',
+      'api::terms-of-service.terms-of-service'
     >;
     locale: Attribute.String;
   };
@@ -2858,9 +2952,11 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
       'api::support.support': ApiSupportSupport;
+      'api::terms-of-service.terms-of-service': ApiTermsOfServiceTermsOfService;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;

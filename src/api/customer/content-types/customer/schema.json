@@ -78,6 +78,19 @@
         }
       }
     },
+    "ImagesDark": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "Seo": {
       "type": "component",
       "repeatable": false,
