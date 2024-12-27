@@ -64,6 +64,14 @@
       "default": "We’re backed by"
     },
     "BackedByImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "BackedByImagesDark": {
       "allowedTypes": [
         "images"
       ],

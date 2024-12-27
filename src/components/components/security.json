@@ -24,6 +24,13 @@
       "type": "component",
       "repeatable": false,
       "component": "components.link"
+    },
+    "ImageDark": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
