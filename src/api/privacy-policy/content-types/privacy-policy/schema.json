@@ -9,17 +9,31 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Contact": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-us-section"
+      "component": "layout.contact-us-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Content": {
       "type": "richtext",
@@ -32,7 +46,12 @@
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.hero"
+      "component": "layout.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
