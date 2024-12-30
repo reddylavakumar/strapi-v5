@@ -926,6 +926,9 @@ export interface LayoutSimpleHero extends Schema.Component {
     Description: Attribute.Text &
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
     Image: Attribute.Media;
+    ImageDark: Attribute.Media;
+    ImageSM: Attribute.Media;
+    ImageSMDark: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
     Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
   };
