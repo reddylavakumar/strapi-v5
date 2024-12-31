@@ -946,6 +946,10 @@ export interface LayoutEnterpriseHeroWithVideo extends Schema.Component {
       Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
     Description: Attribute.Text &
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Image: Attribute.Media;
+    ImageDark: Attribute.Media;
+    ImageSM: Attribute.Media;
+    ImageSMDark: Attribute.Media;
     Buttons: Attribute.Component<'components.link', true>;
     Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
     Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
