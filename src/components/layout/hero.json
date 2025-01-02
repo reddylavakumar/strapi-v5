@@ -78,10 +78,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "DescriptionOther": {
-      "type": "text",
-      "default": "Let your developers focus on really what matters."
     }
   }
 }
