@@ -371,7 +371,7 @@ export interface ComponentsContentWithImage extends Schema.Component {
     Description: Attribute.Text;
     Image: Attribute.Media<'images'>;
     Button: Attribute.Component<'components.link'>;
-    ImageDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    ImageDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
