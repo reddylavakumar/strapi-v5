@@ -183,6 +183,9 @@ export interface LayoutSimpleHero extends Schema.Component {
     Description: Attribute.Text &
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
     Image: Attribute.Media<'images'>;
+    ImageDark: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+    ImageSMDark: Attribute.Media<'images'>;
     Buttons: Attribute.Component<'components.link', true>;
     Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
   };
@@ -371,8 +374,6 @@ export interface LayoutHero extends Schema.Component {
     BackedBy: Attribute.String & Attribute.DefaultTo<'We\u2019re backed by'>;
     BackedByImages: Attribute.Media<'images', true>;
     BackedByImagesDark: Attribute.Media<'images', true>;
-    DescriptionOther: Attribute.Text &
-      Attribute.DefaultTo<'Let your developers focus on really what matters.'>;
   };
 }
 
@@ -685,7 +686,7 @@ export interface ComponentsTestimonial extends Schema.Component {
       Attribute.DefaultTo<'Marketing Director @Metadata.io '>;
     Opinion: Attribute.Text &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Link: Attribute.String;
+    EmbedCode: Attribute.Text;
   };
 }
 
@@ -1027,6 +1028,7 @@ export interface ComponentsContentWithImage extends Schema.Component {
     Description: Attribute.Text;
     Image: Attribute.Media<'images'>;
     Button: Attribute.Component<'components.link'>;
+    ImageDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
