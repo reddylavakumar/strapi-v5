@@ -179,15 +179,20 @@ export interface LayoutSimpleHero extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String &
+      Attribute.Required &
       Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
     Description: Attribute.Text &
+      Attribute.Required &
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
-    Image: Attribute.Media<'images'>;
-    ImageDark: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-    ImageSMDark: Attribute.Media<'images'>;
     Buttons: Attribute.Component<'components.link', true>;
-    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
+    CarouselWithTooltips: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
   };
 }
 
