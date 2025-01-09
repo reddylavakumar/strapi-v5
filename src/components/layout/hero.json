@@ -28,6 +28,10 @@
       "repeatable": true,
       "component": "components.link"
     },
+    "Tag": {
+      "type": "string",
+      "default": "Page name"
+    },
     "LottieLG": {
       "type": "json"
     },
