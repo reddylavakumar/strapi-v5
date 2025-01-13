@@ -1,5 +1,88 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SharedSlider extends Schema.Component {
+  collectionName: 'components_shared_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'address-book';
+    description: '';
+  };
+  attributes: {
+    files: Attribute.Media<'images', true>;
+  };
+}
+
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    canonical: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
+    keywords: Attribute.String &
+      Attribute.DefaultTo<'coderabbit, ai, code, git, gitlab, github'>;
+    og_url: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
+    og_title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    og_description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    og_sitename: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    og_locale: Attribute.String & Attribute.DefaultTo<'en_US'>;
+    og_type: Attribute.String & Attribute.DefaultTo<'website'>;
+    og_image: Attribute.Media<'images'>;
+    twitter_card: Attribute.String & Attribute.DefaultTo<'summary_large_image'>;
+    twitter_title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    twitter_description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    twitter_image: Attribute.Media<'images'>;
+    twitter_site: Attribute.String;
+    twitter_creator: Attribute.String;
+  };
+}
+
+export interface SharedRichText extends Schema.Component {
+  collectionName: 'components_shared_rich_texts';
+  info: {
+    displayName: 'Rich text';
+    icon: 'align-justify';
+    description: '';
+  };
+  attributes: {
+    body: Attribute.RichText;
+  };
+}
+
+export interface SharedQuote extends Schema.Component {
+  collectionName: 'components_shared_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'indent';
+  };
+  attributes: {
+    title: Attribute.String;
+    body: Attribute.Text;
+  };
+}
+
+export interface SharedMedia extends Schema.Component {
+  collectionName: 'components_shared_media';
+  info: {
+    displayName: 'Media';
+    icon: 'file-video';
+  };
+  attributes: {
+    file: Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
 export interface ComponentsTrustCard extends Schema.Component {
   collectionName: 'components_components_trust_cards';
   info: {
@@ -558,6 +641,14 @@ export interface LayoutSimpleHero extends Schema.Component {
         },
         number
       >;
+    CarouselWithTooltipsDark: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
   };
 }
 
@@ -731,6 +822,7 @@ export interface LayoutHero extends Schema.Component {
       Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
     Image: Attribute.Media<'images'>;
     Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
     LottieLG: Attribute.JSON;
     Bullets: Attribute.Component<'components.bullets', true>;
     LottieSM: Attribute.JSON;
@@ -1026,92 +1118,14 @@ export interface LayoutAlternatedContent extends Schema.Component {
   };
 }
 
-export interface SharedSlider extends Schema.Component {
-  collectionName: 'components_shared_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
-  };
-  attributes: {
-    files: Attribute.Media<'images', true>;
-  };
-}
-
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_seo_seos';
-  info: {
-    displayName: 'seo';
-    icon: 'search';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    description: Attribute.Text &
-      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
-    canonical: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
-    keywords: Attribute.String &
-      Attribute.DefaultTo<'coderabbit, ai, code, git, gitlab, github'>;
-    og_url: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
-    og_title: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    og_description: Attribute.Text &
-      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
-    og_sitename: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    og_locale: Attribute.String & Attribute.DefaultTo<'en_US'>;
-    og_type: Attribute.String & Attribute.DefaultTo<'website'>;
-    og_image: Attribute.Media<'images'>;
-    twitter_card: Attribute.String & Attribute.DefaultTo<'summary_large_image'>;
-    twitter_title: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    twitter_description: Attribute.Text &
-      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
-    twitter_image: Attribute.Media<'images'>;
-    twitter_site: Attribute.String;
-    twitter_creator: Attribute.String;
-  };
-}
-
-export interface SharedRichText extends Schema.Component {
-  collectionName: 'components_shared_rich_texts';
-  info: {
-    displayName: 'Rich text';
-    icon: 'align-justify';
-    description: '';
-  };
-  attributes: {
-    body: Attribute.RichText;
-  };
-}
-
-export interface SharedQuote extends Schema.Component {
-  collectionName: 'components_shared_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'indent';
-  };
-  attributes: {
-    title: Attribute.String;
-    body: Attribute.Text;
-  };
-}
-
-export interface SharedMedia extends Schema.Component {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    file: Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'shared.slider': SharedSlider;
+      'shared.seo': SharedSeo;
+      'shared.rich-text': SharedRichText;
+      'shared.quote': SharedQuote;
+      'shared.media': SharedMedia;
       'components.trust-card': ComponentsTrustCard;
       'components.testimonial': ComponentsTestimonial;
       'components.socials': ComponentsSocials;
@@ -1181,11 +1195,6 @@ declare module '@strapi/types' {
       'layout.blog-slider-section': LayoutBlogSliderSection;
       'layout.blog-hero-section': LayoutBlogHeroSection;
       'layout.alternated-content': LayoutAlternatedContent;
-      'shared.slider': SharedSlider;
-      'shared.seo': SharedSeo;
-      'shared.rich-text': SharedRichText;
-      'shared.quote': SharedQuote;
-      'shared.media': SharedMedia;
     }
   }
 }

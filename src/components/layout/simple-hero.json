@@ -28,6 +28,13 @@
       "component": "components.link",
       "required": true,
       "min": 1
+    },
+    "CarouselWithTooltipsDark": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "required": true,
+      "min": 1
     }
   }
 }
