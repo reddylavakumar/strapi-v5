@@ -9,7 +9,9 @@
     "Customers": {
       "type": "component",
       "repeatable": true,
-      "component": "components.link"
+      "component": "components.link",
+      "required": true,
+      "min": 1
     },
     "Title": {
       "type": "string",
@@ -18,6 +20,13 @@
     "Grayscale": {
       "type": "boolean",
       "default": true
+    },
+    "CustomersDark": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "required": true,
+      "min": 1
     }
   }
 }

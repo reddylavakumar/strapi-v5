@@ -981,10 +981,25 @@ export interface LayoutCustomersSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    Customers: Attribute.Component<'components.link', true>;
+    Customers: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     Title: Attribute.String &
       Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
     Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
+    CustomersDark: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
   };
 }
 
