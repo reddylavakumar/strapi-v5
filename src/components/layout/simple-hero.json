@@ -9,52 +9,32 @@
   "attributes": {
     "Title": {
       "type": "string",
-      "default": "Cut Code Review Time & Bugs in Half"
+      "default": "Cut Code Review Time & Bugs in Half",
+      "required": true
     },
     "Description": {
       "type": "text",
-      "default": "Supercharge your entire team with AI-driven contextual feedback. Supports all languages."
-    },
-    "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "ImageDark": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "ImageSM": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "ImageSMDark": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "default": "Supercharge your entire team with AI-driven contextual feedback. Supports all languages.",
+      "required": true
     },
     "Buttons": {
       "type": "component",
       "repeatable": true,
       "component": "components.link"
     },
-    "Tag": {
-      "type": "string",
-      "default": "Page name"
+    "CarouselWithTooltips": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "required": true,
+      "min": 1
+    },
+    "CarouselWithTooltipsDark": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "required": true,
+      "min": 1
     }
   }
 }
