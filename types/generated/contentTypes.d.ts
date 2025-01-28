@@ -3122,11 +3122,36 @@ export interface ApiVdpVdp extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Seo: Attribute.Component<'shared.seo'>;
-    Contact: Attribute.Component<'layout.contact-us-section', true>;
-    Content: Attribute.RichText;
-    Hero: Attribute.Component<'layout.hero', true>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -3134,6 +3159,12 @@ export interface ApiVdpVdp extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::vdp.vdp', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::vdp.vdp',
+      'oneToMany',
+      'api::vdp.vdp'
+    >;
+    locale: Attribute.String;
   };
 }
 
