@@ -3111,6 +3111,32 @@ export interface ApiTrustCenterSocTrustCenterSoc extends Schema.SingleType {
   };
 }
 
+export interface ApiVdpVdp extends Schema.SingleType {
+  collectionName: 'vdps';
+  info: {
+    singularName: 'vdp';
+    pluralName: 'vdps';
+    displayName: 'VDP';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'>;
+    Contact: Attribute.Component<'layout.contact-us-section', true>;
+    Content: Attribute.RichText;
+    Hero: Attribute.Component<'layout.hero', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::vdp.vdp', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::vdp.vdp', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
   collectionName: 'whitepapers';
   info: {
@@ -3223,6 +3249,7 @@ declare module '@strapi/types' {
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
+      'api::vdp.vdp': ApiVdpVdp;
       'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
     }
   }
