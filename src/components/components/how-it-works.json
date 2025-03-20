@@ -31,9 +31,14 @@
       "component": "components.bullets"
     },
     "CTA": {
-      "displayName": "Call to Action (CTA)",
-      "type": "string",
-      "required": false
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
