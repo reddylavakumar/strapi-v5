@@ -953,6 +953,7 @@ export interface ComponentsHowItWorks extends Schema.Component {
       Attribute.DefaultTo<'This is placeholder content. Leverage the power of CodeRabbit\u2019s cloud-based solution with SaaS. Access real-time code reviews, automated suggestions, and seamless integration with your development pipeline\u2014all without the need to manage your own infrastructure. '>;
     Image: Attribute.Media<'images'>;
     Bullets: Attribute.Component<'components.bullets', true>;
+    CTA: Attribute.String;
   };
 }
 

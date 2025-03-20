@@ -22,15 +22,18 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "Bullets": {
       "displayName": "Bullets",
       "type": "component",
       "repeatable": true,
       "component": "components.bullets"
+    },
+    "CTA": {
+      "displayName": "Call to Action (CTA)",
+      "type": "string",
+      "required": false
     }
   }
 }
