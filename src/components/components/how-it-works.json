@@ -22,15 +22,23 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "Bullets": {
       "displayName": "Bullets",
       "type": "component",
       "repeatable": true,
       "component": "components.bullets"
+    },
+    "Cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
