@@ -5,6 +5,13 @@
   },
   "options": {},
   "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Frequently asked questions"
+    },
+    "Description": {
+      "type": "string"
+    },
     "Faqs": {
       "displayName": "Faq Item",
       "type": "component",

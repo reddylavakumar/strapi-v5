@@ -456,6 +456,8 @@ export interface LayoutFaq extends Schema.Component {
     displayName: 'FAQ Section';
   };
   attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
+    Description: Attribute.String;
     Faqs: Attribute.Component<'components.faq-item', true>;
   };
 }
