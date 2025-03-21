@@ -450,6 +450,16 @@ export interface LayoutFeaturesSection extends Schema.Component {
   };
 }
 
+export interface LayoutFaq extends Schema.Component {
+  collectionName: 'components_layout_faq';
+  info: {
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    Faqs: Attribute.Component<'components.faq-item', true>;
+  };
+}
+
 export interface LayoutFaqSection extends Schema.Component {
   collectionName: 'components_layout_faq_sections';
   info: {
@@ -1163,6 +1173,7 @@ declare module '@strapi/types' {
       'layout.get-started': LayoutGetStarted;
       'layout.gdpr-form-section': LayoutGdprFormSection;
       'layout.features-section': LayoutFeaturesSection;
+      'layout.faq': LayoutFaq;
       'layout.faq-section': LayoutFaqSection;
       'layout.event-card': LayoutEventCard;
       'layout.enterprise-platform-section': LayoutEnterprisePlatformSection;
