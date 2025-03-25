@@ -12,11 +12,17 @@
     "Description": {
       "type": "string"
     },
+
     "Faqs": {
       "displayName": "Faq Item",
       "type": "component",
       "repeatable": true,
       "component": "components.faq-item"
+    },
+    "SplitIntoTwoHalves": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, the FAQ section will be split into two equal halves."
     }
   }
 }
