@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_layout_features_sections",
+  "collectionName": "components_layout_features_grid_sections",
   "info": {
-    "displayName": "Features Section",
+    "displayName": "Features Grid Section",
     "description": ""
   },
   "options": {},
@@ -13,7 +13,7 @@
     "Features": {
       "type": "component",
       "repeatable": true,
-      "component": "components.feature"
+      "component": "components.feature-card"
     },
     "Button": {
       "type": "component",

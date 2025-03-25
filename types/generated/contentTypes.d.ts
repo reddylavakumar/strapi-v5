@@ -2637,7 +2637,8 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
         'layout.collapsible-boxes-section',
         'layout.hero-cards-section',
         'layout.enterprise-hero-with-video',
-        'layout.faq'
+        'layout.faq',
+        'layout.feature-grid-section'
       ]
     > &
       Attribute.SetPluginOptions<{
