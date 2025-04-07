@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_asset_sections",
+  "info": {
+    "displayName": "Asset Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "AssetCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.asset-card"
+    }
+  }
+}
