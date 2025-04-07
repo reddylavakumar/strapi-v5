@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_brand-guideline_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit Brand Assets"
+    },
+    "Description": {
+      "type": "string",
+      "default": "Feel free to use the CodeRabbit logos provided below just keep them as-is to help us stay consistent. "
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ImageSM": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
