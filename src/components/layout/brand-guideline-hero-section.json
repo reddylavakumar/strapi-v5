@@ -19,12 +19,6 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
-    },
-    "ImageSM": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
     }
   }
 }
