@@ -31,6 +31,14 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "isDarkMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "isIcon": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -1211,6 +1211,8 @@ export interface ComponentsAssetCard extends Schema.Component {
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
     SvgIcon: Attribute.Media<'images'>;
     PngIcon: Attribute.Media<'images'>;
+    isDarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isIcon: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
