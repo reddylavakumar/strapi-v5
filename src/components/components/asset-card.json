@@ -35,6 +35,10 @@
     "isDarkMode": {
       "type": "boolean",
       "default": false
+    },
+    "isIcon": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
