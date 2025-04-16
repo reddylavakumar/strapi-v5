@@ -1,47 +1,44 @@
 {
-  "collectionName": "components_components_features",
+  "collectionName": "components_components_asset_card",
   "info": {
-    "displayName": "Feature",
+    "displayName": "asset-card",
     "description": ""
   },
   "options": {},
   "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "Title": {
       "type": "string",
-      "default": "Feature title"
+      "default": "Logo"
     },
     "Description": {
       "type": "text",
       "default": "Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
     },
-    "Bullets": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.bullets"
-    },
-    "ImageXL": {
+    "SvgIcon": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
     },
-    "ImageLG": {
+    "PngIcon": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
     },
-    "ImageMD": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+    "isDarkMode": {
+      "type": "boolean",
+      "default": false
     },
-    "ImageSM": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+    "isIcon": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

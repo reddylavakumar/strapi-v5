@@ -1342,6 +1342,71 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
   };
 }
 
+export interface ApiBrandGuidelineBrandGuideline extends Schema.SingleType {
+  collectionName: 'brand-guidelines';
+  info: {
+    singularName: 'brand-guideline';
+    pluralName: 'brand-guidelines';
+    displayName: 'brand-guideline';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Hero: Attribute.Component<'layout.brand-guideline-hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AssetLayout: Attribute.Component<'layout.brand-guideline-asset-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::brand-guideline.brand-guideline',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::brand-guideline.brand-guideline',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::brand-guideline.brand-guideline',
+      'oneToMany',
+      'api::brand-guideline.brand-guideline'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -2636,7 +2701,9 @@ export interface ApiSolutionSolution extends Schema.CollectionType {
         'layout.customers-section',
         'layout.collapsible-boxes-section',
         'layout.hero-cards-section',
-        'layout.enterprise-hero-with-video'
+        'layout.enterprise-hero-with-video',
+        'layout.faq',
+        'layout.feature-grid-section'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -3257,6 +3324,7 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-internal.blog-internal': ApiBlogInternalBlogInternal;
+      'api::brand-guideline.brand-guideline': ApiBrandGuidelineBrandGuideline;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;

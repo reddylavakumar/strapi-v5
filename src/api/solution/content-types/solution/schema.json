@@ -62,7 +62,9 @@
         "layout.customers-section",
         "layout.collapsible-boxes-section",
         "layout.hero-cards-section",
-        "layout.enterprise-hero-with-video"
+        "layout.enterprise-hero-with-video",
+        "layout.faq",
+        "layout.feature-grid-section"
       ],
       "pluginOptions": {
         "i18n": {

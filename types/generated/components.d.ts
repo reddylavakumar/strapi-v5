@@ -450,6 +450,32 @@ export interface LayoutFeaturesSection extends Schema.Component {
   };
 }
 
+export interface LayoutFeatureGridSection extends Schema.Component {
+  collectionName: 'components_layout_features_grid_sections';
+  info: {
+    displayName: 'Features Grid Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
+    Features: Attribute.Component<'components.feature-card', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutFaq extends Schema.Component {
+  collectionName: 'components_layout_faq';
+  info: {
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
+    Description: Attribute.String;
+    Faqs: Attribute.Component<'components.faq-item', true>;
+    SplitIntoTwoHalves: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface LayoutFaqSection extends Schema.Component {
   collectionName: 'components_layout_faq_sections';
   info: {
@@ -634,6 +660,31 @@ export interface LayoutCaseStudySection extends Schema.Component {
     Cases: Attribute.Component<'components.case-study', true> &
       Attribute.Required;
     Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
+export interface LayoutBrandGuidelineHeroSection extends Schema.Component {
+  collectionName: 'components_brand-guideline_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'CodeRabbit Brand Assets'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Feel free to use the CodeRabbit logos provided below just keep them as-is to help us stay consistent. '>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface LayoutBrandGuidelineAssetSection extends Schema.Component {
+  collectionName: 'components_asset_sections';
+  info: {
+    displayName: 'Asset Section';
+    description: '';
+  };
+  attributes: {
+    AssetCard: Attribute.Component<'components.asset-card', true>;
   };
 }
 
@@ -953,6 +1004,12 @@ export interface ComponentsHowItWorks extends Schema.Component {
       Attribute.DefaultTo<'This is placeholder content. Leverage the power of CodeRabbit\u2019s cloud-based solution with SaaS. Access real-time code reviews, automated suggestions, and seamless integration with your development pipeline\u2014all without the need to manage your own infrastructure. '>;
     Image: Attribute.Media<'images'>;
     Bullets: Attribute.Component<'components.bullets', true>;
+    Cta: Attribute.Component<'components.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -1001,6 +1058,21 @@ export interface ComponentsFeature extends Schema.Component {
     ImageLG: Attribute.Media<'images'>;
     ImageMD: Attribute.Media<'images'>;
     ImageSM: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsFeatureCard extends Schema.Component {
+  collectionName: 'components_components_features-card';
+  info: {
+    displayName: 'Feature-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -1126,6 +1198,24 @@ export interface ComponentsBlogSlider extends Schema.Component {
   };
 }
 
+export interface ComponentsAssetCard extends Schema.Component {
+  collectionName: 'components_components_asset_card';
+  info: {
+    displayName: 'asset-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    SvgIcon: Attribute.Media<'images'>;
+    PngIcon: Attribute.Media<'images'>;
+    isDarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isIcon: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -1157,6 +1247,8 @@ declare module '@strapi/types' {
       'layout.get-started': LayoutGetStarted;
       'layout.gdpr-form-section': LayoutGdprFormSection;
       'layout.features-section': LayoutFeaturesSection;
+      'layout.feature-grid-section': LayoutFeatureGridSection;
+      'layout.faq': LayoutFaq;
       'layout.faq-section': LayoutFaqSection;
       'layout.event-card': LayoutEventCard;
       'layout.enterprise-platform-section': LayoutEnterprisePlatformSection;
@@ -1169,6 +1261,8 @@ declare module '@strapi/types' {
       'layout.contact-form-section': LayoutContactFormSection;
       'layout.collapsible-boxes-section': LayoutCollapsibleBoxesSection;
       'layout.case-study-section': LayoutCaseStudySection;
+      'layout.brand-guideline-hero-section': LayoutBrandGuidelineHeroSection;
+      'layout.brand-guideline-asset-section': LayoutBrandGuidelineAssetSection;
       'layout.blog-slider-section': LayoutBlogSliderSection;
       'layout.blog-hero-section': LayoutBlogHeroSection;
       'layout.alternated-content': LayoutAlternatedContent;
@@ -1195,6 +1289,7 @@ declare module '@strapi/types' {
       'components.hero-card': ComponentsHeroCard;
       'components.form-side-section': ComponentsFormSideSection;
       'components.feature': ComponentsFeature;
+      'components.feature-card': ComponentsFeatureCard;
       'components.faq-item': ComponentsFaqItem;
       'components.custom-feature': ComponentsCustomFeature;
       'components.content-with-image': ComponentsContentWithImage;
@@ -1203,6 +1298,7 @@ declare module '@strapi/types' {
       'components.case-study': ComponentsCaseStudy;
       'components.bullets': ComponentsBullets;
       'components.blog-slider': ComponentsBlogSlider;
+      'components.asset-card': ComponentsAssetCard;
     }
   }
 }
