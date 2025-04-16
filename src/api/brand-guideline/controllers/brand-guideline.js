@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * pricing controller
+ * brand-guideline controller
  */
 
 const { createCoreController } = require("@strapi/strapi").factories;
