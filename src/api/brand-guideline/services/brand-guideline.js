@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * pricing service
+ * brand-guideline service
  */
 
 const { createCoreService } = require("@strapi/strapi").factories;

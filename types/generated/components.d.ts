@@ -102,6 +102,35 @@ export interface LayoutWhitepaperFormSection extends Schema.Component {
   };
 }
 
+export interface LayoutVsCodeHeroSection extends Schema.Component {
+  collectionName: 'components_layout_vs_code_heroes';
+  info: {
+    displayName: 'Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Image: Attribute.Media<'images'>;
+    Buttons: Attribute.Component<'components.link', true>;
+    capsule: Attribute.String &
+      Attribute.DefaultTo<'Beta is Live! or some content'>;
+    LeftContentText: Attribute.String &
+      Attribute.DefaultTo<'14-day free trial '>;
+    RightContentText: Attribute.String &
+      Attribute.DefaultTo<'14-day free trial '>;
+    CenterImage_Icon: Attribute.Media<'images'>;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+  };
+}
+
 export interface LayoutTrustSection extends Schema.Component {
   collectionName: 'components_layout_trust_sections';
   info: {
@@ -1225,6 +1254,7 @@ declare module '@strapi/types' {
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
       'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
+      'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
       'layout.trust-section': LayoutTrustSection;
       'layout.testimonials': LayoutTestimonials;
       'layout.startup-form-section': LayoutStartupFormSection;
