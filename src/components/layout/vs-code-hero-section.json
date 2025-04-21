@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_layout_vs_code_heroes",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Cut Code Review Time & Bugs in Half"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Supercharge your entire team with AI-driven contextual feedback. Supports all languages."
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    },
+    "capsule": {
+      "type": "string",
+      "default": "Beta is Live! or some content"
+    },
+
+    "LeftContentText": {
+      "type": "string",
+      "default": "14-day free trial "
+    },
+    "RightContentText": {
+      "type": "string",
+      "default": "14-day free trial "
+    },
+
+    "CenterImage_Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Description_1": {
+      "type": "string",
+      "default": "14-day free trial "
+    },
+    "Description_2": {
+      "type": "string",
+      "default": "No credit card needed."
+    },
+    "Description_3": {
+      "type": "string",
+      "default": "2-click signup with GitHub/GitLab."
+    }
+  }
+}
