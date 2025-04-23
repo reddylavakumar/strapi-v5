@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_lead_capture_layout_sections",
+  "info": {
+    "displayName": "Lead Capture Section"
+  },
+  "options": {},
+  "attributes": {
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.lead-button-banner"
+    },
+    "Email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.lead-input-banner"
+    }
+  }
+}

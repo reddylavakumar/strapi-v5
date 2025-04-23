@@ -1311,6 +1311,18 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'Keep reading'>;
+    PromoCard: Attribute.Component<'components.promo-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LeadCard: Attribute.Component<'layout.lead-capture-layout'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Share: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
