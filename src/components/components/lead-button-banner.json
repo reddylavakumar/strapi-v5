@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_lead_button_banner",
+  "info": {
+    "displayName": "Lead Capture email Banner"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Build better code, faster."
+    },
+    "Description": {
+      "type": "string",
+      "default": "Join thousands of developers using Code Rabbit to accelerate their workflow."
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

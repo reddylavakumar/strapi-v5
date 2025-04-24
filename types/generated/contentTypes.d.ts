@@ -1311,6 +1311,18 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'Keep reading'>;
+    PromoCard: Attribute.Component<'components.promo-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LeadCard: Attribute.Component<'layout.lead-capture-layout'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Share: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1347,7 +1359,7 @@ export interface ApiBrandGuidelineBrandGuideline extends Schema.SingleType {
   info: {
     singularName: 'brand-guideline';
     pluralName: 'brand-guidelines';
-    displayName: 'brand-guideline';
+    displayName: 'Brand Guideline';
     description: '';
   };
   options: {
@@ -3235,120 +3247,6 @@ export interface ApiVdpVdp extends Schema.SingleType {
   };
 }
 
-export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
-  collectionName: 'vs_code_extensions';
-  info: {
-    singularName: 'vs-code-extension';
-    pluralName: 'vs-code-extensions';
-    displayName: 'Vs Code Extension';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Hero: Attribute.Component<'layout.vs-code-hero-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stats: Attribute.Component<'layout.metrics-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Customers: Attribute.Component<'layout.customers-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    SectionTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Extension Features'>;
-    Features: Attribute.Component<'layout.features-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Trust: Attribute.Component<'layout.trust-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    OpenSourceProject: Attribute.Component<'layout.get-started'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Plans: Attribute.Component<'layout.plans-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Faqs: Attribute.Component<'layout.faq-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Contact: Attribute.Component<'layout.contact-us-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::vs-code-extension.vs-code-extension',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::vs-code-extension.vs-code-extension',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::vs-code-extension.vs-code-extension',
-      'oneToMany',
-      'api::vs-code-extension.vs-code-extension'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
   collectionName: 'whitepapers';
   info: {
@@ -3463,7 +3361,6 @@ declare module '@strapi/types' {
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
       'api::vdp.vdp': ApiVdpVdp;
-      'api::vs-code-extension.vs-code-extension': ApiVsCodeExtensionVsCodeExtension;
       'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
     }
   }

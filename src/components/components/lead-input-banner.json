@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_lead_input_banner",
+  "info": {
+    "displayName": "Lead Capture Button Banner"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Build better code, faster."
+    },
+    "Description": {
+      "type": "string",
+      "default": "Join thousands of developers using Code Rabbit to accelerate their workflow."
+    },
+    "Newsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    }
+  }
+}

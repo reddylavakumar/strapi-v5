@@ -39,6 +39,18 @@
       "default": "Keep reading",
       "pluginOptions": { "i18n": { "localized": true } }
     },
+    "PromoCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.promo-card",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "LeadCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.lead-capture-layout",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
     "Share": {
       "type": "string",
       "default": "Share",

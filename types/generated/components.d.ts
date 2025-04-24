@@ -352,6 +352,17 @@ export interface LayoutMarkdownCardSection extends Schema.Component {
   };
 }
 
+export interface LayoutLeadCaptureLayout extends Schema.Component {
+  collectionName: 'components_layout_lead_capture_layout_sections';
+  info: {
+    displayName: 'Lead Capture Section';
+  };
+  attributes: {
+    Button: Attribute.Component<'components.lead-button-banner'>;
+    Email: Attribute.Component<'components.lead-input-banner'>;
+  };
+}
+
 export interface LayoutJoinUsSection extends Schema.Component {
   collectionName: 'components_layout_join_us_sections';
   info: {
@@ -816,6 +827,23 @@ export interface ComponentsSecurity extends Schema.Component {
   };
 }
 
+export interface ComponentsPromoCard extends Schema.Component {
+  collectionName: 'components_components_promo_card';
+  info: {
+    displayName: 'promo-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description1: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    Description2: Attribute.Text & Attribute.DefaultTo<'Free 14-day trial'>;
+    Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
 export interface ComponentsPrivacyPolicyQuestions extends Schema.Component {
   collectionName: 'components_components_privacy_policy_questions';
   info: {
@@ -957,6 +985,32 @@ export interface ComponentsLinkCard extends Schema.Component {
     Icon: Attribute.Media<'images'>;
     Title: Attribute.String;
     Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsLeadInputBanner extends Schema.Component {
+  collectionName: 'components_components_lead_input_banner';
+  info: {
+    displayName: 'Lead Capture Button Banner';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Build better code, faster.'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Join thousands of developers using Code Rabbit to accelerate their workflow.'>;
+    Newsletter: Attribute.Component<'components.input-text-field'>;
+  };
+}
+
+export interface ComponentsLeadButtonBanner extends Schema.Component {
+  collectionName: 'components_components_lead_button_banner';
+  info: {
+    displayName: 'Lead Capture email Banner';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Build better code, faster.'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Join thousands of developers using Code Rabbit to accelerate their workflow.'>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -1269,6 +1323,7 @@ declare module '@strapi/types' {
       'layout.metrics-section': LayoutMetricsSection;
       'layout.members-section': LayoutMembersSection;
       'layout.markdown-card-section': LayoutMarkdownCardSection;
+      'layout.lead-capture-layout': LayoutLeadCaptureLayout;
       'layout.join-us-section': LayoutJoinUsSection;
       'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
       'layout.how-it-works-section': LayoutHowItWorksSection;
@@ -1300,6 +1355,7 @@ declare module '@strapi/types' {
       'components.testimonial': ComponentsTestimonial;
       'components.socials': ComponentsSocials;
       'components.security': ComponentsSecurity;
+      'components.promo-card': ComponentsPromoCard;
       'components.privacy-policy-questions': ComponentsPrivacyPolicyQuestions;
       'components.plan': ComponentsPlan;
       'components.pill': ComponentsPill;
@@ -1311,6 +1367,8 @@ declare module '@strapi/types' {
       'components.link': ComponentsLink;
       'components.link-menu': ComponentsLinkMenu;
       'components.link-card': ComponentsLinkCard;
+      'components.lead-input-banner': ComponentsLeadInputBanner;
+      'components.lead-button-banner': ComponentsLeadButtonBanner;
       'components.input-text-field': ComponentsInputTextField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-checkbox-field': ComponentsInputCheckboxField;
