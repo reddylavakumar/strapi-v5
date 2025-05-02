@@ -56,6 +56,16 @@
         }
       }
     },
+    "SectionDescription": {
+      "type": "string",
+      "repeatable": false,
+      "default": "Extension Features",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "Features": {
       "type": "component",
       "repeatable": false,
@@ -110,6 +120,16 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.faq-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "GetStarted": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.get-started",
       "pluginOptions": {
         "i18n": {
           "localized": true

@@ -3289,6 +3289,13 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'Extension Features'>;
+    SectionDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
     Features: Attribute.Component<'layout.features-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -3320,6 +3327,12 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
         };
       }>;
     Faqs: Attribute.Component<'layout.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

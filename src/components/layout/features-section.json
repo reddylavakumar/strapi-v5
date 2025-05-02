@@ -10,6 +10,10 @@
       "type": "string",
       "default": ""
     },
+    "Description": {
+      "type": "string",
+      "default": ""
+    },
     "Features": {
       "type": "component",
       "repeatable": true,
