@@ -120,8 +120,16 @@ export interface LayoutVsCodeHeroSection extends Schema.Component {
       Attribute.DefaultTo<'Beta is Live! or some content'>;
     LeftContentText: Attribute.String &
       Attribute.DefaultTo<'14-day free trial '>;
-    RightContentText: Attribute.String &
-      Attribute.DefaultTo<'14-day free trial '>;
+    MiddleContentText: Attribute.String & Attribute.DefaultTo<' | Works with'>;
+    RightContentText: Attribute.Component<'components.logo-text-pair', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 3;
+        },
+        number
+      >;
     CenterImage_Icon: Attribute.Media<'images'>;
     Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
     Description_2: Attribute.String &
@@ -938,6 +946,20 @@ export interface ComponentsMember extends Schema.Component {
   };
 }
 
+export interface ComponentsLogoTextPair extends Schema.Component {
+  collectionName: 'components_components_logo_text_pairs';
+  info: {
+    displayName: 'Logo Text Pair';
+    description: 'A component for displaying a logo with its associated text';
+  };
+  attributes: {
+    Logo: Attribute.Media<'images'> & Attribute.Required;
+    Text: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'IDE Name'>;
+  };
+}
+
 export interface ComponentsLinksColumn extends Schema.Component {
   collectionName: 'components_components_links_columns';
   info: {
@@ -1364,6 +1386,7 @@ declare module '@strapi/types' {
       'components.newsletter': ComponentsNewsletter;
       'components.metric': ComponentsMetric;
       'components.member': ComponentsMember;
+      'components.logo-text-pair': ComponentsLogoTextPair;
       'components.links-column': ComponentsLinksColumn;
       'components.link': ComponentsLink;
       'components.link-menu': ComponentsLinkMenu;
