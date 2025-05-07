@@ -76,6 +76,16 @@
         }
       }
     },
+    "FeatureSecondaryLayout": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.vs-feature-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "HowItWorks": {
       "type": "component",
       "repeatable": false,

@@ -1931,7 +1931,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
       }> &
       Attribute.SetMinMax<
         {
-          max: 3;
+          max: 4;
         },
         number
       >;
@@ -3297,6 +3297,12 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
       }> &
       Attribute.DefaultTo<'Extension Features'>;
     Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FeatureSecondaryLayout: Attribute.Component<'layout.vs-feature-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
