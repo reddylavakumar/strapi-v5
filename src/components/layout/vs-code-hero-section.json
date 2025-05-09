@@ -21,6 +21,18 @@
       "required": false,
       "allowedTypes": ["images"]
     },
+    "VideoOrGif": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "VideoOrGifDark": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
     "Buttons": {
       "type": "component",
       "repeatable": true,

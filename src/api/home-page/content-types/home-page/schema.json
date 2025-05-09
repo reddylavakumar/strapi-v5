@@ -106,6 +106,16 @@
         }
       }
     },
+    "Announcment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.announcment",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "Contact": {
       "type": "component",
       "repeatable": false,

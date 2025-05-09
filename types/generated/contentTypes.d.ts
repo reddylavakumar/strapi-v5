@@ -2322,6 +2322,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Announcment: Attribute.Component<'components.announcment'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Contact: Attribute.Component<'layout.contact-us-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -3303,6 +3309,12 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
         };
       }>;
     FeatureSecondaryLayout: Attribute.Component<'layout.vs-feature-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Architecture: Attribute.Component<'layout.architecture'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

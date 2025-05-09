@@ -22,9 +22,11 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
+    },
+    "Hyperlink": {
+      "type": "component",
+      "component": "components.hyperlink"
     }
   }
 }

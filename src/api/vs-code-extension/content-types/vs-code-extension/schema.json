@@ -86,6 +86,16 @@
         }
       }
     },
+    "Architecture": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.architecture",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "HowItWorks": {
       "type": "component",
       "repeatable": false,

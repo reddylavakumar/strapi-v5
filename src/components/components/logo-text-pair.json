@@ -16,6 +16,10 @@
       "type": "string",
       "required": true,
       "default": "IDE Name"
+    },
+    "LogoHref": {
+      "type": "string",
+      "default": "https://www.coderabbit.ai"
     }
   }
-} 
+}

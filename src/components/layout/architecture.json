@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_layout_get_starteds",
+  "collectionName": "components_layout_architecture",
   "info": {
-    "displayName": "Get Started Section",
+    "displayName": "Architecture Section",
     "description": ""
   },
   "options": {},
@@ -10,26 +10,7 @@
       "type": "string",
       "default": "Get started today"
     },
-    "Description_1": {
-      "type": "string",
-      "default": "14-day free trial "
-    },
-    "Buttons": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.link"
-    },
-    "TextDetails": {
-      "type": "string",
-      "default": "2-click signup with GitHub/GitLab."
-    },
     "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
-    },
-    "ImageDark": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -41,8 +22,17 @@
       "required": false,
       "allowedTypes": ["images"]
     },
-    "Description_2": {
-      "type": "string"
+    "ImageDark": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ImageDarkSM": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }
