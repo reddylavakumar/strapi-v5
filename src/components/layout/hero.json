@@ -7,6 +7,10 @@
   },
   "options": {},
   "attributes": {
+    "Capsule": {
+      "type": "component",
+      "component": "components.capsule"
+    },
     "Title": {
       "type": "string",
       "default": "Cut Code Review Time & Bugs in Half"

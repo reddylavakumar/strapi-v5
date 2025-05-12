@@ -42,6 +42,11 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
     }
   }
 }

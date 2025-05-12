@@ -9,7 +9,7 @@
     "Title": {
       "type": "string"
     },
-    "Features": {
+    "Benefits": {
       "type": "component",
       "repeatable": true,
       "component": "components.security",

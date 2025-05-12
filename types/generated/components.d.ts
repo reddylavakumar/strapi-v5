@@ -110,7 +110,7 @@ export interface LayoutVsFeatureSection extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String;
-    Features: Attribute.Component<'components.security', true>;
+    Benefits: Attribute.Component<'components.security', true>;
     Button: Attribute.Component<'components.link'>;
   };
 }
@@ -123,6 +123,7 @@ export interface LayoutVsCodeHeroSection extends Schema.Component {
     description: '';
   };
   attributes: {
+    Capsule: Attribute.Component<'components.capsule'>;
     Title: Attribute.String &
       Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
     Description: Attribute.Text &
@@ -131,8 +132,6 @@ export interface LayoutVsCodeHeroSection extends Schema.Component {
     VideoOrGif: Attribute.Media<'images' | 'videos'>;
     VideoOrGifDark: Attribute.Media<'images' | 'videos'>;
     Buttons: Attribute.Component<'components.link', true>;
-    capsule: Attribute.String &
-      Attribute.DefaultTo<'Beta is Live! or some content'>;
     LeftContentText: Attribute.String &
       Attribute.DefaultTo<'14-day free trial '>;
     MiddleContentText: Attribute.String & Attribute.DefaultTo<' | Works with'>;
@@ -430,6 +429,7 @@ export interface LayoutHero extends Schema.Component {
     description: '';
   };
   attributes: {
+    Capsule: Attribute.Component<'components.capsule'>;
     Title: Attribute.String &
       Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
     Description: Attribute.Text &
@@ -1213,6 +1213,7 @@ export interface ComponentsFeature extends Schema.Component {
     ImageLG: Attribute.Media<'images'>;
     ImageMD: Attribute.Media<'images'>;
     ImageSM: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -1326,6 +1327,19 @@ export interface ComponentsCaseStudy extends Schema.Component {
     CoverDark: Attribute.Media<'images'> & Attribute.Required;
     Title: Attribute.String & Attribute.Required;
     Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
+export interface ComponentsCapsule extends Schema.Component {
+  collectionName: 'components_components_capsule';
+  info: {
+    displayName: 'Capsule';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    Url: Attribute.String & Attribute.DefaultTo<'/'>;
+    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -1473,6 +1487,7 @@ declare module '@strapi/types' {
       'components.contact-success': ComponentsContactSuccess;
       'components.collapsible': ComponentsCollapsible;
       'components.case-study': ComponentsCaseStudy;
+      'components.capsule': ComponentsCapsule;
       'components.bullets': ComponentsBullets;
       'components.blog-slider': ComponentsBlogSlider;
       'components.asset-card': ComponentsAssetCard;

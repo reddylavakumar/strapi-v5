@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_capsule",
+  "info": {
+    "displayName": "Capsule",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "default": "Lorem ipsum"
+    },
+    "Url": {
+      "type": "string",
+      "default": "/"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

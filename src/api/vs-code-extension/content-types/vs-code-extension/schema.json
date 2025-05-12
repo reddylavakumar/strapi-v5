@@ -76,7 +76,7 @@
         }
       }
     },
-    "FeatureSecondaryLayout": {
+    "BenefitsLayout": {
       "type": "component",
       "repeatable": false,
       "component": "layout.vs-feature-section",

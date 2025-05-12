@@ -7,6 +7,10 @@
   },
   "options": {},
   "attributes": {
+    "Capsule": {
+      "type": "component",
+      "component": "components.capsule"
+    },
     "Title": {
       "type": "string",
       "default": "Cut Code Review Time & Bugs in Half"
@@ -38,10 +42,7 @@
       "repeatable": true,
       "component": "components.link"
     },
-    "capsule": {
-      "type": "string",
-      "default": "Beta is Live! or some content"
-    },
+
     "LeftContentText": {
       "type": "string",
       "default": "14-day free trial "

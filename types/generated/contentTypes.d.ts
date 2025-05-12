@@ -3308,7 +3308,7 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
           localized: true;
         };
       }>;
-    FeatureSecondaryLayout: Attribute.Component<'layout.vs-feature-section'> &
+    BenefitsLayout: Attribute.Component<'layout.vs-feature-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
