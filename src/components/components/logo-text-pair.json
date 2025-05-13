@@ -19,7 +19,11 @@
     },
     "LogoHref": {
       "type": "string",
-      "default": "https://www.coderabbit.ai"
+      "default": "/"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
