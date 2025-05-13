@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_layout_features_sections",
+  "collectionName": "components_layout_vs_extension_features_sections",
   "info": {
     "displayName": "Features Section",
     "description": ""
@@ -7,17 +7,15 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string",
-      "default": ""
+      "type": "string"
     },
-    "Description": {
-      "type": "string",
-      "default": ""
-    },
-    "Features": {
+    "Benefits": {
       "type": "component",
       "repeatable": true,
-      "component": "components.feature"
+      "component": "components.security",
+      "info": {
+        "displayName": "Features"
+      }
     },
     "Button": {
       "type": "component",

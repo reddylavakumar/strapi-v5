@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_hyperlink",
+  "info": {
+    "displayName": "Hyperlink",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "default": "Lorem ipsum"
+    },
+    "HyperlinkText": {
+      "type": "string",
+      "default": "Hyperlink text"
+    },
+    "HyperlinkUrl": {
+      "type": "string",
+      "default": "https://www.coderabbit.ai"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

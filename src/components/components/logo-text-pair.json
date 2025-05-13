@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_logo_text_pairs",
+  "info": {
+    "displayName": "Logo Text Pair",
+    "description": "A component for displaying a logo with its associated text"
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "Text": {
+      "type": "string",
+      "required": true,
+      "default": "IDE Name"
+    },
+    "LogoHref": {
+      "type": "string",
+      "default": "/"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

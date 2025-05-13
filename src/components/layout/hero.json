@@ -7,6 +7,10 @@
   },
   "options": {},
   "attributes": {
+    "Capsule": {
+      "type": "component",
+      "component": "components.capsule"
+    },
     "Title": {
       "type": "string",
       "default": "Cut Code Review Time & Bugs in Half"
@@ -19,9 +23,13 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
+    },
+    "VideoOrGif": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
     },
     "Buttons": {
       "type": "component",
@@ -67,17 +75,13 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "BackedByImagesDark": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     }
   }
 }
