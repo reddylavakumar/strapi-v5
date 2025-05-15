@@ -45,12 +45,13 @@
       "component": "components.promo-card",
       "pluginOptions": { "i18n": { "localized": true } }
     },
-    "LeadCard": {
+    "BlogBanners": {
       "type": "component",
-      "repeatable": false,
-      "component": "layout.lead-capture-layout",
+      "repeatable": true,
+      "component": "components.blog-banner",
       "pluginOptions": { "i18n": { "localized": true } }
     },
+
     "Share": {
       "type": "string",
       "default": "Share",

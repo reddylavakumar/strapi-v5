@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_components_blog_banner",
+  "info": {
+    "displayName": "Blog Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "widgetNameFromHashnode": {
+      "type": "string",
+      "default": ""
+    },
+    "Title": {
+      "type": "string",
+      "default": "Cut code review time & bugs by 50%"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Most installed AI app on GitHub and GitLab"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-feilds"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ImagePositionLeft": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

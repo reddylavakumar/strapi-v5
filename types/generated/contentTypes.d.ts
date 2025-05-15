@@ -1317,7 +1317,7 @@ export interface ApiBlogInternalBlogInternal extends Schema.SingleType {
           localized: true;
         };
       }>;
-    LeadCard: Attribute.Component<'layout.lead-capture-layout'> &
+    BlogBanners: Attribute.Component<'components.blog-banner', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
