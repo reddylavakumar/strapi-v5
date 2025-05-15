@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_blog_banners",
+  "info": {
+    "displayName": "Blog Banners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Banner": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.blog-banner"
+    }
+  }
+}
