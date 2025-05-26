@@ -450,8 +450,8 @@ export interface LayoutHoppyFanCreatives extends Schema.Component {
       Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
     Description: Attribute.Text &
       Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Socials: Attribute.Component<'components.link', true>;
     Creatives: Attribute.Component<'components.hoppy-creative', true>;
-    Button: Attribute.Component<'components.link'>;
   };
 }
 
@@ -1273,12 +1273,6 @@ export interface ComponentsHoppyCreative extends Schema.Component {
   attributes: {
     Title: Attribute.String &
       Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
-    Socials: Attribute.Component<'components.link', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     CreativeImage: Attribute.Media<'images'>;
     UserImage: Attribute.Media<'images'>;
   };
