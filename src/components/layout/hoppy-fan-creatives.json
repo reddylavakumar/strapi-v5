@@ -15,15 +15,14 @@
       "type": "text",
       "default": "Fast, smart, and always by your side — helping you level up your coding skills."
     },
+    "Socials": {
+      "type": "component",
+      "component": "components.link"
+    },
     "Creatives": {
       "type": "component",
       "repeatable": true,
       "component": "components.hoppy-creative"
-    },
-    "Button": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.link"
     }
   }
 }

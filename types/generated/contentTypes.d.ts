@@ -2633,12 +2633,6 @@ export interface ApiHoppyCornerHoppyCorner extends Schema.SingleType {
           localized: true;
         };
       }>;
-    ComicPageTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     Sections: Attribute.DynamicZone<
       [
         'components.hoppy-hero',

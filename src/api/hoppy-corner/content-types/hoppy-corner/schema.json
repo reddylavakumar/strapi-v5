@@ -26,14 +26,6 @@
         }
       }
     },
-    "ComicPageTitle": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "Sections": {
       "type": "dynamiczone",
       "components": [

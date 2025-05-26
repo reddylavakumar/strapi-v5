@@ -11,12 +11,6 @@
       "type": "string",
       "default": "Meet Hoppy, Your Dev Sidekick"
     },
-    "Socials": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.link",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
     "CreativeImage": {
       "type": "media",
       "multiple": false,
