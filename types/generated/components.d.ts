@@ -1314,7 +1314,7 @@ export interface ComponentsHoppyBanner extends Schema.Component {
     Description: Attribute.Text &
       Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
     Button: Attribute.Component<'components.link'>;
-    email: Attribute.Component<'components.banner-text-feilds'>;
+    email: Attribute.Component<'components.banner-text-fields'>;
     Image: Attribute.Media<'images'>;
     ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
@@ -1532,13 +1532,13 @@ export interface ComponentsBlogBanner extends Schema.Component {
     Description: Attribute.Text &
       Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
     Button: Attribute.Component<'components.link'>;
-    email: Attribute.Component<'components.banner-text-feilds'>;
+    email: Attribute.Component<'components.banner-text-fields'>;
     Image: Attribute.Media<'images'>;
     ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
-export interface ComponentsBannerTextFeilds extends Schema.Component {
+export interface ComponentsBannerTextFields extends Schema.Component {
   collectionName: 'components_components_banner_input_text_fields';
   info: {
     displayName: 'Input Text Field';
@@ -1689,7 +1689,7 @@ declare module '@strapi/types' {
       'components.bullets': ComponentsBullets;
       'components.blog-slider': ComponentsBlogSlider;
       'components.blog-banner': ComponentsBlogBanner;
-      'components.banner-text-feilds': ComponentsBannerTextFeilds;
+      'components.banner-text-fields': ComponentsBannerTextFields;
       'components.asset-card': ComponentsAssetCard;
       'components.announcment': ComponentsAnnouncment;
     }

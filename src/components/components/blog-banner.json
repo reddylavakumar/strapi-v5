@@ -26,7 +26,7 @@
     "email": {
       "type": "component",
       "repeatable": false,
-      "component": "components.banner-text-feilds"
+      "component": "components.banner-text-fields"
     },
     "Image": {
       "type": "media",
