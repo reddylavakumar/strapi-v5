@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_components_hoppy_comic",
+  "info": {
+    "displayName": "Hoppy Comic",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Hoppy Comic"
+    },
+    "brief": {
+      "type": "text",
+      "default": "A fun and engaging comic strip featuring Hoppy, the AI sidekick."
+    },
+    "slug": {
+      "type": "string",
+      "default": "/"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "publishedAt": {
+      "type": "date",
+      "required": false
+    }
+  }
+}

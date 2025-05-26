@@ -421,6 +421,57 @@ export interface LayoutHowItWorksSection extends Schema.Component {
   };
 }
 
+export interface LayoutHoppyMood extends Schema.Component {
+  collectionName: 'components_layout_hoppy_mood';
+  info: {
+    displayName: 'Hoppy Quotes';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Button: Attribute.Component<'components.link'>;
+    Versions: Attribute.Component<'components.hoppy-quote', true>;
+  };
+}
+
+export interface LayoutHoppyFanCreatives extends Schema.Component {
+  collectionName: 'components_layout_hoppy_fan_creatives';
+  info: {
+    displayName: 'Fan Creatives Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Creatives: Attribute.Component<'components.hoppy-creative', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutHoppyComicSection extends Schema.Component {
+  collectionName: 'components_layout_hoppy_comic_section';
+  info: {
+    displayName: 'Comic Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Image: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface LayoutHero extends Schema.Component {
   collectionName: 'components_layout_heroes';
   info: {
@@ -1179,6 +1230,96 @@ export interface ComponentsHowItWorks extends Schema.Component {
   };
 }
 
+export interface ComponentsHoppyQuote extends Schema.Component {
+  collectionName: 'components_components_hoppy_quote';
+  info: {
+    displayName: 'Quotes';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Refactoring.'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'No one will understand this code, not even Future Me.'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHoppyHero extends Schema.Component {
+  collectionName: 'components_components_hoppy_hero';
+  info: {
+    displayName: 'Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Image: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHoppyCreative extends Schema.Component {
+  collectionName: 'components_components_hoppy_creative';
+  info: {
+    displayName: 'Hoppy Creative';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Socials: Attribute.Component<'components.link', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CreativeImage: Attribute.Media<'images'>;
+    UserImage: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHoppyComic extends Schema.Component {
+  collectionName: 'components_components_hoppy_comic';
+  info: {
+    displayName: 'Hoppy Comic';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.DefaultTo<'Hoppy Comic'>;
+    brief: Attribute.Text &
+      Attribute.DefaultTo<'A fun and engaging comic strip featuring Hoppy, the AI sidekick.'>;
+    slug: Attribute.String & Attribute.DefaultTo<'/'>;
+    coverImage: Attribute.Media<'images'>;
+    Pdf: Attribute.Media<'files'>;
+    publishedAt: Attribute.Date;
+  };
+}
+
+export interface ComponentsHoppyBanner extends Schema.Component {
+  collectionName: 'components_components_hoppy_banner';
+  info: {
+    displayName: 'Hoppy Banner';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    Button: Attribute.Component<'components.link'>;
+    email: Attribute.Component<'components.banner-text-feilds'>;
+    Image: Attribute.Media<'images'>;
+    ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
 export interface ComponentsHeroCard extends Schema.Component {
   collectionName: 'components_components_hero_cards';
   info: {
@@ -1475,6 +1616,9 @@ declare module '@strapi/types' {
       'layout.join-us-section': LayoutJoinUsSection;
       'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
       'layout.how-it-works-section': LayoutHowItWorksSection;
+      'layout.hoppy-mood': LayoutHoppyMood;
+      'layout.hoppy-fan-creatives': LayoutHoppyFanCreatives;
+      'layout.hoppy-comic-section': LayoutHoppyComicSection;
       'layout.hero': LayoutHero;
       'layout.hero-cards-section': LayoutHeroCardsSection;
       'layout.get-started': LayoutGetStarted;
@@ -1526,6 +1670,11 @@ declare module '@strapi/types' {
       'components.impact-slider': ComponentsImpactSlider;
       'components.hyperlink': ComponentsHyperlink;
       'components.how-it-works': ComponentsHowItWorks;
+      'components.hoppy-quote': ComponentsHoppyQuote;
+      'components.hoppy-hero': ComponentsHoppyHero;
+      'components.hoppy-creative': ComponentsHoppyCreative;
+      'components.hoppy-comic': ComponentsHoppyComic;
+      'components.hoppy-banner': ComponentsHoppyBanner;
       'components.hero-card': ComponentsHeroCard;
       'components.form-side-section': ComponentsFormSideSection;
       'components.feature': ComponentsFeature;

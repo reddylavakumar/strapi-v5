@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "hoppy-corners",
+  "info": {
+    "singularName": "hoppy-corner",
+    "pluralName": "hoppy-corners",
+    "displayName": "Hoppy Corner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "ComicPageTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Sections": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hoppy-hero",
+        "components.hoppy-banner",
+        "layout.hoppy-mood",
+        "layout.hoppy-comic-section",
+        "layout.hoppy-fan-creatives"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

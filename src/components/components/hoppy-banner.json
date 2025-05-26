@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_hoppy_banner",
+  "info": {
+    "displayName": "Hoppy Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Cut code review time & bugs by 50%"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Most installed AI app on GitHub and GitLab"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ImagePositionLeft": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

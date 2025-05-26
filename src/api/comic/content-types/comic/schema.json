@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comics",
+  "info": {
+    "singularName": "comic",
+    "pluralName": "comics",
+    "displayName": "Comic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "title": {
+      "type": "string",
+      "default": "Hoppy Comic",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "brief": {
+      "type": "text",
+      "default": "A fun and engaging comic strip featuring Hoppy, the AI sidekick.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title"
+    },
+    "Share": {
+      "type": "string",
+      "default": "Share",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.hoppy-banner",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}
