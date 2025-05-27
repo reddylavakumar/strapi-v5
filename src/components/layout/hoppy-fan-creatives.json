@@ -19,11 +19,6 @@
       "type": "component",
       "repeatable": true,
       "component": "components.link"
-    },
-    "Creatives": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.hoppy-creative"
     }
   }
 }

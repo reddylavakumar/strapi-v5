@@ -2671,6 +2671,101 @@ export interface ApiHoppyCornerHoppyCorner extends Schema.SingleType {
   };
 }
 
+export interface ApiHoppyversionHoppyversion extends Schema.CollectionType {
+  collectionName: 'hoppyversions';
+  info: {
+    singularName: 'hoppyversion';
+    pluralName: 'hoppyversions';
+    displayName: 'Hoppy Versions';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    slug: Attribute.UID<'api::hoppyversion.hoppyversion', 'CreativeName'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slogan: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    SocialShareText: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Meet our guy'>;
+    CreativeName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Hoppy'>;
+    CreativeImage: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    UserImage: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hoppyversion.hoppyversion',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hoppyversion.hoppyversion',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hoppyversion.hoppyversion',
+      'oneToMany',
+      'api::hoppyversion.hoppyversion'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiPartnershipPartnership extends Schema.SingleType {
   collectionName: 'partnerships';
   info: {
@@ -3710,6 +3805,7 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::home-page-2.home-page-2': ApiHomePage2HomePage2;
       'api::hoppy-corner.hoppy-corner': ApiHoppyCornerHoppyCorner;
+      'api::hoppyversion.hoppyversion': ApiHoppyversionHoppyversion;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;

@@ -451,7 +451,6 @@ export interface LayoutHoppyFanCreatives extends Schema.Component {
     Description: Attribute.Text &
       Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
     Socials: Attribute.Component<'components.link', true>;
-    Creatives: Attribute.Component<'components.hoppy-creative', true>;
   };
 }
 
