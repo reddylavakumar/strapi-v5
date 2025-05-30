@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_layout_hoppy_mood",
+  "info": {
+    "displayName": "Hoppy Quotes",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Cut Code Review Time & Bugs in Half"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Supercharge your entire team with AI-driven contextual feedback. Supports all languages."
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "Versions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.hoppy-quote"
+    }
+  }
+}

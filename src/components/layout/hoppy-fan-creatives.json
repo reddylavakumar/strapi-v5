@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_layout_hoppy_fan_creatives",
+  "info": {
+    "displayName": "Fan Creatives Section",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Meet Hoppy, Your Dev Sidekick"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Fast, smart, and always by your side — helping you level up your coding skills."
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    }
+  }
+}

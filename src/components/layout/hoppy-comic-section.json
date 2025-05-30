@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_layout_hoppy_comic_section",
+  "info": {
+    "displayName": "Comic Section",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Meet Hoppy, Your Dev Sidekick"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Fast, smart, and always by your side — helping you level up your coding skills."
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

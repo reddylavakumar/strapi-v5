@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_hoppy_hero",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Meet Hoppy, Your Dev Sidekick"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Fast, smart, and always by your side — helping you level up your coding skills."
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ImageSM": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

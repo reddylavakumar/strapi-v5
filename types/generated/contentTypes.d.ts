@@ -1482,6 +1482,157 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiComicComic extends Schema.CollectionType {
+  collectionName: 'comics';
+  info: {
+    singularName: 'comic';
+    pluralName: 'comics';
+    displayName: 'Comic';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Hoppy Comic'>;
+    brief: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'A fun and engaging comic strip featuring Hoppy, the AI sidekick.'>;
+    coverImage: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Pdf: Attribute.Media<'files'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::comic.comic', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Share: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Share'>;
+    Banner: Attribute.Component<'components.hoppy-banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Socials: Attribute.Component<'components.link', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::comic.comic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::comic.comic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::comic.comic',
+      'oneToMany',
+      'api::comic.comic'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiComicsLandingComicsLanding extends Schema.SingleType {
+  collectionName: 'comics-landing';
+  info: {
+    singularName: 'comics-landing';
+    pluralName: 'comics-landings';
+    displayName: 'Comics Landing Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ComicPageTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::comics-landing.comics-landing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::comics-landing.comics-landing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::comics-landing.comics-landing',
+      'oneToMany',
+      'api::comics-landing.comics-landing'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiContactContact extends Schema.SingleType {
   collectionName: 'contacts';
   info: {
@@ -2454,6 +2605,306 @@ export interface ApiHomePage2HomePage2 extends Schema.SingleType {
       'api::home-page-2.home-page-2',
       'oneToMany',
       'api::home-page-2.home-page-2'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHoppyCornerHoppyCorner extends Schema.SingleType {
+  collectionName: 'hoppy-corners';
+  info: {
+    singularName: 'hoppy-corner';
+    pluralName: 'hoppy-corners';
+    displayName: 'Hoppy Corner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Sections: Attribute.DynamicZone<
+      [
+        'components.hoppy-hero',
+        'components.hoppy-banner',
+        'layout.hoppy-mood',
+        'layout.hoppy-comic-section',
+        'layout.hoppy-fan-creatives'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hoppy-corner.hoppy-corner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hoppy-corner.hoppy-corner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hoppy-corner.hoppy-corner',
+      'oneToMany',
+      'api::hoppy-corner.hoppy-corner'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHoppyversionHoppyversion extends Schema.CollectionType {
+  collectionName: 'hoppyversions';
+  info: {
+    singularName: 'hoppyversion';
+    pluralName: 'hoppyversions';
+    displayName: 'Hoppy Versions';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    slug: Attribute.UID<'api::hoppyversion.hoppyversion', 'CreativeName'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slogan: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    SocialShareText: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Meet our guy'>;
+    CreativeName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Hoppy'>;
+    CreativeImage: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    UserImage: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hoppyversion.hoppyversion',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hoppyversion.hoppyversion',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hoppyversion.hoppyversion',
+      'oneToMany',
+      'api::hoppyversion.hoppyversion'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiIdeIde extends Schema.CollectionType {
+  collectionName: 'ides';
+  info: {
+    singularName: 'ide';
+    pluralName: 'ides';
+    displayName: 'Ide';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Variant: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'A'>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.vs-code-hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SectionTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    SectionDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BenefitsLayout: Attribute.Component<'layout.vs-feature-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Architecture: Attribute.Component<'layout.architecture'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Trust: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OpenSourceProject: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Plans: Attribute.Component<'layout.plans-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Faqs: Attribute.Component<'layout.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::ide.ide', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::ide.ide', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::ide.ide',
+      'oneToMany',
+      'api::ide.ide'
     >;
     locale: Attribute.String;
   };
@@ -3483,6 +3934,8 @@ declare module '@strapi/types' {
       'api::blog-internal.blog-internal': ApiBlogInternalBlogInternal;
       'api::brand-guideline.brand-guideline': ApiBrandGuidelineBrandGuideline;
       'api::category.category': ApiCategoryCategory;
+      'api::comic.comic': ApiComicComic;
+      'api::comics-landing.comics-landing': ApiComicsLandingComicsLanding;
       'api::contact.contact': ApiContactContact;
       'api::customer.customer': ApiCustomerCustomer;
       'api::enterprise.enterprise': ApiEnterpriseEnterprise;
@@ -3495,6 +3948,9 @@ declare module '@strapi/types' {
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::home-page-2.home-page-2': ApiHomePage2HomePage2;
+      'api::hoppy-corner.hoppy-corner': ApiHoppyCornerHoppyCorner;
+      'api::hoppyversion.hoppyversion': ApiHoppyversionHoppyversion;
+      'api::ide.ide': ApiIdeIde;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::pricing.pricing': ApiPricingPricing;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;

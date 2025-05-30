@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_components_hoppy_creative",
+  "info": {
+    "displayName": "Hoppy Creative",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Meet Hoppy, Your Dev Sidekick"
+    },
+    "CreativeImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "UserImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

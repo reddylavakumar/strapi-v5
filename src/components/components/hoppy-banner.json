@@ -1,15 +1,11 @@
 {
-  "collectionName": "components_components_blog_banner",
+  "collectionName": "components_components_hoppy_banner",
   "info": {
-    "displayName": "Blog Banner",
+    "displayName": "Hoppy Banner",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "widgetNameFromHashnode": {
-      "type": "string",
-      "default": ""
-    },
     "Title": {
       "type": "string",
       "default": "Cut code review time & bugs by 50%"

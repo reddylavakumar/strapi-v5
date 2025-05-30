@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hoppyversions",
+  "info": {
+    "singularName": "hoppyversion",
+    "pluralName": "hoppyversions",
+    "displayName": "Hoppy Versions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Title": {
+      "type": "string",
+      "default": "Meet Hoppy, Your Dev Sidekick",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "type": "uid",
+      "targetField": "CreativeName"
+    },
+    "Slogan": {
+      "type": "string",
+      "default": "Meet Hoppy, Your Dev Sidekick",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "SocialShareText": {
+      "type": "string",
+      "default": "Meet our guy",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "CreativeName": {
+      "type": "string",
+      "default": "Hoppy",
+      "pluginOptions": { "i18n": { "localized": true } },
+      "required": true
+    },
+    "CreativeImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "UserImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

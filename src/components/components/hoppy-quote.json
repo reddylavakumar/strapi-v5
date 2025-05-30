@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_hoppy_quote",
+  "info": {
+    "displayName": "Quotes",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Title": {
+      "type": "string",
+      "default": "Refactoring."
+    },
+    "Description": {
+      "type": "text",
+      "default": "No one will understand this code, not even Future Me."
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
