@@ -20,10 +20,10 @@
       "repeatable": false,
       "component": "components.link"
     },
-    "Versions": {
+    "Socials": {
       "type": "component",
       "repeatable": true,
-      "component": "components.hoppy-quote"
+      "component": "components.link"
     }
   }
 }

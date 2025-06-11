@@ -2742,6 +2742,7 @@ export interface ApiHoppyversionHoppyversion extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    IsQuote: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
