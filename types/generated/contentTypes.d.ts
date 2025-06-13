@@ -2615,7 +2615,7 @@ export interface ApiHomepageMainHomepageMain extends Schema.CollectionType {
   info: {
     singularName: 'homepage-main';
     pluralName: 'homepages-main';
-    displayName: 'HomePage Main';
+    displayName: 'Home Page';
     description: '';
   };
   options: {
