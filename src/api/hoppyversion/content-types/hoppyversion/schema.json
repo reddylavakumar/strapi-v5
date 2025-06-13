@@ -66,6 +66,10 @@
       "required": false,
       "allowedTypes": ["images"],
       "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "IsQuote": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
