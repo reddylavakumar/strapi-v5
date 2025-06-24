@@ -1698,6 +1698,151 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiCursorCursor extends Schema.SingleType {
+  collectionName: 'cursor';
+  info: {
+    singularName: 'cursor';
+    pluralName: 'cursors';
+    displayName: 'Cursor';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.vs-code-hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SectionTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    SectionDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BenefitsLayout: Attribute.Component<'layout.vs-feature-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Architecture: Attribute.Component<'layout.architecture'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Trust: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OpenSourceProject: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Plans: Attribute.Component<'layout.plans-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Faqs: Attribute.Component<'layout.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cursor.cursor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cursor.cursor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::cursor.cursor',
+      'oneToMany',
+      'api::cursor.cursor'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCustomerCustomer extends Schema.SingleType {
   collectionName: 'customers';
   info: {
@@ -2224,6 +2369,151 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
   };
 }
 
+export interface ApiGithubCopilotGithubCopilot extends Schema.SingleType {
+  collectionName: 'github-copilot';
+  info: {
+    singularName: 'github-copilot';
+    pluralName: 'github-copilots';
+    displayName: 'Github Copilot';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.vs-code-hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SectionTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    SectionDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BenefitsLayout: Attribute.Component<'layout.vs-feature-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Architecture: Attribute.Component<'layout.architecture'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Trust: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OpenSourceProject: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Plans: Attribute.Component<'layout.plans-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Faqs: Attribute.Component<'layout.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::github-copilot.github-copilot',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::github-copilot.github-copilot',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::github-copilot.github-copilot',
+      'oneToMany',
+      'api::github-copilot.github-copilot'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -2605,126 +2895,6 @@ export interface ApiHomePage2HomePage2 extends Schema.SingleType {
       'api::home-page-2.home-page-2',
       'oneToMany',
       'api::home-page-2.home-page-2'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiHomepageMainHomepageMain extends Schema.CollectionType {
-  collectionName: 'homepage-main';
-  info: {
-    singularName: 'homepage-main';
-    pluralName: 'homepages-main';
-    displayName: 'Home Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Variant: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'A'>;
-    slug: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Hero: Attribute.Component<'layout.hero'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stats: Attribute.Component<'layout.metrics-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Customers: Attribute.Component<'layout.customers-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Features: Attribute.Component<'layout.features-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Trust: Attribute.Component<'layout.trust-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    GetStarted: Attribute.Component<'layout.get-started'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Testimonials: Attribute.Component<'layout.testimonials'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Announcment: Attribute.Component<'components.announcment'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Contact: Attribute.Component<'layout.contact-us-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::homepage-main.homepage-main',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::homepage-main.homepage-main',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::homepage-main.homepage-main',
-      'oneToMany',
-      'api::homepage-main.homepage-main'
     >;
     locale: Attribute.String;
   };
@@ -4029,6 +4199,151 @@ export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
   };
 }
 
+export interface ApiWindsurfWindsurf extends Schema.SingleType {
+  collectionName: 'windsurf';
+  info: {
+    singularName: 'windsurf';
+    pluralName: 'windsurfs';
+    displayName: 'Windsurf';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.vs-code-hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SectionTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    SectionDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Extension Features'>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BenefitsLayout: Attribute.Component<'layout.vs-feature-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Architecture: Attribute.Component<'layout.architecture'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Trust: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OpenSourceProject: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Plans: Attribute.Component<'layout.plans-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Faqs: Attribute.Component<'layout.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::windsurf.windsurf',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::windsurf.windsurf',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::windsurf.windsurf',
+      'oneToMany',
+      'api::windsurf.windsurf'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -4058,18 +4373,19 @@ declare module '@strapi/types' {
       'api::comic.comic': ApiComicComic;
       'api::comics-landing.comics-landing': ApiComicsLandingComicsLanding;
       'api::contact.contact': ApiContactContact;
+      'api::cursor.cursor': ApiCursorCursor;
       'api::customer.customer': ApiCustomerCustomer;
       'api::enterprise.enterprise': ApiEnterpriseEnterprise;
       'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
+      'api::github-copilot.github-copilot': ApiGithubCopilotGithubCopilot;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::home-page-2.home-page-2': ApiHomePage2HomePage2;
-      'api::homepage-main.homepage-main': ApiHomepageMainHomepageMain;
       'api::hoppy-corner.hoppy-corner': ApiHoppyCornerHoppyCorner;
       'api::hoppyversion.hoppyversion': ApiHoppyversionHoppyversion;
       'api::ide.ide': ApiIdeIde;
@@ -4086,6 +4402,7 @@ declare module '@strapi/types' {
       'api::vdp.vdp': ApiVdpVdp;
       'api::vs-code-extension.vs-code-extension': ApiVsCodeExtensionVsCodeExtension;
       'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
+      'api::windsurf.windsurf': ApiWindsurfWindsurf;
     }
   }
 }

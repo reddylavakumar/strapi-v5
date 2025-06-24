@@ -1,9 +1,9 @@
 "use strict";
 
 /**
- * ide service
+ * windsurf service
  */
 
 const { createCoreService } = require("@strapi/strapi").factories;
 
-module.exports = createCoreService("api::homepage-main.homepage-main");
+module.exports = createCoreService("api::windsurf.windsurf");

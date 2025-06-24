@@ -1,9 +1,9 @@
 "use strict";
 
 /**
- * ide controller
+ * windsurf controller
  */
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-module.exports = createCoreController("api::homepage-main.homepage-main");
+module.exports = createCoreController("api::windsurf.windsurf");
