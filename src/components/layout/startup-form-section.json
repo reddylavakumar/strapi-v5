@@ -25,6 +25,11 @@
       "repeatable": false,
       "component": "components.input-text-field"
     },
+    "FundingDetails": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.input-text-field"
+    },
     "GitOrgName": {
       "type": "component",
       "repeatable": false,

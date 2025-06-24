@@ -193,6 +193,7 @@ export interface LayoutStartupFormSection extends Schema.Component {
     FirstName: Attribute.Component<'components.input-text-field'>;
     LastName: Attribute.Component<'components.input-text-field'>;
     CompanyWebsite: Attribute.Component<'components.input-text-field'>;
+    FundingDetails: Attribute.Component<'components.input-text-field'>;
     GitOrgName: Attribute.Component<'components.input-text-field'>;
     JobTitle: Attribute.Component<'components.input-text-field'>;
     Email: Attribute.Component<'components.input-text-field'>;
