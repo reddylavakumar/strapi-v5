@@ -6,4 +6,4 @@
 
 const { createCoreRouter } = require("@strapi/strapi").factories;
 
-module.exports = createCoreRouter("api::github-copilot.github-copilot");
+module.exports = createCoreRouter("api::visual-studio-code.visual-studio-code");
