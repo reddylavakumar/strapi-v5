@@ -6,6 +6,4 @@
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-module.exports = createCoreController(
-  "api::visual-studio-code.visual-studio-code"
-);
+module.exports = createCoreController("api::github-copilot.github-copilot");
