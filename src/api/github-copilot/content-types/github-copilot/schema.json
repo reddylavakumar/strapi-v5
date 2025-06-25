@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "visual-studio-code",
+  "collectionName": "github-copilot",
   "info": {
-    "singularName": "visual-studio-code",
-    "pluralName": "visual-studio-codes",
-    "displayName": "Visual Studio Code",
+    "singularName": "github-copilot",
+    "pluralName": "github-copilots",
+    "displayName": "Github Copilot",
     "description": ""
   },
   "options": {

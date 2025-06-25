@@ -6,6 +6,4 @@
 
 const { createCoreService } = require("@strapi/strapi").factories;
 
-module.exports = createCoreService(
-  "api::visual-studio-code.visual-studio-code"
-);
+module.exports = createCoreService("api::github-copilot.github-copilot");
