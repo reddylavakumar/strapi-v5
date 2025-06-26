@@ -1940,6 +1940,63 @@ export interface ApiCustomerCustomer extends Schema.SingleType {
   };
 }
 
+export interface ApiDpaDpa extends Schema.SingleType {
+  collectionName: 'dpas';
+  info: {
+    singularName: 'dpa';
+    pluralName: 'dpas';
+    displayName: 'DPA';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::dpa.dpa', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::dpa.dpa', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::dpa.dpa',
+      'oneToMany',
+      'api::dpa.dpa'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiEnterpriseEnterprise extends Schema.SingleType {
   collectionName: 'enterprises';
   info: {
@@ -4375,6 +4432,7 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::cursor.cursor': ApiCursorCursor;
       'api::customer.customer': ApiCustomerCustomer;
+      'api::dpa.dpa': ApiDpaDpa;
       'api::enterprise.enterprise': ApiEnterpriseEnterprise;
       'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
