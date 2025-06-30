@@ -2957,6 +2957,120 @@ export interface ApiHomePage2HomePage2 extends Schema.SingleType {
   };
 }
 
+export interface ApiHomepageHomepage extends Schema.CollectionType {
+  collectionName: 'homepage';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Home Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Variant: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'a'>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Features: Attribute.Component<'layout.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Trust: Attribute.Component<'layout.trust-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    GetStarted: Attribute.Component<'layout.get-started'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Testimonials: Attribute.Component<'layout.testimonials'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Announcment: Attribute.Component<'components.announcment'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiHoppyCornerHoppyCorner extends Schema.SingleType {
   collectionName: 'hoppy-corners';
   info: {
@@ -4450,6 +4564,7 @@ declare module '@strapi/types' {
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::home-page-2.home-page-2': ApiHomePage2HomePage2;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::hoppy-corner.hoppy-corner': ApiHoppyCornerHoppyCorner;
       'api::hoppyversion.hoppyversion': ApiHoppyversionHoppyversion;
       'api::ide.ide': ApiIdeIde;
