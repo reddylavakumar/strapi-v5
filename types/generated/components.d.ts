@@ -83,6 +83,716 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
+export interface ComponentsTrustCard extends Schema.Component {
+  collectionName: 'components_components_trust_cards';
+  info: {
+    displayName: 'Trust Card';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media<'images'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur.Reviews only the essential code'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsTestimonial extends Schema.Component {
+  collectionName: 'components_components_testimonials';
+  info: {
+    displayName: 'Testimonial';
+    description: '';
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.DefaultTo<'Marguerite Bergnaum'>;
+    Avatar: Attribute.Media<'images'>;
+    Job: Attribute.String &
+      Attribute.DefaultTo<'Marketing Director @Metadata.io '>;
+    Opinion: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    EmbedCode: Attribute.Text;
+  };
+}
+
+export interface ComponentsSocials extends Schema.Component {
+  collectionName: 'components_components_socials';
+  info: {
+    displayName: 'Socials';
+  };
+  attributes: {
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface ComponentsSecurity extends Schema.Component {
+  collectionName: 'components_components_securities';
+  info: {
+    displayName: 'Security Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+    ImageDark: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsPromoCard extends Schema.Component {
+  collectionName: 'components_components_promo_card';
+  info: {
+    displayName: 'promo-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description1: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    Description2: Attribute.Text & Attribute.DefaultTo<'Free 14-day trial'>;
+    Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
+export interface ComponentsPrivacyPolicyQuestions extends Schema.Component {
+  collectionName: 'components_components_privacy_policy_questions';
+  info: {
+    displayName: 'Privacy Policy Questions';
+  };
+  attributes: {
+    Question: Attribute.String;
+    Answer: Attribute.RichText;
+    Bullets: Attribute.Component<'components.bullets', true>;
+  };
+}
+
+export interface ComponentsPlan extends Schema.Component {
+  collectionName: 'components_components_plans';
+  info: {
+    displayName: 'Plan';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Price: Attribute.String;
+    Detail: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+    IncludesTitle: Attribute.String;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Recommended: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsPill extends Schema.Component {
+  collectionName: 'components_components_pills';
+  info: {
+    displayName: 'Pill';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images'>;
+    Link: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsNotification extends Schema.Component {
+  collectionName: 'components_components_notifications';
+  info: {
+    displayName: 'Notification';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
+    Link: Attribute.Component<'components.link'>;
+    Show: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsNewsletter extends Schema.Component {
+  collectionName: 'components_components_newsletters';
+  info: {
+    displayName: 'Select Option';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    Value: Attribute.String & Attribute.DefaultTo<'Value'>;
+  };
+}
+
+export interface ComponentsMetric extends Schema.Component {
+  collectionName: 'components_components_metrics';
+  info: {
+    displayName: 'Stat';
+    description: '';
+  };
+  attributes: {
+    Number: Attribute.String & Attribute.DefaultTo<'10k'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Repositories in review'>;
+  };
+}
+
+export interface ComponentsMember extends Schema.Component {
+  collectionName: 'components_components_members';
+  info: {
+    displayName: 'Member';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Name: Attribute.String;
+    Position: Attribute.String;
+  };
+}
+
+export interface ComponentsLogoTextPair extends Schema.Component {
+  collectionName: 'components_components_logo_text_pairs';
+  info: {
+    displayName: 'Logo Text Pair';
+    description: 'A component for displaying a logo with its associated text';
+  };
+  attributes: {
+    Logo: Attribute.Media<'images'> & Attribute.Required;
+    Text: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'IDE Name'>;
+    LogoHref: Attribute.String & Attribute.DefaultTo<'/'>;
+    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsLinksColumn extends Schema.Component {
+  collectionName: 'components_components_links_columns';
+  info: {
+    displayName: 'Links Column';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Column title'>;
+    Links: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface ComponentsLink extends Schema.Component {
+  collectionName: 'components_components_links';
+  info: {
+    displayName: 'Link';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    Url: Attribute.String & Attribute.DefaultTo<'/'>;
+    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
+    Image: Attribute.Media<'images'>;
+    Hyperlink: Attribute.Component<'components.hyperlink'>;
+  };
+}
+
+export interface ComponentsLinkMenu extends Schema.Component {
+  collectionName: 'components_components_link_menus';
+  info: {
+    displayName: 'Link Menu';
+  };
+  attributes: {
+    Link: Attribute.Component<'components.link'>;
+    hasSubmenu: Attribute.Boolean & Attribute.DefaultTo<false>;
+    Submenu: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface ComponentsLinkCard extends Schema.Component {
+  collectionName: 'components_components_link_card_s';
+  info: {
+    displayName: 'Link Card ';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media<'images'>;
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsLeadInputBanner extends Schema.Component {
+  collectionName: 'components_components_lead_input_banner';
+  info: {
+    displayName: 'Lead Capture Button Banner';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Build better code, faster.'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Join thousands of developers using Code Rabbit to accelerate their workflow.'>;
+    Newsletter: Attribute.Component<'components.input-text-field'>;
+  };
+}
+
+export interface ComponentsLeadButtonBanner extends Schema.Component {
+  collectionName: 'components_components_lead_button_banner';
+  info: {
+    displayName: 'Lead Capture email Banner';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Build better code, faster.'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Join thousands of developers using Code Rabbit to accelerate their workflow.'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsInputTextField extends Schema.Component {
+  collectionName: 'components_components_input_text_fields';
+  info: {
+    displayName: 'Input Text Field';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String;
+    Placeholder: Attribute.String;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
+    isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isWebsite: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsInputSelectField extends Schema.Component {
+  collectionName: 'components_components_input_select_fields';
+  info: {
+    displayName: 'Input Select Field';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    Placeholder: Attribute.String & Attribute.DefaultTo<'Placeholder'>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Options: Attribute.Component<'components.newsletter', true>;
+  };
+}
+
+export interface ComponentsInputCheckboxField extends Schema.Component {
+  collectionName: 'components_components_input_checkbox_fields';
+  info: {
+    displayName: 'Input Checkbox Field';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ComponentsImpactSlider extends Schema.Component {
+  collectionName: 'components_components_impact_sliders';
+  info: {
+    displayName: 'Impact Slider';
+    description: '';
+  };
+  attributes: {
+    Company: Attribute.Media<'images'>;
+    Opinion: Attribute.Text;
+    Name: Attribute.String;
+    Avatar: Attribute.Media<'images'>;
+    Job: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+    CompanyDark: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHyperlink extends Schema.Component {
+  collectionName: 'components_components_hyperlink';
+  info: {
+    displayName: 'Hyperlink';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    HyperlinkText: Attribute.String & Attribute.DefaultTo<'Hyperlink text'>;
+    HyperlinkUrl: Attribute.String &
+      Attribute.DefaultTo<'https://www.coderabbit.ai'>;
+    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsHowItWorks extends Schema.Component {
+  collectionName: 'components_components_how_it_works';
+  info: {
+    displayName: 'How It Works';
+    description: '';
+  };
+  attributes: {
+    Tab: Attribute.String & Attribute.DefaultTo<'SaaS'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Effortless Scaling with SaaS'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'This is placeholder content. Leverage the power of CodeRabbit\u2019s cloud-based solution with SaaS. Access real-time code reviews, automated suggestions, and seamless integration with your development pipeline\u2014all without the need to manage your own infrastructure. '>;
+    Image: Attribute.Media<'images'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Cta: Attribute.Component<'components.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface ComponentsHoppyQuote extends Schema.Component {
+  collectionName: 'components_components_hoppy_quote';
+  info: {
+    displayName: 'Quotes';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Refactoring.'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'No one will understand this code, not even Future Me.'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHoppyHero extends Schema.Component {
+  collectionName: 'components_components_hoppy_hero';
+  info: {
+    displayName: 'Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Image: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHoppyCreative extends Schema.Component {
+  collectionName: 'components_components_hoppy_creative';
+  info: {
+    displayName: 'Hoppy Creative';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    CreativeImage: Attribute.Media<'images'>;
+    UserImage: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsHoppyComic extends Schema.Component {
+  collectionName: 'components_components_hoppy_comic';
+  info: {
+    displayName: 'Hoppy Comic';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.DefaultTo<'Hoppy Comic'>;
+    brief: Attribute.Text &
+      Attribute.DefaultTo<'A fun and engaging comic strip featuring Hoppy, the AI sidekick.'>;
+    slug: Attribute.String & Attribute.DefaultTo<'/'>;
+    coverImage: Attribute.Media<'images'>;
+    Pdf: Attribute.Media<'files'>;
+    publishedAt: Attribute.Date;
+  };
+}
+
+export interface ComponentsHoppyBanner extends Schema.Component {
+  collectionName: 'components_components_hoppy_banner';
+  info: {
+    displayName: 'Hoppy Banner';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    Button: Attribute.Component<'components.link'>;
+    email: Attribute.Component<'components.banner-text-fields'>;
+    Image: Attribute.Media<'images'>;
+    ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ComponentsHeroCard extends Schema.Component {
+  collectionName: 'components_components_hero_cards';
+  info: {
+    displayName: 'Hero Card';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media<'images'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Reviews only the essential code'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsFormSideSection extends Schema.Component {
+  collectionName: 'components_components_form_side_sections';
+  info: {
+    displayName: 'Form Side Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    ListTitle: Attribute.String;
+    Bullets: Attribute.Component<'components.bullets', true>;
+  };
+}
+
+export interface ComponentsFeature extends Schema.Component {
+  collectionName: 'components_components_features';
+  info: {
+    displayName: 'Feature';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    ImageXL: Attribute.Media<'images'>;
+    ImageLG: Attribute.Media<'images'>;
+    ImageMD: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsFeatureCard extends Schema.Component {
+  collectionName: 'components_components_features-card';
+  info: {
+    displayName: 'Feature-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsFaqItem extends Schema.Component {
+  collectionName: 'components_components_faq_items';
+  info: {
+    displayName: 'Faq Item';
+    description: '';
+  };
+  attributes: {
+    Question: Attribute.String;
+    Answer: Attribute.RichText;
+    Category: Attribute.String &
+      Attribute.DefaultTo<'Popular, Product, Security'>;
+  };
+}
+
+export interface ComponentsCustomFeature extends Schema.Component {
+  collectionName: 'components_components_custom_features';
+  info: {
+    displayName: 'Custom Feature';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    ImageXL: Attribute.Media<'images'>;
+    ImageLG: Attribute.Media<'images'>;
+    ImageMD: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+    CardType: Attribute.Enumeration<['medium', 'small', 'big']> &
+      Attribute.DefaultTo<'big'>;
+  };
+}
+
+export interface ComponentsContentWithImage extends Schema.Component {
+  collectionName: 'components_components_content_with_images';
+  info: {
+    displayName: 'Content with Image';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+    ImageDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ComponentsContactSuccess extends Schema.Component {
+  collectionName: 'components_components_contact_successes';
+  info: {
+    displayName: 'Contact Success';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Hooray! '>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'Your message has been sent. We\u2019ll get back to you shortly.'>;
+    Button: Attribute.Component<'components.link'>;
+    SocialsTitle: Attribute.String &
+      Attribute.DefaultTo<'In the meantime, follow along:'>;
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface ComponentsCollapsible extends Schema.Component {
+  collectionName: 'components_components_collapsibles';
+  info: {
+    displayName: 'Collapsible';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    ImageXL: Attribute.Media<'images'>;
+    ImageLG: Attribute.Media<'images'>;
+    ImageMD: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsCaseStudy extends Schema.Component {
+  collectionName: 'components_components_case_studies';
+  info: {
+    displayName: 'Case Study';
+  };
+  attributes: {
+    CustomerLight: Attribute.Media<'images'> & Attribute.Required;
+    CustomerDark: Attribute.Media<'images'> & Attribute.Required;
+    CoverLight: Attribute.Media<'images'> & Attribute.Required;
+    CoverDark: Attribute.Media<'images'> & Attribute.Required;
+    Title: Attribute.String & Attribute.Required;
+    Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
+export interface ComponentsCapsule extends Schema.Component {
+  collectionName: 'components_components_capsule';
+  info: {
+    displayName: 'Capsule';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    Url: Attribute.String & Attribute.DefaultTo<'/'>;
+    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsBullets extends Schema.Component {
+  collectionName: 'components_components_bullets';
+  info: {
+    displayName: 'Bullet';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
+    Description: Attribute.RichText;
+  };
+}
+
+export interface ComponentsBlogSlider extends Schema.Component {
+  collectionName: 'components_components_blog_sliders';
+  info: {
+    displayName: 'Blog Slider';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Category: Attribute.String;
+  };
+}
+
+export interface ComponentsBlogBanner extends Schema.Component {
+  collectionName: 'components_components_blog_banner';
+  info: {
+    displayName: 'Blog Banner';
+    description: '';
+  };
+  attributes: {
+    widgetNameFromHashnode: Attribute.String & Attribute.DefaultTo<''>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    Button: Attribute.Component<'components.link'>;
+    email: Attribute.Component<'components.banner-text-fields'>;
+    Image: Attribute.Media<'images'>;
+    ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ComponentsBannerTextFields extends Schema.Component {
+  collectionName: 'components_components_banner_input_text_fields';
+  info: {
+    displayName: 'Input Text Field';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String;
+    Placeholder: Attribute.String;
+    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
+    isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isWebsite: Attribute.Boolean & Attribute.DefaultTo<false>;
+    SuccessMessage: Attribute.Text &
+      Attribute.DefaultTo<'Thank you for signing up!'>;
+  };
+}
+
+export interface ComponentsAssetCard extends Schema.Component {
+  collectionName: 'components_components_asset_card';
+  info: {
+    displayName: 'asset-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    SvgIcon: Attribute.Media<'images'>;
+    PngIcon: Attribute.Media<'images'>;
+    isDarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isIcon: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ComponentsAnnouncment extends Schema.Component {
+  collectionName: 'components_components_announcment';
+  info: {
+    displayName: 'Announcment';
+    description: '';
+  };
+  attributes: {
+    Text: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    isClosable: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
 export interface LayoutWhitepaperFormSection extends Schema.Component {
   collectionName: 'components_layout_whitepaper_form_sections';
   info: {
@@ -871,716 +1581,6 @@ export interface LayoutAlternatedContent extends Schema.Component {
   };
 }
 
-export interface ComponentsTrustCard extends Schema.Component {
-  collectionName: 'components_components_trust_cards';
-  info: {
-    displayName: 'Trust Card';
-    description: '';
-  };
-  attributes: {
-    Icon: Attribute.Media<'images'>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur.Reviews only the essential code'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsTestimonial extends Schema.Component {
-  collectionName: 'components_components_testimonials';
-  info: {
-    displayName: 'Testimonial';
-    description: '';
-  };
-  attributes: {
-    Name: Attribute.String & Attribute.DefaultTo<'Marguerite Bergnaum'>;
-    Avatar: Attribute.Media<'images'>;
-    Job: Attribute.String &
-      Attribute.DefaultTo<'Marketing Director @Metadata.io '>;
-    Opinion: Attribute.Text &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    EmbedCode: Attribute.Text;
-  };
-}
-
-export interface ComponentsSocials extends Schema.Component {
-  collectionName: 'components_components_socials';
-  info: {
-    displayName: 'Socials';
-  };
-  attributes: {
-    Socials: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface ComponentsSecurity extends Schema.Component {
-  collectionName: 'components_components_securities';
-  info: {
-    displayName: 'Security Card';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Image: Attribute.Media<'images'>;
-    Button: Attribute.Component<'components.link'>;
-    ImageDark: Attribute.Media<'images'>;
-  };
-}
-
-export interface ComponentsPromoCard extends Schema.Component {
-  collectionName: 'components_components_promo_card';
-  info: {
-    displayName: 'promo-card';
-    description: '';
-  };
-  attributes: {
-    Image: Attribute.Media<'images'>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
-    Description1: Attribute.Text &
-      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
-    Description2: Attribute.Text & Attribute.DefaultTo<'Free 14-day trial'>;
-    Button: Attribute.Component<'components.link'> & Attribute.Required;
-  };
-}
-
-export interface ComponentsPrivacyPolicyQuestions extends Schema.Component {
-  collectionName: 'components_components_privacy_policy_questions';
-  info: {
-    displayName: 'Privacy Policy Questions';
-  };
-  attributes: {
-    Question: Attribute.String;
-    Answer: Attribute.RichText;
-    Bullets: Attribute.Component<'components.bullets', true>;
-  };
-}
-
-export interface ComponentsPlan extends Schema.Component {
-  collectionName: 'components_components_plans';
-  info: {
-    displayName: 'Plan';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.String;
-    Price: Attribute.String;
-    Detail: Attribute.String;
-    Button: Attribute.Component<'components.link'>;
-    IncludesTitle: Attribute.String;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    Recommended: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsPill extends Schema.Component {
-  collectionName: 'components_components_pills';
-  info: {
-    displayName: 'Pill';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Image: Attribute.Media<'images'>;
-    Link: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsNotification extends Schema.Component {
-  collectionName: 'components_components_notifications';
-  info: {
-    displayName: 'Notification';
-    description: '';
-  };
-  attributes: {
-    Text: Attribute.String &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
-    Link: Attribute.Component<'components.link'>;
-    Show: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsNewsletter extends Schema.Component {
-  collectionName: 'components_components_newsletters';
-  info: {
-    displayName: 'Select Option';
-    description: '';
-  };
-  attributes: {
-    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
-    Value: Attribute.String & Attribute.DefaultTo<'Value'>;
-  };
-}
-
-export interface ComponentsMetric extends Schema.Component {
-  collectionName: 'components_components_metrics';
-  info: {
-    displayName: 'Stat';
-    description: '';
-  };
-  attributes: {
-    Number: Attribute.String & Attribute.DefaultTo<'10k'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Repositories in review'>;
-  };
-}
-
-export interface ComponentsMember extends Schema.Component {
-  collectionName: 'components_components_members';
-  info: {
-    displayName: 'Member';
-  };
-  attributes: {
-    Image: Attribute.Media<'images'>;
-    Name: Attribute.String;
-    Position: Attribute.String;
-  };
-}
-
-export interface ComponentsLogoTextPair extends Schema.Component {
-  collectionName: 'components_components_logo_text_pairs';
-  info: {
-    displayName: 'Logo Text Pair';
-    description: 'A component for displaying a logo with its associated text';
-  };
-  attributes: {
-    Logo: Attribute.Media<'images'> & Attribute.Required;
-    Text: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'IDE Name'>;
-    LogoHref: Attribute.String & Attribute.DefaultTo<'/'>;
-    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsLinksColumn extends Schema.Component {
-  collectionName: 'components_components_links_columns';
-  info: {
-    displayName: 'Links Column';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Column title'>;
-    Links: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface ComponentsLink extends Schema.Component {
-  collectionName: 'components_components_links';
-  info: {
-    displayName: 'Link';
-    description: '';
-  };
-  attributes: {
-    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
-    Url: Attribute.String & Attribute.DefaultTo<'/'>;
-    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Image: Attribute.Media<'images'>;
-    Hyperlink: Attribute.Component<'components.hyperlink'>;
-  };
-}
-
-export interface ComponentsLinkMenu extends Schema.Component {
-  collectionName: 'components_components_link_menus';
-  info: {
-    displayName: 'Link Menu';
-  };
-  attributes: {
-    Link: Attribute.Component<'components.link'>;
-    hasSubmenu: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Submenu: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface ComponentsLinkCard extends Schema.Component {
-  collectionName: 'components_components_link_card_s';
-  info: {
-    displayName: 'Link Card ';
-    description: '';
-  };
-  attributes: {
-    Icon: Attribute.Media<'images'>;
-    Title: Attribute.String;
-    Description: Attribute.String;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsLeadInputBanner extends Schema.Component {
-  collectionName: 'components_components_lead_input_banner';
-  info: {
-    displayName: 'Lead Capture Button Banner';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Build better code, faster.'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Join thousands of developers using Code Rabbit to accelerate their workflow.'>;
-    Newsletter: Attribute.Component<'components.input-text-field'>;
-  };
-}
-
-export interface ComponentsLeadButtonBanner extends Schema.Component {
-  collectionName: 'components_components_lead_button_banner';
-  info: {
-    displayName: 'Lead Capture email Banner';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Build better code, faster.'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Join thousands of developers using Code Rabbit to accelerate their workflow.'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsInputTextField extends Schema.Component {
-  collectionName: 'components_components_input_text_fields';
-  info: {
-    displayName: 'Input Text Field';
-    description: '';
-  };
-  attributes: {
-    Label: Attribute.String;
-    Placeholder: Attribute.String;
-    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
-    isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isWebsite: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsInputSelectField extends Schema.Component {
-  collectionName: 'components_components_input_select_fields';
-  info: {
-    displayName: 'Input Select Field';
-    description: '';
-  };
-  attributes: {
-    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
-    Placeholder: Attribute.String & Attribute.DefaultTo<'Placeholder'>;
-    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
-    Options: Attribute.Component<'components.newsletter', true>;
-  };
-}
-
-export interface ComponentsInputCheckboxField extends Schema.Component {
-  collectionName: 'components_components_input_checkbox_fields';
-  info: {
-    displayName: 'Input Checkbox Field';
-  };
-  attributes: {
-    Label: Attribute.String & Attribute.DefaultTo<'Label'>;
-    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
-  };
-}
-
-export interface ComponentsImpactSlider extends Schema.Component {
-  collectionName: 'components_components_impact_sliders';
-  info: {
-    displayName: 'Impact Slider';
-    description: '';
-  };
-  attributes: {
-    Company: Attribute.Media<'images'>;
-    Opinion: Attribute.Text;
-    Name: Attribute.String;
-    Avatar: Attribute.Media<'images'>;
-    Job: Attribute.String;
-    Button: Attribute.Component<'components.link'>;
-    CompanyDark: Attribute.Media<'images'>;
-  };
-}
-
-export interface ComponentsHyperlink extends Schema.Component {
-  collectionName: 'components_components_hyperlink';
-  info: {
-    displayName: 'Hyperlink';
-    description: '';
-  };
-  attributes: {
-    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
-    HyperlinkText: Attribute.String & Attribute.DefaultTo<'Hyperlink text'>;
-    HyperlinkUrl: Attribute.String &
-      Attribute.DefaultTo<'https://www.coderabbit.ai'>;
-    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsHowItWorks extends Schema.Component {
-  collectionName: 'components_components_how_it_works';
-  info: {
-    displayName: 'How It Works';
-    description: '';
-  };
-  attributes: {
-    Tab: Attribute.String & Attribute.DefaultTo<'SaaS'>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Effortless Scaling with SaaS'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'This is placeholder content. Leverage the power of CodeRabbit\u2019s cloud-based solution with SaaS. Access real-time code reviews, automated suggestions, and seamless integration with your development pipeline\u2014all without the need to manage your own infrastructure. '>;
-    Image: Attribute.Media<'images'>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    Cta: Attribute.Component<'components.link'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface ComponentsHoppyQuote extends Schema.Component {
-  collectionName: 'components_components_hoppy_quote';
-  info: {
-    displayName: 'Quotes';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Icon: Attribute.Media<'images'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Refactoring.'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'No one will understand this code, not even Future Me.'>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface ComponentsHoppyHero extends Schema.Component {
-  collectionName: 'components_components_hoppy_hero';
-  info: {
-    displayName: 'Hero Section';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
-    Image: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-  };
-}
-
-export interface ComponentsHoppyCreative extends Schema.Component {
-  collectionName: 'components_components_hoppy_creative';
-  info: {
-    displayName: 'Hoppy Creative';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
-    CreativeImage: Attribute.Media<'images'>;
-    UserImage: Attribute.Media<'images'>;
-  };
-}
-
-export interface ComponentsHoppyComic extends Schema.Component {
-  collectionName: 'components_components_hoppy_comic';
-  info: {
-    displayName: 'Hoppy Comic';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.DefaultTo<'Hoppy Comic'>;
-    brief: Attribute.Text &
-      Attribute.DefaultTo<'A fun and engaging comic strip featuring Hoppy, the AI sidekick.'>;
-    slug: Attribute.String & Attribute.DefaultTo<'/'>;
-    coverImage: Attribute.Media<'images'>;
-    Pdf: Attribute.Media<'files'>;
-    publishedAt: Attribute.Date;
-  };
-}
-
-export interface ComponentsHoppyBanner extends Schema.Component {
-  collectionName: 'components_components_hoppy_banner';
-  info: {
-    displayName: 'Hoppy Banner';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
-    Button: Attribute.Component<'components.link'>;
-    email: Attribute.Component<'components.banner-text-fields'>;
-    Image: Attribute.Media<'images'>;
-    ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
-  };
-}
-
-export interface ComponentsHeroCard extends Schema.Component {
-  collectionName: 'components_components_hero_cards';
-  info: {
-    displayName: 'Hero Card';
-    description: '';
-  };
-  attributes: {
-    Icon: Attribute.Media<'images'>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Reviews only the essential code'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Your data stays confidential and solely fine-tunes your reviews. You can opt out of data storage.'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsFormSideSection extends Schema.Component {
-  collectionName: 'components_components_form_side_sections';
-  info: {
-    displayName: 'Form Side Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    ListTitle: Attribute.String;
-    Bullets: Attribute.Component<'components.bullets', true>;
-  };
-}
-
-export interface ComponentsFeature extends Schema.Component {
-  collectionName: 'components_components_features';
-  info: {
-    displayName: 'Feature';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    ImageXL: Attribute.Media<'images'>;
-    ImageLG: Attribute.Media<'images'>;
-    ImageMD: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsFeatureCard extends Schema.Component {
-  collectionName: 'components_components_features-card';
-  info: {
-    displayName: 'Feature-card';
-    description: '';
-  };
-  attributes: {
-    Image: Attribute.Media<'images'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface ComponentsFaqItem extends Schema.Component {
-  collectionName: 'components_components_faq_items';
-  info: {
-    displayName: 'Faq Item';
-    description: '';
-  };
-  attributes: {
-    Question: Attribute.String;
-    Answer: Attribute.RichText;
-    Category: Attribute.String &
-      Attribute.DefaultTo<'Popular, Product, Security'>;
-  };
-}
-
-export interface ComponentsCustomFeature extends Schema.Component {
-  collectionName: 'components_components_custom_features';
-  info: {
-    displayName: 'Custom Feature';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    ImageXL: Attribute.Media<'images'>;
-    ImageLG: Attribute.Media<'images'>;
-    ImageMD: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-    CardType: Attribute.Enumeration<['medium', 'small', 'big']> &
-      Attribute.DefaultTo<'big'>;
-  };
-}
-
-export interface ComponentsContentWithImage extends Schema.Component {
-  collectionName: 'components_components_content_with_images';
-  info: {
-    displayName: 'Content with Image';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Image: Attribute.Media<'images'>;
-    Button: Attribute.Component<'components.link'>;
-    ImageDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ComponentsContactSuccess extends Schema.Component {
-  collectionName: 'components_components_contact_successes';
-  info: {
-    displayName: 'Contact Success';
-  };
-  attributes: {
-    Image: Attribute.Media<'images'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Hooray! '>;
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'Your message has been sent. We\u2019ll get back to you shortly.'>;
-    Button: Attribute.Component<'components.link'>;
-    SocialsTitle: Attribute.String &
-      Attribute.DefaultTo<'In the meantime, follow along:'>;
-    Socials: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface ComponentsCollapsible extends Schema.Component {
-  collectionName: 'components_components_collapsibles';
-  info: {
-    displayName: 'Collapsible';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Feature title'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    ImageXL: Attribute.Media<'images'>;
-    ImageLG: Attribute.Media<'images'>;
-    ImageMD: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-  };
-}
-
-export interface ComponentsCaseStudy extends Schema.Component {
-  collectionName: 'components_components_case_studies';
-  info: {
-    displayName: 'Case Study';
-  };
-  attributes: {
-    CustomerLight: Attribute.Media<'images'> & Attribute.Required;
-    CustomerDark: Attribute.Media<'images'> & Attribute.Required;
-    CoverLight: Attribute.Media<'images'> & Attribute.Required;
-    CoverDark: Attribute.Media<'images'> & Attribute.Required;
-    Title: Attribute.String & Attribute.Required;
-    Button: Attribute.Component<'components.link'> & Attribute.Required;
-  };
-}
-
-export interface ComponentsCapsule extends Schema.Component {
-  collectionName: 'components_components_capsule';
-  info: {
-    displayName: 'Capsule';
-    description: '';
-  };
-  attributes: {
-    Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
-    Url: Attribute.String & Attribute.DefaultTo<'/'>;
-    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsBullets extends Schema.Component {
-  collectionName: 'components_components_bullets';
-  info: {
-    displayName: 'Bullet';
-    description: '';
-  };
-  attributes: {
-    Text: Attribute.String &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
-    Description: Attribute.RichText;
-  };
-}
-
-export interface ComponentsBlogSlider extends Schema.Component {
-  collectionName: 'components_components_blog_sliders';
-  info: {
-    displayName: 'Blog Slider';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Category: Attribute.String;
-  };
-}
-
-export interface ComponentsBlogBanner extends Schema.Component {
-  collectionName: 'components_components_blog_banner';
-  info: {
-    displayName: 'Blog Banner';
-    description: '';
-  };
-  attributes: {
-    widgetNameFromHashnode: Attribute.String & Attribute.DefaultTo<''>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
-    Button: Attribute.Component<'components.link'>;
-    email: Attribute.Component<'components.banner-text-fields'>;
-    Image: Attribute.Media<'images'>;
-    ImagePositionLeft: Attribute.Boolean & Attribute.DefaultTo<true>;
-  };
-}
-
-export interface ComponentsBannerTextFields extends Schema.Component {
-  collectionName: 'components_components_banner_input_text_fields';
-  info: {
-    displayName: 'Input Text Field';
-    description: '';
-  };
-  attributes: {
-    Label: Attribute.String;
-    Placeholder: Attribute.String;
-    isRequired: Attribute.Boolean & Attribute.DefaultTo<true>;
-    isTextarea: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isWebsite: Attribute.Boolean & Attribute.DefaultTo<false>;
-    SuccessMessage: Attribute.Text &
-      Attribute.DefaultTo<'Thank you for signing up!'>;
-  };
-}
-
-export interface ComponentsAssetCard extends Schema.Component {
-  collectionName: 'components_components_asset_card';
-  info: {
-    displayName: 'asset-card';
-    description: '';
-  };
-  attributes: {
-    Image: Attribute.Media<'images'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    SvgIcon: Attribute.Media<'images'>;
-    PngIcon: Attribute.Media<'images'>;
-    isDarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isIcon: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ComponentsAnnouncment extends Schema.Component {
-  collectionName: 'components_components_announcment';
-  info: {
-    displayName: 'Announcment';
-    description: '';
-  };
-  attributes: {
-    Text: Attribute.String & Attribute.DefaultTo<'Logo'>;
-    isClosable: Attribute.Boolean & Attribute.DefaultTo<true>;
-    Button: Attribute.Component<'components.link'> & Attribute.Required;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -1589,6 +1589,53 @@ declare module '@strapi/types' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'components.trust-card': ComponentsTrustCard;
+      'components.testimonial': ComponentsTestimonial;
+      'components.socials': ComponentsSocials;
+      'components.security': ComponentsSecurity;
+      'components.promo-card': ComponentsPromoCard;
+      'components.privacy-policy-questions': ComponentsPrivacyPolicyQuestions;
+      'components.plan': ComponentsPlan;
+      'components.pill': ComponentsPill;
+      'components.notification': ComponentsNotification;
+      'components.newsletter': ComponentsNewsletter;
+      'components.metric': ComponentsMetric;
+      'components.member': ComponentsMember;
+      'components.logo-text-pair': ComponentsLogoTextPair;
+      'components.links-column': ComponentsLinksColumn;
+      'components.link': ComponentsLink;
+      'components.link-menu': ComponentsLinkMenu;
+      'components.link-card': ComponentsLinkCard;
+      'components.lead-input-banner': ComponentsLeadInputBanner;
+      'components.lead-button-banner': ComponentsLeadButtonBanner;
+      'components.input-text-field': ComponentsInputTextField;
+      'components.input-select-field': ComponentsInputSelectField;
+      'components.input-checkbox-field': ComponentsInputCheckboxField;
+      'components.impact-slider': ComponentsImpactSlider;
+      'components.hyperlink': ComponentsHyperlink;
+      'components.how-it-works': ComponentsHowItWorks;
+      'components.hoppy-quote': ComponentsHoppyQuote;
+      'components.hoppy-hero': ComponentsHoppyHero;
+      'components.hoppy-creative': ComponentsHoppyCreative;
+      'components.hoppy-comic': ComponentsHoppyComic;
+      'components.hoppy-banner': ComponentsHoppyBanner;
+      'components.hero-card': ComponentsHeroCard;
+      'components.form-side-section': ComponentsFormSideSection;
+      'components.feature': ComponentsFeature;
+      'components.feature-card': ComponentsFeatureCard;
+      'components.faq-item': ComponentsFaqItem;
+      'components.custom-feature': ComponentsCustomFeature;
+      'components.content-with-image': ComponentsContentWithImage;
+      'components.contact-success': ComponentsContactSuccess;
+      'components.collapsible': ComponentsCollapsible;
+      'components.case-study': ComponentsCaseStudy;
+      'components.capsule': ComponentsCapsule;
+      'components.bullets': ComponentsBullets;
+      'components.blog-slider': ComponentsBlogSlider;
+      'components.blog-banner': ComponentsBlogBanner;
+      'components.banner-text-fields': ComponentsBannerTextFields;
+      'components.asset-card': ComponentsAssetCard;
+      'components.announcment': ComponentsAnnouncment;
       'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
       'layout.vs-feature-section': LayoutVsFeatureSection;
       'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
@@ -1639,53 +1686,6 @@ declare module '@strapi/types' {
       'layout.blog-banners': LayoutBlogBanners;
       'layout.architecture': LayoutArchitecture;
       'layout.alternated-content': LayoutAlternatedContent;
-      'components.trust-card': ComponentsTrustCard;
-      'components.testimonial': ComponentsTestimonial;
-      'components.socials': ComponentsSocials;
-      'components.security': ComponentsSecurity;
-      'components.promo-card': ComponentsPromoCard;
-      'components.privacy-policy-questions': ComponentsPrivacyPolicyQuestions;
-      'components.plan': ComponentsPlan;
-      'components.pill': ComponentsPill;
-      'components.notification': ComponentsNotification;
-      'components.newsletter': ComponentsNewsletter;
-      'components.metric': ComponentsMetric;
-      'components.member': ComponentsMember;
-      'components.logo-text-pair': ComponentsLogoTextPair;
-      'components.links-column': ComponentsLinksColumn;
-      'components.link': ComponentsLink;
-      'components.link-menu': ComponentsLinkMenu;
-      'components.link-card': ComponentsLinkCard;
-      'components.lead-input-banner': ComponentsLeadInputBanner;
-      'components.lead-button-banner': ComponentsLeadButtonBanner;
-      'components.input-text-field': ComponentsInputTextField;
-      'components.input-select-field': ComponentsInputSelectField;
-      'components.input-checkbox-field': ComponentsInputCheckboxField;
-      'components.impact-slider': ComponentsImpactSlider;
-      'components.hyperlink': ComponentsHyperlink;
-      'components.how-it-works': ComponentsHowItWorks;
-      'components.hoppy-quote': ComponentsHoppyQuote;
-      'components.hoppy-hero': ComponentsHoppyHero;
-      'components.hoppy-creative': ComponentsHoppyCreative;
-      'components.hoppy-comic': ComponentsHoppyComic;
-      'components.hoppy-banner': ComponentsHoppyBanner;
-      'components.hero-card': ComponentsHeroCard;
-      'components.form-side-section': ComponentsFormSideSection;
-      'components.feature': ComponentsFeature;
-      'components.feature-card': ComponentsFeatureCard;
-      'components.faq-item': ComponentsFaqItem;
-      'components.custom-feature': ComponentsCustomFeature;
-      'components.content-with-image': ComponentsContentWithImage;
-      'components.contact-success': ComponentsContactSuccess;
-      'components.collapsible': ComponentsCollapsible;
-      'components.case-study': ComponentsCaseStudy;
-      'components.capsule': ComponentsCapsule;
-      'components.bullets': ComponentsBullets;
-      'components.blog-slider': ComponentsBlogSlider;
-      'components.blog-banner': ComponentsBlogBanner;
-      'components.banner-text-fields': ComponentsBannerTextFields;
-      'components.asset-card': ComponentsAssetCard;
-      'components.announcment': ComponentsAnnouncment;
     }
   }
 }

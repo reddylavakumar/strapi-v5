@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "vs_code_extensions",
+  "collectionName": "visual-studio-code",
   "info": {
-    "singularName": "vs-code-extension",
-    "pluralName": "vs-code-extensions",
-    "displayName": "Vs Code Extension",
+    "singularName": "visual-studio-code",
+    "pluralName": "visual-studio-codes",
+    "displayName": "Visual Studio Code",
     "description": ""
   },
   "options": {
@@ -16,6 +16,14 @@
     }
   },
   "attributes": {
+    "slug": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "Hero": {
       "type": "component",
       "repeatable": false,

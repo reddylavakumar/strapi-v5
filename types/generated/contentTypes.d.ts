@@ -4052,12 +4052,12 @@ export interface ApiVdpVdp extends Schema.SingleType {
   };
 }
 
-export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
-  collectionName: 'vs_code_extensions';
+export interface ApiVisualStudioCodeVisualStudioCode extends Schema.SingleType {
+  collectionName: 'visual-studio-code';
   info: {
-    singularName: 'vs-code-extension';
-    pluralName: 'vs-code-extensions';
-    displayName: 'Vs Code Extension';
+    singularName: 'visual-studio-code';
+    pluralName: 'visual-studio-codes';
+    displayName: 'Visual Studio Code';
     description: '';
   };
   options: {
@@ -4069,6 +4069,12 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
     };
   };
   attributes: {
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Hero: Attribute.Component<'layout.vs-code-hero-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -4171,21 +4177,21 @@ export interface ApiVsCodeExtensionVsCodeExtension extends Schema.SingleType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::vs-code-extension.vs-code-extension',
+      'api::visual-studio-code.visual-studio-code',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::vs-code-extension.vs-code-extension',
+      'api::visual-studio-code.visual-studio-code',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::vs-code-extension.vs-code-extension',
+      'api::visual-studio-code.visual-studio-code',
       'oneToMany',
-      'api::vs-code-extension.vs-code-extension'
+      'api::visual-studio-code.visual-studio-code'
     >;
     locale: Attribute.String;
   };
@@ -4458,7 +4464,7 @@ declare module '@strapi/types' {
       'api::trust-center-gdpr.trust-center-gdpr': ApiTrustCenterGdprTrustCenterGdpr;
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
       'api::vdp.vdp': ApiVdpVdp;
-      'api::vs-code-extension.vs-code-extension': ApiVsCodeExtensionVsCodeExtension;
+      'api::visual-studio-code.visual-studio-code': ApiVisualStudioCodeVisualStudioCode;
       'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
       'api::windsurf.windsurf': ApiWindsurfWindsurf;
     }
