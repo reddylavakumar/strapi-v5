@@ -1,0 +1,140 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepage",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Home Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Variant": {
+      "type": "string",
+      "repeatable": false,
+      "default": "a",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.metrics-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Customers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.customers-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.features-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Trust": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.trust-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "GetStarted": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.get-started",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.testimonials",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "HowItWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.how-it-works-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Announcment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.announcment",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
