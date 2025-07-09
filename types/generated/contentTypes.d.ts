@@ -1377,13 +1377,25 @@ export interface ApiBrandGuidelineBrandGuideline extends Schema.SingleType {
           localized: true;
         };
       }>;
+    TitleSection: Attribute.Component<'components.blog-slider'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     AssetLayout: Attribute.Component<'layout.brand-guideline-asset-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Contact: Attribute.Component<'layout.contact-us-section'> &
+    ColorPalette: Attribute.Component<'components.color-palette'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LogoLayout: Attribute.Component<'components.logo-guideline'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

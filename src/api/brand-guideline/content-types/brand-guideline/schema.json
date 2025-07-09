@@ -26,6 +26,16 @@
         }
       }
     },
+    "TitleSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.blog-slider",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "AssetLayout": {
       "type": "component",
       "repeatable": false,
@@ -36,10 +46,20 @@
         }
       }
     },
-    "Contact": {
+    "ColorPalette": {
       "type": "component",
       "repeatable": false,
-      "component": "layout.contact-us-section",
+      "component": "components.color-palette",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "LogoLayout": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.logo-guideline",
       "pluginOptions": {
         "i18n": {
           "localized": true

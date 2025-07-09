@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_color-palette",
+  "info": {
+    "displayName": "Color Palette Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "AssetCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.color-palette-card"
+    },
+    "Title": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Lorem."
+    }
+  }
+}

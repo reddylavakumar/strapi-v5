@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_logo_guideline",
+  "info": {
+    "displayName": "logo_guideline",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Lorem "
+    },
+    "LogoLayoutCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.logo-asset-card"
+    }
+  }
+}
