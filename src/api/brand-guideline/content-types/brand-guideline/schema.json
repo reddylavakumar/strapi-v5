@@ -26,10 +26,40 @@
         }
       }
     },
+    "TitleSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.blog-slider",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "AssetLayout": {
       "type": "component",
       "repeatable": false,
       "component": "layout.brand-guideline-asset-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "ColorPalette": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.color-palette",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "LogoLayout": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.logo-guideline",
       "pluginOptions": {
         "i18n": {
           "localized": true

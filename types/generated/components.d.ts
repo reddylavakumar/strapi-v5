@@ -1055,6 +1055,35 @@ export interface ComponentsLogoTextPair extends Schema.Component {
   };
 }
 
+export interface ComponentsLogoGuideline extends Schema.Component {
+  collectionName: 'components_components_logo_guideline';
+  info: {
+    displayName: 'logo_guideline';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Description: Attribute.Text & Attribute.DefaultTo<'Lorem '>;
+    LogoLayoutCard: Attribute.Component<'components.logo-asset-card', true>;
+  };
+}
+
+export interface ComponentsLogoAssetCard extends Schema.Component {
+  collectionName: 'components_components_logo_asset_card';
+  info: {
+    displayName: 'Logo Asset Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Description: Attribute.Text & Attribute.DefaultTo<'Lorem '>;
+    Image: Attribute.Media<'images'>;
+    Image1: Attribute.Media<'images'>;
+    Image2: Attribute.Media<'images'>;
+    Image3: Attribute.Media<'images'>;
+  };
+}
+
 export interface ComponentsLinksColumn extends Schema.Component {
   collectionName: 'components_components_links_columns';
   info: {
@@ -1444,6 +1473,37 @@ export interface ComponentsContactSuccess extends Schema.Component {
   };
 }
 
+export interface ComponentsColorPalette extends Schema.Component {
+  collectionName: 'components_color-palette';
+  info: {
+    displayName: 'Color Palette Section';
+    description: '';
+  };
+  attributes: {
+    AssetCard: Attribute.Component<'components.color-palette-card', true>;
+    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Description: Attribute.Text & Attribute.DefaultTo<'Lorem.'>;
+  };
+}
+
+export interface ComponentsColorPaletteCard extends Schema.Component {
+  collectionName: 'components_color-palette-card';
+  info: {
+    displayName: 'asset-card';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Color: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    ColorName: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Hex: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Rgb: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    Cmyk: Attribute.String & Attribute.DefaultTo<'Logo'>;
+    isDarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ComponentsCollapsible extends Schema.Component {
   collectionName: 'components_components_collapsibles';
   info: {
@@ -1652,6 +1712,8 @@ declare module '@strapi/types' {
       'components.metric': ComponentsMetric;
       'components.member': ComponentsMember;
       'components.logo-text-pair': ComponentsLogoTextPair;
+      'components.logo-guideline': ComponentsLogoGuideline;
+      'components.logo-asset-card': ComponentsLogoAssetCard;
       'components.links-column': ComponentsLinksColumn;
       'components.link': ComponentsLink;
       'components.link-menu': ComponentsLinkMenu;
@@ -1677,6 +1739,8 @@ declare module '@strapi/types' {
       'components.custom-feature': ComponentsCustomFeature;
       'components.content-with-image': ComponentsContentWithImage;
       'components.contact-success': ComponentsContactSuccess;
+      'components.color-palette': ComponentsColorPalette;
+      'components.color-palette-card': ComponentsColorPaletteCard;
       'components.collapsible': ComponentsCollapsible;
       'components.case-study': ComponentsCaseStudy;
       'components.capsule': ComponentsCapsule;

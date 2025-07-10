@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_color-palette-card",
+  "info": {
+    "displayName": "asset-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Title": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "Color": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "ColorName": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "Hex": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "Rgb": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "Cmyk": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "isDarkMode": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

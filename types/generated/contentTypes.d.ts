@@ -1377,7 +1377,25 @@ export interface ApiBrandGuidelineBrandGuideline extends Schema.SingleType {
           localized: true;
         };
       }>;
+    TitleSection: Attribute.Component<'components.blog-slider'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     AssetLayout: Attribute.Component<'layout.brand-guideline-asset-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ColorPalette: Attribute.Component<'components.color-palette'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LogoLayout: Attribute.Component<'components.logo-guideline'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2426,151 +2444,6 @@ export interface ApiGhEventPageGhEventPage extends Schema.SingleType {
   };
 }
 
-export interface ApiGithubCopilotGithubCopilot extends Schema.SingleType {
-  collectionName: 'github-copilot';
-  info: {
-    singularName: 'github-copilot';
-    pluralName: 'github-copilots';
-    displayName: 'Github Copilot';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    slug: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Hero: Attribute.Component<'layout.vs-code-hero-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stats: Attribute.Component<'layout.metrics-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Customers: Attribute.Component<'layout.customers-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    SectionTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Extension Features'>;
-    SectionDescription: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Extension Features'>;
-    Features: Attribute.Component<'layout.features-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    BenefitsLayout: Attribute.Component<'layout.vs-feature-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Architecture: Attribute.Component<'layout.architecture'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Trust: Attribute.Component<'layout.trust-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    OpenSourceProject: Attribute.Component<'layout.get-started'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Plans: Attribute.Component<'layout.plans-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Faqs: Attribute.Component<'layout.faq-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    GetStarted: Attribute.Component<'layout.get-started'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Contact: Attribute.Component<'layout.contact-us-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::github-copilot.github-copilot',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::github-copilot.github-copilot',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::github-copilot.github-copilot',
-      'oneToMany',
-      'api::github-copilot.github-copilot'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -2744,214 +2617,6 @@ export interface ApiHelpDeskHelpDesk extends Schema.SingleType {
       'api::help-desk.help-desk',
       'oneToMany',
       'api::help-desk.help-desk'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiHomePageHomePage extends Schema.SingleType {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'Home page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Hero: Attribute.Component<'layout.hero'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stats: Attribute.Component<'layout.metrics-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Customers: Attribute.Component<'layout.customers-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Features: Attribute.Component<'layout.features-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Trust: Attribute.Component<'layout.trust-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    GetStarted: Attribute.Component<'layout.get-started'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Testimonials: Attribute.Component<'layout.testimonials'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Announcment: Attribute.Component<'components.announcment'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Contact: Attribute.Component<'layout.contact-us-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToMany',
-      'api::home-page.home-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiHomePage2HomePage2 extends Schema.SingleType {
-  collectionName: 'home_page_2s';
-  info: {
-    singularName: 'home-page-2';
-    pluralName: 'home-page-2s';
-    displayName: 'Home page 2';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Hero: Attribute.Component<'layout.hero'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stats: Attribute.Component<'layout.metrics-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Customers: Attribute.Component<'layout.customers-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Features: Attribute.Component<'layout.features-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Trust: Attribute.Component<'layout.trust-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    GetStarted: Attribute.Component<'layout.get-started'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Testimonials: Attribute.Component<'layout.testimonials'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    HowItWorks: Attribute.Component<'layout.how-it-works-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Contact: Attribute.Component<'layout.contact-us-section'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page-2.home-page-2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page-2.home-page-2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::home-page-2.home-page-2',
-      'oneToMany',
-      'api::home-page-2.home-page-2'
     >;
     locale: Attribute.String;
   };
@@ -4558,12 +4223,9 @@ declare module '@strapi/types' {
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
-      'api::github-copilot.github-copilot': ApiGithubCopilotGithubCopilot;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::help-desk.help-desk': ApiHelpDeskHelpDesk;
-      'api::home-page.home-page': ApiHomePageHomePage;
-      'api::home-page-2.home-page-2': ApiHomePage2HomePage2;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::hoppy-corner.hoppy-corner': ApiHoppyCornerHoppyCorner;
       'api::hoppyversion.hoppyversion': ApiHoppyversionHoppyversion;
