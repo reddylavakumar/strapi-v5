@@ -66,6 +66,16 @@
         }
       }
     },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
 
     "Seo": {
       "type": "component",
