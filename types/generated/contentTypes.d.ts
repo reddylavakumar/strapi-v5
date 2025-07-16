@@ -1610,6 +1610,12 @@ export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
           localized: true;
         };
       }>;
+    subtitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Stats: Attribute.Component<'components.metric', true> &
       Attribute.SetPluginOptions<{
         i18n: {
