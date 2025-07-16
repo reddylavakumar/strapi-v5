@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_components_info_graphics",
+  "info": {
+    "displayName": "Info Graphics",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Description": {
+      "type": "string",
+      "default": "Repositories in review"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_case_conclusion_card",
+  "info": {
+    "displayName": "Case Conclusion Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Before CodeRabbit "
+    },
+    "Bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    }
+  }
+}

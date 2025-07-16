@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_components_case_section3",
+  "info": {
+    "displayName": "Section 3",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SectionName": {
+      "type": "string",
+      "default": "Section 3"
+    },
+    "Title": {
+      "type": "string",
+      "default": "Ways to Work Together"
+    },
+    "SubHeading": {
+      "type": "string",
+      "default": "Ways to Work Together"
+    },
+    "Description": {
+      "type": "richtext",
+      "default": "lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

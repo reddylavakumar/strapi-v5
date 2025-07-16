@@ -871,6 +871,211 @@ export interface LayoutAlternatedContent extends Schema.Component {
   };
 }
 
+export interface CasestudyTestimonial extends Schema.Component {
+  collectionName: 'components_components_case_testimonial';
+  info: {
+    displayName: 'Testimonial Card';
+    description: '';
+  };
+  attributes: {
+    testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyStats extends Schema.Component {
+  collectionName: 'components_components_case_studies_stats';
+  info: {
+    singularName: 'case-study-stat';
+    pluralName: 'case-studies-stats';
+    displayName: 'Stats';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Stats: Attribute.Component<'components.metric', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface CasestudySection4 extends Schema.Component {
+  collectionName: 'components_components_case_section4';
+  info: {
+    displayName: 'Section 4';
+    description: '';
+  };
+  attributes: {
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection3 extends Schema.Component {
+  collectionName: 'components_components_case_section3';
+  info: {
+    displayName: 'Section 3';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface CasestudySection2 extends Schema.Component {
+  collectionName: 'components_components_case_section2';
+  info: {
+    displayName: 'Section 2';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Paragraph: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection1 extends Schema.Component {
+  collectionName: 'components_components_case_section1';
+  info: {
+    displayName: 'Section 1';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Image: Attribute.Media<'images'>;
+    NameAndPosition: Attribute.String &
+      Attribute.DefaultTo<'Before CodeRabbit '>;
+    Testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyConclusion extends Schema.Component {
+  collectionName: 'components_components_case_conculision';
+  info: {
+    singularName: 'case-conclusion';
+    pluralName: 'case-conclusions';
+    displayName: 'Conclusion';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
+      Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+  };
+}
+
+export interface CasestudyCaseHome extends Schema.Component {
+  collectionName: 'components_components_case_homes';
+  info: {
+    displayName: 'Case Home';
+    description: 'Home section for case studies';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    ClientName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum'>;
+    ClientLogo: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ClientLogoDark: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CaseTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
+    CaseDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImageSM: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface CasestudyCaseConclusionCard extends Schema.Component {
+  collectionName: 'components_components_case_conclusion_card';
+  info: {
+    displayName: 'Case Conclusion Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+  };
+}
+
 export interface ComponentsTrustCard extends Schema.Component {
   collectionName: 'components_components_trust_cards';
   info: {
@@ -1204,6 +1409,19 @@ export interface ComponentsInputCheckboxField extends Schema.Component {
   };
 }
 
+export interface ComponentsInfoGraphics extends Schema.Component {
+  collectionName: 'components_components_info_graphics';
+  info: {
+    displayName: 'Info Graphics';
+    description: '';
+  };
+  attributes: {
+    Icon: Attribute.Media<'images'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Repositories in review'>;
+  };
+}
+
 export interface ComponentsImpactSlider extends Schema.Component {
   collectionName: 'components_components_impact_sliders';
   info: {
@@ -1521,6 +1739,24 @@ export interface ComponentsCollapsible extends Schema.Component {
   };
 }
 
+export interface ComponentsCaseSummaryCard extends Schema.Component {
+  collectionName: 'components_components_case_internal_summary_card';
+  info: {
+    displayName: 'Case Summary Card';
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    Logo: Attribute.Media<'images'>;
+    LogoDark: Attribute.Media<'images'>;
+    Location: Attribute.String &
+      Attribute.DefaultTo<'San Fransisco, United States'>;
+    WebAddress: Attribute.String &
+      Attribute.DefaultTo<'https://www.example.com'>;
+    Pointers: Attribute.Component<'components.case-overview', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
 export interface ComponentsCaseStudy extends Schema.Component {
   collectionName: 'components_components_case_studies';
   info: {
@@ -1533,6 +1769,80 @@ export interface ComponentsCaseStudy extends Schema.Component {
     CoverDark: Attribute.Media<'images'> & Attribute.Required;
     Title: Attribute.String & Attribute.Required;
     Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
+export interface ComponentsCaseStudyFeatured extends Schema.Component {
+  collectionName: 'components_components_featured_case_study';
+  info: {
+    displayName: 'Featured Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Featured '>;
+  };
+}
+
+export interface ComponentsCaseOverview extends Schema.Component {
+  collectionName: 'components_components_case_overview';
+  info: {
+    displayName: 'Case Overview';
+    description: '';
+  };
+  attributes: {
+    Heading: Attribute.String & Attribute.DefaultTo<'Challenge'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Some challenge that company has been facing for a very long time and it has been bothering.'>;
+  };
+}
+
+export interface ComponentsCaseInternalHero extends Schema.Component {
+  collectionName: 'components_components_case_internal_hero';
+  info: {
+    displayName: 'Hero Section';
+  };
+  attributes: {
+    ClientName: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
+    ClientLogo: Attribute.Media<'images'>;
+    ClientLogoDark: Attribute.Media<'images'>;
+    CaseTitle: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
+    CaseDescription: Attribute.String &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
+    ImageXL: Attribute.Media<'images'>;
+    ImageLG: Attribute.Media<'images'>;
+    ImageMD: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsCaseContactCard extends Schema.Component {
+  collectionName: 'components_components_casestudy_contact_card';
+  info: {
+    displayName: 'Contact Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    name: Attribute.Component<'components.banner-text-fields'>;
+    Button: Attribute.Component<'components.link'>;
+    email: Attribute.Component<'components.banner-text-fields'>;
+    Hyperlink: Attribute.Component<'components.hyperlink'>;
+  };
+}
+
+export interface ComponentsCaseCategory extends Schema.Component {
+  collectionName: 'components_components_casestudy_categories';
+  info: {
+    displayName: 'Category';
+    description: '';
+  };
+  attributes: {
+    categoryName: Attribute.String & Attribute.DefaultTo<'Category Name'>;
+    Description: Attribute.String & Attribute.DefaultTo<'description'>;
   };
 }
 
@@ -1699,6 +2009,15 @@ declare module '@strapi/types' {
       'layout.blog-banners': LayoutBlogBanners;
       'layout.architecture': LayoutArchitecture;
       'layout.alternated-content': LayoutAlternatedContent;
+      'casestudy.testimonial': CasestudyTestimonial;
+      'casestudy.stats': CasestudyStats;
+      'casestudy.section-4': CasestudySection4;
+      'casestudy.section-3': CasestudySection3;
+      'casestudy.section-2': CasestudySection2;
+      'casestudy.section-1': CasestudySection1;
+      'casestudy.conclusion': CasestudyConclusion;
+      'casestudy.case-home': CasestudyCaseHome;
+      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
       'components.trust-card': ComponentsTrustCard;
       'components.testimonial': ComponentsTestimonial;
       'components.socials': ComponentsSocials;
@@ -1723,6 +2042,7 @@ declare module '@strapi/types' {
       'components.input-text-field': ComponentsInputTextField;
       'components.input-select-field': ComponentsInputSelectField;
       'components.input-checkbox-field': ComponentsInputCheckboxField;
+      'components.info-graphics': ComponentsInfoGraphics;
       'components.impact-slider': ComponentsImpactSlider;
       'components.hyperlink': ComponentsHyperlink;
       'components.how-it-works': ComponentsHowItWorks;
@@ -1742,7 +2062,13 @@ declare module '@strapi/types' {
       'components.color-palette': ComponentsColorPalette;
       'components.color-palette-card': ComponentsColorPaletteCard;
       'components.collapsible': ComponentsCollapsible;
+      'components.case-summary-card': ComponentsCaseSummaryCard;
       'components.case-study': ComponentsCaseStudy;
+      'components.case-study-featured': ComponentsCaseStudyFeatured;
+      'components.case-overview': ComponentsCaseOverview;
+      'components.case-internal-hero': ComponentsCaseInternalHero;
+      'components.case-contact-card': ComponentsCaseContactCard;
+      'components.case-category': ComponentsCaseCategory;
       'components.capsule': ComponentsCapsule;
       'components.bullets': ComponentsBullets;
       'components.blog-slider': ComponentsBlogSlider;

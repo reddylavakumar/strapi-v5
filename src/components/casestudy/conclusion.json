@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "components_components_case_conculision",
+  "info": {
+    "singularName": "case-conclusion",
+    "pluralName": "case-conclusions",
+    "displayName": "Conclusion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "SectionName": {
+      "type": "string",
+      "default": "Section 1 "
+    },
+    "Title": {
+      "type": "string",
+      "default": "Ways to Work Together"
+    },
+    "Description": {
+      "type": "string",
+      "default": "Here’s how teams can close the gap:"
+    },
+    "Conclusion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "casestudy.case-conclusion-card",
+      "max": 3
+    }
+  }
+}

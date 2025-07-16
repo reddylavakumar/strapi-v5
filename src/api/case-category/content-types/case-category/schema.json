@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_categories",
+  "info": {
+    "singularName": "case-category",
+    "pluralName": "case-categories",
+    "displayName": "Case Categories",
+    "description": "Categories for case studies"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

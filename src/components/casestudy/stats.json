@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "components_components_case_studies_stats",
+  "info": {
+    "singularName": "case-study-stat",
+    "pluralName": "case-studies-stats",
+    "displayName": "Stats",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.metric",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case",
+  "info": {
+    "singularName": "case",
+    "pluralName": "cases",
+    "displayName": "Case Studies",
+    "description": "Collection of case studies"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "type": "uid",
+      "targetField": "CaseHome.CaseTitle"
+    },
+    "CaseHome": {
+      "type": "component",
+      "component": "casestudy.case-home",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Features": {
+      "type": "component",
+      "component": "components.info-graphics",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "CaseSummary": {
+      "type": "component",
+      "component": "components.case-summary-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "ContactBanner": {
+      "type": "component",
+      "component": "components.case-contact-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "Sections": {
+      "type": "dynamiczone",
+      "components": [
+        "casestudy.stats",
+        "casestudy.conclusion",
+        "casestudy.section-1",
+        "casestudy.section-2",
+        "casestudy.section-3"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::case-category.case-category"
+    }
+  }
+}

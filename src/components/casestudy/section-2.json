@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_case_section2",
+  "info": {
+    "displayName": "Section 2",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SectionName": {
+      "type": "string",
+      "default": "Section 2 "
+    },
+    "Title": {
+      "type": "string",
+      "default": "Before CodeRabbit "
+    },
+    "Description": {
+      "type": "string",
+      "default": "lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+    },
+    "Bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    },
+    "Paragraph": {
+      "type": "richtext",
+      "default": "lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+    }
+  }
+}

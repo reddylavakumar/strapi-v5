@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_components_casestudy_contact_card",
+  "info": {
+    "displayName": "Contact Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Cut code review time & bugs by 50%"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Most installed AI app on GitHub and GitLab"
+    },
+    "name": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "Hyperlink": {
+      "type": "component",
+      "component": "components.hyperlink"
+    }
+  }
+}

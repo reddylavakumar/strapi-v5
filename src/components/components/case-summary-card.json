@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_components_case_internal_summary_card",
+  "info": {
+    "displayName": "Case Summary Card"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "default": "Lorem ipsum"
+    },
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "LogoDark": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Location": {
+      "type": "string",
+      "default": "San Fransisco, United States"
+    },
+    "WebAddress": {
+      "type": "string",
+      "default": "https://www.example.com"
+    },
+    "Pointers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.case-overview"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}
