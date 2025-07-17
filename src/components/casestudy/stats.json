@@ -25,6 +25,15 @@
           "localized": true
         }
       }
+    },
+    "Breif": {
+      "type": "richtext",
+      "default": "lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
