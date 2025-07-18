@@ -1557,12 +1557,12 @@ export interface ApiCaseCategoryCaseCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::case-category.case-category', 'name'> &
-      Attribute.Required &
+    slug: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
+        targetField: 'CaseHome.CaseTitle';
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

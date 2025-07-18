@@ -1,5 +1,88 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SharedSlider extends Schema.Component {
+  collectionName: 'components_shared_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'address-book';
+    description: '';
+  };
+  attributes: {
+    files: Attribute.Media<'images', true>;
+  };
+}
+
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    canonical: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
+    keywords: Attribute.String &
+      Attribute.DefaultTo<'coderabbit, ai, code, git, gitlab, github'>;
+    og_url: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
+    og_title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    og_description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    og_sitename: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    og_locale: Attribute.String & Attribute.DefaultTo<'en_US'>;
+    og_type: Attribute.String & Attribute.DefaultTo<'website'>;
+    og_image: Attribute.Media<'images'>;
+    twitter_card: Attribute.String & Attribute.DefaultTo<'summary_large_image'>;
+    twitter_title: Attribute.String &
+      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
+    twitter_description: Attribute.Text &
+      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
+    twitter_image: Attribute.Media<'images'>;
+    twitter_site: Attribute.String;
+    twitter_creator: Attribute.String;
+  };
+}
+
+export interface SharedRichText extends Schema.Component {
+  collectionName: 'components_shared_rich_texts';
+  info: {
+    displayName: 'Rich text';
+    icon: 'align-justify';
+    description: '';
+  };
+  attributes: {
+    body: Attribute.RichText;
+  };
+}
+
+export interface SharedQuote extends Schema.Component {
+  collectionName: 'components_shared_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'indent';
+  };
+  attributes: {
+    title: Attribute.String;
+    body: Attribute.Text;
+  };
+}
+
+export interface SharedMedia extends Schema.Component {
+  collectionName: 'components_shared_media';
+  info: {
+    displayName: 'Media';
+    icon: 'file-video';
+  };
+  attributes: {
+    file: Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
 export interface LayoutWhitepaperFormSection extends Schema.Component {
   collectionName: 'components_layout_whitepaper_form_sections';
   info: {
@@ -785,301 +868,6 @@ export interface LayoutAlternatedContent extends Schema.Component {
       'components.content-with-image',
       true
     >;
-  };
-}
-
-export interface SharedSlider extends Schema.Component {
-  collectionName: 'components_shared_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
-  };
-  attributes: {
-    files: Attribute.Media<'images', true>;
-  };
-}
-
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_seo_seos';
-  info: {
-    displayName: 'seo';
-    icon: 'search';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    description: Attribute.Text &
-      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
-    canonical: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
-    keywords: Attribute.String &
-      Attribute.DefaultTo<'coderabbit, ai, code, git, gitlab, github'>;
-    og_url: Attribute.String & Attribute.DefaultTo<'https://coderabbit.ai/'>;
-    og_title: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    og_description: Attribute.Text &
-      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
-    og_sitename: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    og_locale: Attribute.String & Attribute.DefaultTo<'en_US'>;
-    og_type: Attribute.String & Attribute.DefaultTo<'website'>;
-    og_image: Attribute.Media<'images'>;
-    twitter_card: Attribute.String & Attribute.DefaultTo<'summary_large_image'>;
-    twitter_title: Attribute.String &
-      Attribute.DefaultTo<'AI Code Reviews | CodeRabbit | Try for Free'>;
-    twitter_description: Attribute.Text &
-      Attribute.DefaultTo<'AI-first pull request reviewer with context-aware feedback, line-by-line code suggestions, and real-time chat.'>;
-    twitter_image: Attribute.Media<'images'>;
-    twitter_site: Attribute.String;
-    twitter_creator: Attribute.String;
-  };
-}
-
-export interface SharedRichText extends Schema.Component {
-  collectionName: 'components_shared_rich_texts';
-  info: {
-    displayName: 'Rich text';
-    icon: 'align-justify';
-    description: '';
-  };
-  attributes: {
-    body: Attribute.RichText;
-  };
-}
-
-export interface SharedQuote extends Schema.Component {
-  collectionName: 'components_shared_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'indent';
-  };
-  attributes: {
-    title: Attribute.String;
-    body: Attribute.Text;
-  };
-}
-
-export interface SharedMedia extends Schema.Component {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    file: Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
-export interface CasestudyTestimonial extends Schema.Component {
-  collectionName: 'components_components_case_testimonial';
-  info: {
-    displayName: 'Testimonial Card';
-    description: '';
-  };
-  attributes: {
-    testimonial: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudyStats extends Schema.Component {
-  collectionName: 'components_components_case_studies_stats';
-  info: {
-    singularName: 'case-study-stat';
-    pluralName: 'case-studies-stats';
-    displayName: 'Stats';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Stats: Attribute.Component<'components.metric', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Brief: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection4 extends Schema.Component {
-  collectionName: 'components_components_case_section4';
-  info: {
-    displayName: 'Section 4';
-    description: '';
-  };
-  attributes: {
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection3 extends Schema.Component {
-  collectionName: 'components_components_case_section3';
-  info: {
-    displayName: 'Section 3';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface CasestudySection2 extends Schema.Component {
-  collectionName: 'components_components_case_section2';
-  info: {
-    displayName: 'Section 2';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    Paragraph: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection1 extends Schema.Component {
-  collectionName: 'components_components_case_section1';
-  info: {
-    displayName: 'Section 1';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
-    Image: Attribute.Media<'images'>;
-    NameAndPosition: Attribute.String &
-      Attribute.DefaultTo<'Before CodeRabbit '>;
-    Testimonial: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudyConclusion extends Schema.Component {
-  collectionName: 'components_components_case_conculision';
-  info: {
-    singularName: 'case-conclusion';
-    pluralName: 'case-conclusions';
-    displayName: 'Conclusion';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
-    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
-      Attribute.SetMinMax<
-        {
-          max: 3;
-        },
-        number
-      >;
-  };
-}
-
-export interface CasestudyCaseHome extends Schema.Component {
-  collectionName: 'components_components_case_homes';
-  info: {
-    displayName: 'Case Home';
-    description: 'Home section for case studies';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    ClientName: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum'>;
-    ClientLogo: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ClientLogoDark: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    CaseTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
-    CaseDescription: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
-    Image: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImageSM: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface CasestudyCaseConclusionCard extends Schema.Component {
-  collectionName: 'components_components_case_conclusion_card';
-  info: {
-    displayName: 'Case Conclusion Card';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
-    Bullets: Attribute.Component<'components.bullets', true>;
   };
 }
 
@@ -1958,9 +1746,226 @@ export interface ComponentsAnnouncment extends Schema.Component {
   };
 }
 
+export interface CasestudyTestimonial extends Schema.Component {
+  collectionName: 'components_components_case_testimonial';
+  info: {
+    displayName: 'Testimonial Card';
+    description: '';
+  };
+  attributes: {
+    testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyStats extends Schema.Component {
+  collectionName: 'components_components_case_studies_stats';
+  info: {
+    singularName: 'case-study-stat';
+    pluralName: 'case-studies-stats';
+    displayName: 'Stats';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Stats: Attribute.Component<'components.metric', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Brief: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection4 extends Schema.Component {
+  collectionName: 'components_components_case_section4';
+  info: {
+    displayName: 'Section 4';
+    description: '';
+  };
+  attributes: {
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection3 extends Schema.Component {
+  collectionName: 'components_components_case_section3';
+  info: {
+    displayName: 'Section 3';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface CasestudySection2 extends Schema.Component {
+  collectionName: 'components_components_case_section2';
+  info: {
+    displayName: 'Section 2';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Paragraph: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection1 extends Schema.Component {
+  collectionName: 'components_components_case_section1';
+  info: {
+    displayName: 'Section 1';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Image: Attribute.Media<'images'>;
+    NameAndPosition: Attribute.String &
+      Attribute.DefaultTo<'Before CodeRabbit '>;
+    Testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyConclusion extends Schema.Component {
+  collectionName: 'components_components_case_conculision';
+  info: {
+    singularName: 'case-conclusion';
+    pluralName: 'case-conclusions';
+    displayName: 'Conclusion';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
+      Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+  };
+}
+
+export interface CasestudyCaseHome extends Schema.Component {
+  collectionName: 'components_components_case_homes';
+  info: {
+    displayName: 'Case Home';
+    description: 'Home section for case studies';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    ClientName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum'>;
+    ClientLogo: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ClientLogoDark: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CaseTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
+    CaseDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImageSM: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface CasestudyCaseConclusionCard extends Schema.Component {
+  collectionName: 'components_components_case_conclusion_card';
+  info: {
+    displayName: 'Case Conclusion Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'shared.slider': SharedSlider;
+      'shared.seo': SharedSeo;
+      'shared.rich-text': SharedRichText;
+      'shared.quote': SharedQuote;
+      'shared.media': SharedMedia;
       'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
       'layout.vs-feature-section': LayoutVsFeatureSection;
       'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
@@ -2011,20 +2016,6 @@ declare module '@strapi/types' {
       'layout.blog-banners': LayoutBlogBanners;
       'layout.architecture': LayoutArchitecture;
       'layout.alternated-content': LayoutAlternatedContent;
-      'shared.slider': SharedSlider;
-      'shared.seo': SharedSeo;
-      'shared.rich-text': SharedRichText;
-      'shared.quote': SharedQuote;
-      'shared.media': SharedMedia;
-      'casestudy.testimonial': CasestudyTestimonial;
-      'casestudy.stats': CasestudyStats;
-      'casestudy.section-4': CasestudySection4;
-      'casestudy.section-3': CasestudySection3;
-      'casestudy.section-2': CasestudySection2;
-      'casestudy.section-1': CasestudySection1;
-      'casestudy.conclusion': CasestudyConclusion;
-      'casestudy.case-home': CasestudyCaseHome;
-      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
       'components.trust-card': ComponentsTrustCard;
       'components.testimonial': ComponentsTestimonial;
       'components.socials': ComponentsSocials;
@@ -2083,6 +2074,15 @@ declare module '@strapi/types' {
       'components.banner-text-fields': ComponentsBannerTextFields;
       'components.asset-card': ComponentsAssetCard;
       'components.announcment': ComponentsAnnouncment;
+      'casestudy.testimonial': CasestudyTestimonial;
+      'casestudy.stats': CasestudyStats;
+      'casestudy.section-4': CasestudySection4;
+      'casestudy.section-3': CasestudySection3;
+      'casestudy.section-2': CasestudySection2;
+      'casestudy.section-1': CasestudySection1;
+      'casestudy.conclusion': CasestudyConclusion;
+      'casestudy.case-home': CasestudyCaseHome;
+      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
     }
   }
 }
