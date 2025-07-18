@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_case_overview",
+  "info": {
+    "displayName": "Case Overview",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "default": "Challenge"
+    },
+    "Description": {
+      "type": "string",
+      "default": "Some challenge that company has been facing for a very long time and it has been bothering."
+    }
+  }
+}

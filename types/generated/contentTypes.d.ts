@@ -1437,6 +1437,234 @@ export interface ApiBrandGuidelineBrandGuideline extends Schema.SingleType {
   };
 }
 
+export interface ApiCaseCase extends Schema.CollectionType {
+  collectionName: 'case';
+  info: {
+    singularName: 'case';
+    pluralName: 'cases';
+    displayName: 'Case Studies';
+    description: 'Collection of case studies';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        targetField: 'CaseHome.CaseTitle';
+      }>;
+    isFeatured: Attribute.Boolean & Attribute.DefaultTo<false>;
+    CaseHome: Attribute.Component<'casestudy.case-home'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Features: Attribute.Component<'components.info-graphics', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CaseSummary: Attribute.Component<'components.case-summary-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Socials: Attribute.Component<'components.link', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ContactBanner: Attribute.Component<'components.case-contact-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Sections: Attribute.DynamicZone<
+      [
+        'casestudy.stats',
+        'casestudy.conclusion',
+        'casestudy.section-1',
+        'casestudy.section-2',
+        'casestudy.section-3'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    category: Attribute.Relation<
+      'api::case.case',
+      'manyToOne',
+      'api::case-category.case-category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::case.case', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::case.case', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::case.case',
+      'oneToMany',
+      'api::case.case'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiCaseCategoryCaseCategory extends Schema.CollectionType {
+  collectionName: 'case_categories';
+  info: {
+    singularName: 'case-category';
+    pluralName: 'case-categories';
+    displayName: 'Case Categories';
+    description: 'Categories for case studies';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        targetField: 'CaseHome.CaseTitle';
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::case-category.case-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::case-category.case-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::case-category.case-category',
+      'oneToMany',
+      'api::case-category.case-category'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
+  collectionName: 'case-studies';
+  info: {
+    singularName: 'case-study';
+    pluralName: 'case-studies';
+    displayName: 'Case-Study Landing';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subtitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Stats: Attribute.Component<'components.metric', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.Component<'components.case-category', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ContactBanner: Attribute.Component<'components.case-contact-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToMany',
+      'api::case-study.case-study'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -4211,6 +4439,9 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::blog-internal.blog-internal': ApiBlogInternalBlogInternal;
       'api::brand-guideline.brand-guideline': ApiBrandGuidelineBrandGuideline;
+      'api::case.case': ApiCaseCase;
+      'api::case-category.case-category': ApiCaseCategoryCaseCategory;
+      'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::comic.comic': ApiComicComic;
       'api::comics-landing.comics-landing': ApiComicsLandingComicsLanding;

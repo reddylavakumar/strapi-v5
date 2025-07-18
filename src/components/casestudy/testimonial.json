@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_components_case_testimonial",
+  "info": {
+    "displayName": "Testimonial Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "testimonial": {
+      "type": "richtext",
+      "default": "lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+    }
+  }
+}

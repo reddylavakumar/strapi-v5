@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_casestudy_categories",
+  "info": {
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "categoryName": {
+      "type": "string",
+      "default": "Category Name"
+    },
+    "Description": {
+      "type": "string",
+      "default": "description"
+    }
+  }
+}

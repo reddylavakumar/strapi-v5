@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_components_case_section1",
+  "info": {
+    "displayName": "Section 1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SectionName": {
+      "type": "string",
+      "default": "Section 1 "
+    },
+    "Title": {
+      "type": "string",
+      "default": "Ways to Work Together"
+    },
+    "Description": {
+      "type": "string",
+      "default": "Here’s how teams can close the gap:"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "NameAndPosition": {
+      "type": "string",
+      "default": "Before CodeRabbit "
+    },
+    "Testimonial": {
+      "type": "richtext",
+      "default": "lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a."
+    }
+  }
+}
