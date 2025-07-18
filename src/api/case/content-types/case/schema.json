@@ -17,14 +17,13 @@
   },
   "attributes": {
     "slug": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
-        }
-      },
-      "required": true,
-      "type": "uid",
-      "targetField": "CaseHome.CaseTitle"
+        },
+        "targetField": "CaseHome.CaseTitle"
+      }
     },
     "isFeatured": {
       "type": "boolean",
