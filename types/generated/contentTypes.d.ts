@@ -1454,12 +1454,12 @@ export interface ApiCaseCase extends Schema.CollectionType {
     };
   };
   attributes: {
-    slug: Attribute.UID<'api::case.case', 'CaseHome.CaseTitle'> &
-      Attribute.Required &
+    slug: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
+        targetField: 'CaseHome.CaseTitle';
       }>;
     isFeatured: Attribute.Boolean & Attribute.DefaultTo<false>;
     CaseHome: Attribute.Component<'casestudy.case-home'> &
