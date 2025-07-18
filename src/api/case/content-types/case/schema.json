@@ -26,6 +26,10 @@
       "type": "uid",
       "targetField": "CaseHome.CaseTitle"
     },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
     "CaseHome": {
       "type": "component",
       "component": "casestudy.case-home",
