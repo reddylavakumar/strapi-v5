@@ -1461,6 +1461,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    isFeatured: Attribute.Boolean & Attribute.DefaultTo<false>;
     CaseHome: Attribute.Component<'casestudy.case-home'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1596,7 +1597,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
     description: '';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   pluginOptions: {
     i18n: {
@@ -1634,8 +1635,15 @@ export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::case-study.case-study',
       'oneToOne',
