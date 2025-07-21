@@ -1454,13 +1454,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
     };
   };
   attributes: {
-    slug: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-        targetField: 'CaseHome.CaseTitle';
-      }>;
+    slug: Attribute.String;
     isFeatured: Attribute.Boolean & Attribute.DefaultTo<false>;
     CaseHome: Attribute.Component<'casestudy.case-home'> &
       Attribute.SetPluginOptions<{
@@ -1557,13 +1551,7 @@ export interface ApiCaseCategoryCaseCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-        targetField: 'CaseHome.CaseTitle';
-      }>;
+    slug: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

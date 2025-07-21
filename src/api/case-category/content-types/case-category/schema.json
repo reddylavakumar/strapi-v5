@@ -27,11 +27,8 @@
     },
     "slug": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "targetField": "name",
+      "required": true
     }
   }
 }
