@@ -17,13 +17,7 @@
   },
   "attributes": {
     "slug": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        },
-        "targetField": "CaseHome.CaseTitle"
-      }
+      "type": "string"
     },
     "isFeatured": {
       "type": "boolean",
