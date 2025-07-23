@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_components_event_card",
+  "info": {
+    "displayName": "Explore Event Card",
+    "description": "Explore Event card section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

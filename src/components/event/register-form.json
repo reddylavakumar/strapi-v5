@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_components_event_register_form",
+  "info": {
+    "displayName": "Register Form",
+    "description": "Register form for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Secure your spot"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Join industry experts and transform your development workflow."
+    },
+    "FirstName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "LastName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "Email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "JobTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "Company": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.banner-text-fields"
+    },
+    "Hyperlink": {
+      "type": "component",
+      "component": "components.hyperlink"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

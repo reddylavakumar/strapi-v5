@@ -1932,6 +1932,62 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiCountdownBannerCountdownBanner extends Schema.SingleType {
+  collectionName: 'countdown-banner';
+  info: {
+    singularName: 'countdown-banner';
+    pluralName: 'countdown-banners';
+    displayName: 'Countdown Banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Images: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.'>;
+    EventTime: Attribute.Component<'event.event-time'>;
+    Button: Attribute.Component<'components.link'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::countdown-banner.countdown-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::countdown-banner.countdown-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::countdown-banner.countdown-banner',
+      'oneToMany',
+      'api::countdown-banner.countdown-banner'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCursorCursor extends Schema.SingleType {
   collectionName: 'cursor';
   info: {
@@ -2431,6 +2487,111 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'api::event.event',
       'oneToMany',
       'api::event.event'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiEventFormatEventFormat extends Schema.CollectionType {
+  collectionName: 'event_formats';
+  info: {
+    singularName: 'event-format';
+    pluralName: 'event-formats';
+    displayName: 'Event Format';
+    description: 'Types for events';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::event-format.event-format', 'name'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event-format.event-format',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event-format.event-format',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::event-format.event-format',
+      'oneToMany',
+      'api::event-format.event-format'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiEventTypeEventType extends Schema.CollectionType {
+  collectionName: 'event_types';
+  info: {
+    singularName: 'event-type';
+    pluralName: 'event-types';
+    displayName: 'Event Type';
+    description: 'Types for events';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::event-type.event-type', 'name'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event-type.event-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event-type.event-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::event-type.event-type',
+      'oneToMany',
+      'api::event-type.event-type'
     >;
     locale: Attribute.String;
   };
@@ -4192,6 +4353,79 @@ export interface ApiVisualStudioCodeVisualStudioCode extends Schema.SingleType {
   };
 }
 
+export interface ApiWebinarWebinar extends Schema.CollectionType {
+  collectionName: 'webinar';
+  info: {
+    singularName: 'webinar';
+    pluralName: 'webinars';
+    displayName: 'webinar';
+    description: 'Collection of webinars';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String & Attribute.Required;
+    Sections: Attribute.DynamicZone<
+      ['event.external-event', 'event.internal-event']
+    > &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    EventType: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'api::event-type.event-type'
+    >;
+    EventFormat: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToMany',
+      'api::event-format.event-format'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToMany',
+      'api::webinar.webinar'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiWhitepaperWhitepaper extends Schema.SingleType {
   collectionName: 'whitepapers';
   info: {
@@ -4434,11 +4668,14 @@ declare module '@strapi/types' {
       'api::comic.comic': ApiComicComic;
       'api::comics-landing.comics-landing': ApiComicsLandingComicsLanding;
       'api::contact.contact': ApiContactContact;
+      'api::countdown-banner.countdown-banner': ApiCountdownBannerCountdownBanner;
       'api::cursor.cursor': ApiCursorCursor;
       'api::customer.customer': ApiCustomerCustomer;
       'api::dpa.dpa': ApiDpaDpa;
       'api::enterprise.enterprise': ApiEnterpriseEnterprise;
       'api::event.event': ApiEventEvent;
+      'api::event-format.event-format': ApiEventFormatEventFormat;
+      'api::event-type.event-type': ApiEventTypeEventType;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;
@@ -4461,6 +4698,7 @@ declare module '@strapi/types' {
       'api::trust-center-soc.trust-center-soc': ApiTrustCenterSocTrustCenterSoc;
       'api::vdp.vdp': ApiVdpVdp;
       'api::visual-studio-code.visual-studio-code': ApiVisualStudioCodeVisualStudioCode;
+      'api::webinar.webinar': ApiWebinarWebinar;
       'api::whitepaper.whitepaper': ApiWhitepaperWhitepaper;
       'api::windsurf.windsurf': ApiWindsurfWindsurf;
     }

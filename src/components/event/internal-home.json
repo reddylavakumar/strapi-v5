@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_components_event_internal_home",
+  "info": {
+    "displayName": "Home",
+    "description": "Home section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "EventTime": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.event-time"
+    },
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "Description": {
+      "type": "string",
+      "default": "CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. ",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "RegisterForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.register-form"
+    },
+    "Success": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.contact-success",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

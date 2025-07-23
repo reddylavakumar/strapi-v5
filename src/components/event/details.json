@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_components_event_details",
+  "info": {
+    "displayName": "Details",
+    "description": "Details section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Description1": {
+      "type": "string",
+      "default": "",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Description2": {
+      "type": "string",
+      "default": "",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Venue": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.venue"
+    }
+  }
+}

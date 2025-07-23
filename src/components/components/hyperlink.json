@@ -4,7 +4,13 @@
     "displayName": "Hyperlink",
     "description": ""
   },
+
   "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Text": {
       "type": "string",

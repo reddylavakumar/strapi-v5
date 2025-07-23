@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "countdown-banner",
+  "info": {
+    "singularName": "countdown-banner",
+    "pluralName": "countdown-banners",
+    "displayName": "Countdown Banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Title": {
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "EventTime": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.event-time"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

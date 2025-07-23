@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_components_event_external_event",
+  "info": {
+    "displayName": "External Event",
+    "description": "External event section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Home": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.external-home"
+    },
+    "Details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.details"
+    },
+    "EventExploreCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
