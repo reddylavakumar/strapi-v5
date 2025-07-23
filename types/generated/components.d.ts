@@ -83,423 +83,6 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
-export interface EventVenue extends Schema.Component {
-  collectionName: 'components_components_event_venue';
-  info: {
-    displayName: 'Venue';
-    description: 'Venue section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    VenueTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Javits Convention Center'>;
-    VenueName: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Javits Convention Center'>;
-    Website: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'https://javitscenter.com'>;
-    AddressTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'429 11th Ave'>;
-    Address: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'429 11th Ave'>;
-    City: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'New York City NY 10001'>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface EventSpeaker extends Schema.Component {
-  collectionName: 'components_components_event_speaker';
-  info: {
-    displayName: 'Speaker';
-    description: 'Speaker section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Name: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'John Doe'>;
-    Role: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Software Engineer'>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface EventRegisterForm extends Schema.Component {
-  collectionName: 'components_components_event_register_form';
-  info: {
-    displayName: 'Register Form';
-    description: 'Register form for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Secure your spot'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Join industry experts and transform your development workflow.'>;
-    FirstName: Attribute.Component<'components.banner-text-fields'>;
-    LastName: Attribute.Component<'components.banner-text-fields'>;
-    Email: Attribute.Component<'components.banner-text-fields'>;
-    JobTitle: Attribute.Component<'components.banner-text-fields'>;
-    Company: Attribute.Component<'components.banner-text-fields'>;
-    Hyperlink: Attribute.Component<'components.hyperlink'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface EventLearn extends Schema.Component {
-  collectionName: 'components_components_event_learn';
-  info: {
-    displayName: 'Learn';
-    description: 'Learn section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Pointers: Attribute.Component<'components.bullets', true>;
-    FeaturingTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Speakers: Attribute.Component<'event.speaker', true>;
-  };
-}
-
-export interface EventInternalHome extends Schema.Component {
-  collectionName: 'components_components_event_internal_home';
-  info: {
-    displayName: 'Home';
-    description: 'Home section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Image: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    EventTime: Attribute.Component<'event.event-time'>;
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Description: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. '>;
-    RegisterForm: Attribute.Component<'event.register-form'>;
-    Success: Attribute.Component<'components.contact-success'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface EventInternalEvent extends Schema.Component {
-  collectionName: 'components_components_event_internal_event';
-  info: {
-    displayName: 'Internal Event';
-    description: 'Internal event section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Home: Attribute.Component<'event.internal-home'>;
-    Details: Attribute.Component<'event.learn'>;
-    EventExploreCard: Attribute.Component<'event.card'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface EventExternalHome extends Schema.Component {
-  collectionName: 'components_components_event_external_home';
-  info: {
-    displayName: 'Home';
-    description: 'Home section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Image: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    EventTime: Attribute.Component<'event.event-time'>;
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Location: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Booth #544/ Javits Convention Center \u2014 New York City, NY'>;
-    Description: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. '>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface EventExternalEvent extends Schema.Component {
-  collectionName: 'components_components_event_external_event';
-  info: {
-    displayName: 'External Event';
-    description: 'External event section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Home: Attribute.Component<'event.external-home'>;
-    Details: Attribute.Component<'event.details'>;
-    EventExploreCard: Attribute.Component<'event.card'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface EventEventTime extends Schema.Component {
-  collectionName: 'components_event_time_event_time';
-  info: {
-    displayName: 'Event Date & Time';
-    description: 'Event date and time with AM/PM and timezone options';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Date: Attribute.Date &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Time: Attribute.Time & Attribute.Required;
-    Period: Attribute.Enumeration<['AM', 'PM']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'AM'>;
-    Timezone: Attribute.Enumeration<
-      [
-        'PST',
-        'PDT',
-        'MST',
-        'MDT',
-        'CST',
-        'CDT',
-        'EST',
-        'EDT',
-        'IST',
-        'UTC',
-        'GMT',
-        'CET',
-        'CEST',
-        'JST',
-        'AEST',
-        'AEDT',
-        'Other'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'EST'>;
-  };
-}
-
-export interface EventDetails extends Schema.Component {
-  collectionName: 'components_components_event_details';
-  info: {
-    displayName: 'Details';
-    description: 'Details section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Description1: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<''>;
-    Description2: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<''>;
-    Venue: Attribute.Component<'event.venue'>;
-  };
-}
-
-export interface EventCard extends Schema.Component {
-  collectionName: 'components_components_event_card';
-  info: {
-    displayName: 'Explore Event Card';
-    description: 'Explore Event card section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Image: Attribute.Media<'images'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface EventFeaturing extends Schema.Component {
-  collectionName: 'components_components_event_featuring';
-  info: {
-    displayName: 'Featuring';
-    description: 'Featuring section for events';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
-    Speakers: Attribute.Component<'event.speaker', true>;
-  };
-}
-
 export interface LayoutWhitepaperFormSection extends Schema.Component {
   collectionName: 'components_layout_whitepaper_form_sections';
   info: {
@@ -1285,6 +868,423 @@ export interface LayoutAlternatedContent extends Schema.Component {
       'components.content-with-image',
       true
     >;
+  };
+}
+
+export interface EventVenue extends Schema.Component {
+  collectionName: 'components_components_event_venue';
+  info: {
+    displayName: 'Venue';
+    description: 'Venue section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    VenueTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Javits Convention Center'>;
+    VenueName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Javits Convention Center'>;
+    Website: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'https://javitscenter.com'>;
+    AddressTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'429 11th Ave'>;
+    Address: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'429 11th Ave'>;
+    City: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'New York City NY 10001'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface EventSpeaker extends Schema.Component {
+  collectionName: 'components_components_event_speaker';
+  info: {
+    displayName: 'Speaker';
+    description: 'Speaker section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'John Doe'>;
+    Role: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Software Engineer'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface EventRegisterForm extends Schema.Component {
+  collectionName: 'components_components_event_register_form';
+  info: {
+    displayName: 'Register Form';
+    description: 'Register form for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Secure your spot'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Join industry experts and transform your development workflow.'>;
+    FirstName: Attribute.Component<'components.banner-text-fields'>;
+    LastName: Attribute.Component<'components.banner-text-fields'>;
+    Email: Attribute.Component<'components.banner-text-fields'>;
+    JobTitle: Attribute.Component<'components.banner-text-fields'>;
+    Company: Attribute.Component<'components.banner-text-fields'>;
+    Hyperlink: Attribute.Component<'components.hyperlink'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface EventLearn extends Schema.Component {
+  collectionName: 'components_components_event_learn';
+  info: {
+    displayName: 'Learn';
+    description: 'Learn section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Pointers: Attribute.Component<'components.bullets', true>;
+    FeaturingTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Speakers: Attribute.Component<'event.speaker', true>;
+  };
+}
+
+export interface EventInternalHome extends Schema.Component {
+  collectionName: 'components_components_event_internal_home';
+  info: {
+    displayName: 'Home';
+    description: 'Home section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    EventTime: Attribute.Component<'event.event-time'>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. '>;
+    RegisterForm: Attribute.Component<'event.register-form'>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface EventInternalEvent extends Schema.Component {
+  collectionName: 'components_components_event_internal_event';
+  info: {
+    displayName: 'Internal Event';
+    description: 'Internal event section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Home: Attribute.Component<'event.internal-home'>;
+    Details: Attribute.Component<'event.learn'>;
+    EventExploreCard: Attribute.Component<'event.card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface EventExternalHome extends Schema.Component {
+  collectionName: 'components_components_event_external_home';
+  info: {
+    displayName: 'Home';
+    description: 'Home section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    EventTime: Attribute.Component<'event.event-time'>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Location: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Booth #544/ Javits Convention Center \u2014 New York City, NY'>;
+    Description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. '>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface EventExternalEvent extends Schema.Component {
+  collectionName: 'components_components_event_external_event';
+  info: {
+    displayName: 'External Event';
+    description: 'External event section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Home: Attribute.Component<'event.external-home'>;
+    Details: Attribute.Component<'event.details'>;
+    EventExploreCard: Attribute.Component<'event.card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface EventEventTime extends Schema.Component {
+  collectionName: 'components_event_time_event_time';
+  info: {
+    displayName: 'Event Date & Time';
+    description: 'Event date and time with AM/PM and timezone options';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Time: Attribute.Time & Attribute.Required;
+    Period: Attribute.Enumeration<['AM', 'PM']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'AM'>;
+    Timezone: Attribute.Enumeration<
+      [
+        'PST',
+        'PDT',
+        'MST',
+        'MDT',
+        'CST',
+        'CDT',
+        'EST',
+        'EDT',
+        'IST',
+        'UTC',
+        'GMT',
+        'CET',
+        'CEST',
+        'JST',
+        'AEST',
+        'AEDT',
+        'Other'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'EST'>;
+  };
+}
+
+export interface EventDetails extends Schema.Component {
+  collectionName: 'components_components_event_details';
+  info: {
+    displayName: 'Details';
+    description: 'Details section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Description1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<''>;
+    Description2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<''>;
+    Venue: Attribute.Component<'event.venue'>;
+  };
+}
+
+export interface EventCard extends Schema.Component {
+  collectionName: 'components_components_event_card';
+  info: {
+    displayName: 'Explore Event Card';
+    description: 'Explore Event card section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Image: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface EventFeaturing extends Schema.Component {
+  collectionName: 'components_components_event_featuring';
+  info: {
+    displayName: 'Featuring';
+    description: 'Featuring section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Speakers: Attribute.Component<'event.speaker', true>;
   };
 }
 
@@ -2388,18 +2388,6 @@ declare module '@strapi/types' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'event.venue': EventVenue;
-      'event.speaker': EventSpeaker;
-      'event.register-form': EventRegisterForm;
-      'event.learn': EventLearn;
-      'event.internal-home': EventInternalHome;
-      'event.internal-event': EventInternalEvent;
-      'event.external-home': EventExternalHome;
-      'event.external-event': EventExternalEvent;
-      'event.event-time': EventEventTime;
-      'event.details': EventDetails;
-      'event.card': EventCard;
-      'event.featuring': EventFeaturing;
       'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
       'layout.vs-feature-section': LayoutVsFeatureSection;
       'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
@@ -2450,6 +2438,18 @@ declare module '@strapi/types' {
       'layout.blog-banners': LayoutBlogBanners;
       'layout.architecture': LayoutArchitecture;
       'layout.alternated-content': LayoutAlternatedContent;
+      'event.venue': EventVenue;
+      'event.speaker': EventSpeaker;
+      'event.register-form': EventRegisterForm;
+      'event.learn': EventLearn;
+      'event.internal-home': EventInternalHome;
+      'event.internal-event': EventInternalEvent;
+      'event.external-home': EventExternalHome;
+      'event.external-event': EventExternalEvent;
+      'event.event-time': EventEventTime;
+      'event.details': EventDetails;
+      'event.card': EventCard;
+      'event.featuring': EventFeaturing;
       'casestudy.testimonial': CasestudyTestimonial;
       'casestudy.stats': CasestudyStats;
       'casestudy.section-4': CasestudySection4;

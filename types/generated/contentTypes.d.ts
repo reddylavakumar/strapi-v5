@@ -2516,13 +2516,7 @@ export interface ApiEventFormatEventFormat extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::event-format.event-format', 'name'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    slug: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2571,8 +2565,7 @@ export interface ApiEventTypeEventType extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::event-type.event-type', 'name'> &
-      Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
