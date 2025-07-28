@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "student_programs",
+  "info": {
+    "singularName": "student-program",
+    "pluralName": "student-programs",
+    "displayName": "Student Program",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.metrics-section",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contact-us-section",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Customers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.customers-section",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.startup-form-section",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Success": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.contact-success",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "FormSideSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.form-side-section",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

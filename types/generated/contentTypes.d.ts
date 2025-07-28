@@ -3790,6 +3790,95 @@ export interface ApiStartupProgramStartupProgram extends Schema.SingleType {
   };
 }
 
+export interface ApiStudentProgramStudentProgram extends Schema.SingleType {
+  collectionName: 'student_programs';
+  info: {
+    singularName: 'student-program';
+    pluralName: 'student-programs';
+    displayName: 'Student Program';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Stats: Attribute.Component<'layout.metrics-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Contact: Attribute.Component<'layout.contact-us-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Customers: Attribute.Component<'layout.customers-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'layout.hero'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Form: Attribute.Component<'layout.startup-form-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FormSideSection: Attribute.Component<'components.form-side-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::student-program.student-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::student-program.student-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::student-program.student-program',
+      'oneToMany',
+      'api::student-program.student-program'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSupportSupport extends Schema.SingleType {
   collectionName: 'supports';
   info: {
@@ -4684,6 +4773,7 @@ declare module '@strapi/types' {
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::solution.solution': ApiSolutionSolution;
       'api::startup-program.startup-program': ApiStartupProgramStartupProgram;
+      'api::student-program.student-program': ApiStudentProgramStudentProgram;
       'api::support.support': ApiSupportSupport;
       'api::terms-of-service.terms-of-service': ApiTermsOfServiceTermsOfService;
       'api::trust-center.trust-center': ApiTrustCenterTrustCenter;
