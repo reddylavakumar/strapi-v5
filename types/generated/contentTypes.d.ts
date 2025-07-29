@@ -2590,6 +2590,72 @@ export interface ApiEventTypeEventType extends Schema.CollectionType {
   };
 }
 
+export interface ApiEventsLandingEventsLanding extends Schema.SingleType {
+  collectionName: 'events-landing';
+  info: {
+    singularName: 'events-landing';
+    pluralName: 'events-landings';
+    displayName: 'Events Landing Page';
+    description: 'Events landing page for displaying events';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subtitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FilterSection: Attribute.Component<'components.filter-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Component<'components.case-contact-card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::events-landing.events-landing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::events-landing.events-landing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::events-landing.events-landing',
+      'oneToMany',
+      'api::events-landing.events-landing'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.SingleType {
   collectionName: 'faqs';
   info: {
@@ -4758,6 +4824,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::event-format.event-format': ApiEventFormatEventFormat;
       'api::event-type.event-type': ApiEventTypeEventType;
+      'api::events-landing.events-landing': ApiEventsLandingEventsLanding;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gh-event-page.gh-event-page': ApiGhEventPageGhEventPage;

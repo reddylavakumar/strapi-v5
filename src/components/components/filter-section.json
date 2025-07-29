@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_components_filter_section",
+  "info": {
+    "displayName": "Filter section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Cut code review time & bugs by 50%"
+    },
+    "Description": {
+      "type": "text",
+      "default": "Most installed AI app on GitHub and GitLab"
+    },
+    "SearchPlaceholder": {
+      "type": "string",
+      "default": "Search articles"
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.filter-category",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
