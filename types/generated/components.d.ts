@@ -83,218 +83,6 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
-export interface CasestudyTestimonial extends Schema.Component {
-  collectionName: 'components_components_case_testimonial';
-  info: {
-    displayName: 'Testimonial Card';
-    description: '';
-  };
-  attributes: {
-    testimonial: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudyStats extends Schema.Component {
-  collectionName: 'components_components_case_studies_stats';
-  info: {
-    singularName: 'case-study-stat';
-    pluralName: 'case-studies-stats';
-    displayName: 'Stats';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Stats: Attribute.Component<'components.metric', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Brief: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection4 extends Schema.Component {
-  collectionName: 'components_components_case_section4';
-  info: {
-    displayName: 'Section 4';
-    description: '';
-  };
-  attributes: {
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection3 extends Schema.Component {
-  collectionName: 'components_components_case_section3';
-  info: {
-    displayName: 'Section 3';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface CasestudySection2 extends Schema.Component {
-  collectionName: 'components_components_case_section2';
-  info: {
-    displayName: 'Section 2';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    Paragraph: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection1 extends Schema.Component {
-  collectionName: 'components_components_case_section1';
-  info: {
-    displayName: 'Section 1';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
-    Image: Attribute.Media<'images'>;
-    NameAndPosition: Attribute.String &
-      Attribute.DefaultTo<'Before CodeRabbit '>;
-    Testimonial: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudyConclusion extends Schema.Component {
-  collectionName: 'components_components_case_conculision';
-  info: {
-    singularName: 'case-conclusion';
-    pluralName: 'case-conclusions';
-    displayName: 'Conclusion';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
-    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
-      Attribute.SetMinMax<
-        {
-          max: 3;
-        },
-        number
-      >;
-  };
-}
-
-export interface CasestudyCaseHome extends Schema.Component {
-  collectionName: 'components_components_case_homes';
-  info: {
-    displayName: 'Case Home';
-    description: 'Home section for case studies';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    ClientName: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum'>;
-    ClientLogo: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ClientLogoDark: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    CaseTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
-    CaseDescription: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
-    Image: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImageSM: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface CasestudyCaseConclusionCard extends Schema.Component {
-  collectionName: 'components_components_case_conclusion_card';
-  info: {
-    displayName: 'Case Conclusion Card';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-  };
-}
-
 export interface LayoutWhitepaperFormSection extends Schema.Component {
   collectionName: 'components_layout_whitepaper_form_sections';
   info: {
@@ -1084,6 +872,635 @@ export interface LayoutAlternatedContent extends Schema.Component {
   };
 }
 
+export interface CasestudyTestimonial extends Schema.Component {
+  collectionName: 'components_components_case_testimonial';
+  info: {
+    displayName: 'Testimonial Card';
+    description: '';
+  };
+  attributes: {
+    testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyStats extends Schema.Component {
+  collectionName: 'components_components_case_studies_stats';
+  info: {
+    singularName: 'case-study-stat';
+    pluralName: 'case-studies-stats';
+    displayName: 'Stats';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Stats: Attribute.Component<'components.metric', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Brief: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection4 extends Schema.Component {
+  collectionName: 'components_components_case_section4';
+  info: {
+    displayName: 'Section 4';
+    description: '';
+  };
+  attributes: {
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection3 extends Schema.Component {
+  collectionName: 'components_components_case_section3';
+  info: {
+    displayName: 'Section 3';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface CasestudySection2 extends Schema.Component {
+  collectionName: 'components_components_case_section2';
+  info: {
+    displayName: 'Section 2';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Paragraph: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection1 extends Schema.Component {
+  collectionName: 'components_components_case_section1';
+  info: {
+    displayName: 'Section 1';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Image: Attribute.Media<'images'>;
+    NameAndPosition: Attribute.String &
+      Attribute.DefaultTo<'Before CodeRabbit '>;
+    Testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyConclusion extends Schema.Component {
+  collectionName: 'components_components_case_conculision';
+  info: {
+    singularName: 'case-conclusion';
+    pluralName: 'case-conclusions';
+    displayName: 'Conclusion';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
+      Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+  };
+}
+
+export interface CasestudyCaseHome extends Schema.Component {
+  collectionName: 'components_components_case_homes';
+  info: {
+    displayName: 'Case Home';
+    description: 'Home section for case studies';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    ClientName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum'>;
+    ClientLogo: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ClientLogoDark: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CaseTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
+    CaseDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImageSM: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface CasestudyCaseConclusionCard extends Schema.Component {
+  collectionName: 'components_components_case_conclusion_card';
+  info: {
+    displayName: 'Case Conclusion Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+  };
+}
+
+export interface EventVenue extends Schema.Component {
+  collectionName: 'components_components_event_venue';
+  info: {
+    displayName: 'Venue';
+    description: 'Venue section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    VenueTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Javits Convention Center'>;
+    VenueName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Javits Convention Center'>;
+    Website: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'https://javitscenter.com'>;
+    AddressTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'429 11th Ave'>;
+    Address: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'429 11th Ave'>;
+    City: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'New York City NY 10001'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface EventSpeaker extends Schema.Component {
+  collectionName: 'components_components_event_speaker';
+  info: {
+    displayName: 'Speaker';
+    description: 'Speaker section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'John Doe'>;
+    Role: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Software Engineer'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface EventRegisterForm extends Schema.Component {
+  collectionName: 'components_components_event_register_form';
+  info: {
+    displayName: 'Register Form';
+    description: 'Register form for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Secure your spot'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Join industry experts and transform your development workflow.'>;
+    FirstName: Attribute.Component<'components.banner-text-fields'>;
+    LastName: Attribute.Component<'components.banner-text-fields'>;
+    Email: Attribute.Component<'components.banner-text-fields'>;
+    JobTitle: Attribute.Component<'components.banner-text-fields'>;
+    Company: Attribute.Component<'components.banner-text-fields'>;
+    Hyperlink: Attribute.Component<'components.hyperlink'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface EventLearn extends Schema.Component {
+  collectionName: 'components_components_event_learn';
+  info: {
+    displayName: 'Learn';
+    description: 'Learn section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Pointers: Attribute.Component<'components.bullets', true>;
+    FeaturingTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Speakers: Attribute.Component<'event.speaker', true>;
+  };
+}
+
+export interface EventInternalHome extends Schema.Component {
+  collectionName: 'components_components_event_internal_home';
+  info: {
+    displayName: 'Home';
+    description: 'Home section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    EventTime: Attribute.Component<'event.event-time'>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. '>;
+    RegisterForm: Attribute.Component<'event.register-form'>;
+    Success: Attribute.Component<'components.contact-success'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface EventInternalEvent extends Schema.Component {
+  collectionName: 'components_components_event_internal_event';
+  info: {
+    displayName: 'Internal Event';
+    description: 'Internal event section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Home: Attribute.Component<'event.internal-home'>;
+    Details: Attribute.Component<'event.learn'>;
+    EventExploreCard: Attribute.Component<'event.card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface EventExternalHome extends Schema.Component {
+  collectionName: 'components_components_event_external_home';
+  info: {
+    displayName: 'Home';
+    description: 'Home section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    EventTime: Attribute.Component<'event.event-time'>;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Location: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Booth #544/ Javits Convention Center \u2014 New York City, NY'>;
+    Description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit is an AI code review tool that integrates with version control platforms like GitHub, GitLab, and Azure DevOps. '>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface EventExternalEvent extends Schema.Component {
+  collectionName: 'components_components_event_external_event';
+  info: {
+    displayName: 'External Event';
+    description: 'External event section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Home: Attribute.Component<'event.external-home'>;
+    Details: Attribute.Component<'event.details'>;
+    EventExploreCard: Attribute.Component<'event.card'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface EventEventTime extends Schema.Component {
+  collectionName: 'components_event_time_event_time';
+  info: {
+    displayName: 'Event Date & Time';
+    description: 'Event date and time with AM/PM and timezone options';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Time: Attribute.Time & Attribute.Required;
+    Period: Attribute.Enumeration<['AM', 'PM']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'AM'>;
+    Timezone: Attribute.Enumeration<
+      [
+        'PST',
+        'PDT',
+        'MST',
+        'MDT',
+        'CST',
+        'CDT',
+        'EST',
+        'EDT',
+        'IST',
+        'UTC',
+        'GMT',
+        'CET',
+        'CEST',
+        'JST',
+        'AEST',
+        'AEDT',
+        'Other'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'EST'>;
+  };
+}
+
+export interface EventDetails extends Schema.Component {
+  collectionName: 'components_components_event_details';
+  info: {
+    displayName: 'Details';
+    description: 'Details section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Description1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<''>;
+    Description2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<''>;
+    Venue: Attribute.Component<'event.venue'>;
+  };
+}
+
+export interface EventCard extends Schema.Component {
+  collectionName: 'components_components_event_card';
+  info: {
+    displayName: 'Explore Event Card';
+    description: 'Explore Event card section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Image: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface EventFeaturing extends Schema.Component {
+  collectionName: 'components_components_event_featuring';
+  info: {
+    displayName: 'Featuring';
+    description: 'Featuring section for events';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
+    Speakers: Attribute.Component<'event.speaker', true>;
+  };
+}
+
 export interface ComponentsTrustCard extends Schema.Component {
   collectionName: 'components_components_trust_cards';
   info: {
@@ -1453,6 +1870,11 @@ export interface ComponentsHyperlink extends Schema.Component {
     displayName: 'Hyperlink';
     description: '';
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     Text: Attribute.String & Attribute.DefaultTo<'Lorem ipsum'>;
     HyperlinkText: Attribute.String & Attribute.DefaultTo<'Hyperlink text'>;
@@ -1599,6 +2021,40 @@ export interface ComponentsFormSideSection extends Schema.Component {
   };
 }
 
+export interface ComponentsFilterSection extends Schema.Component {
+  collectionName: 'components_components_filter_section';
+  info: {
+    displayName: 'Filter section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut code review time & bugs by 50%'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Most installed AI app on GitHub and GitLab'>;
+    SearchPlaceholder: Attribute.String &
+      Attribute.DefaultTo<'Search articles'>;
+    categories: Attribute.Component<'components.filter-category', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface ComponentsFilterCategory extends Schema.Component {
+  collectionName: 'components_components_filter_categories';
+  info: {
+    displayName: 'Filter Category';
+    description: '';
+  };
+  attributes: {
+    categoryName: Attribute.String & Attribute.DefaultTo<'Filter Categories'>;
+    Description: Attribute.Component<'components.description-item', true>;
+  };
+}
+
 export interface ComponentsFeature extends Schema.Component {
   collectionName: 'components_components_features';
   info: {
@@ -1644,6 +2100,17 @@ export interface ComponentsFaqItem extends Schema.Component {
     Answer: Attribute.RichText;
     Category: Attribute.String &
       Attribute.DefaultTo<'Popular, Product, Security'>;
+  };
+}
+
+export interface ComponentsDescriptionItem extends Schema.Component {
+  collectionName: 'components_components_description_items';
+  info: {
+    displayName: 'Description Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    item: Attribute.String;
   };
 }
 
@@ -1874,7 +2341,7 @@ export interface ComponentsBullets extends Schema.Component {
     description: '';
   };
   attributes: {
-    Text: Attribute.String &
+    Text: Attribute.Text &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac.'>;
     Description: Attribute.RichText;
   };
@@ -1967,15 +2434,6 @@ declare module '@strapi/types' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'casestudy.testimonial': CasestudyTestimonial;
-      'casestudy.stats': CasestudyStats;
-      'casestudy.section-4': CasestudySection4;
-      'casestudy.section-3': CasestudySection3;
-      'casestudy.section-2': CasestudySection2;
-      'casestudy.section-1': CasestudySection1;
-      'casestudy.conclusion': CasestudyConclusion;
-      'casestudy.case-home': CasestudyCaseHome;
-      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
       'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
       'layout.vs-feature-section': LayoutVsFeatureSection;
       'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
@@ -2026,6 +2484,27 @@ declare module '@strapi/types' {
       'layout.blog-banners': LayoutBlogBanners;
       'layout.architecture': LayoutArchitecture;
       'layout.alternated-content': LayoutAlternatedContent;
+      'casestudy.testimonial': CasestudyTestimonial;
+      'casestudy.stats': CasestudyStats;
+      'casestudy.section-4': CasestudySection4;
+      'casestudy.section-3': CasestudySection3;
+      'casestudy.section-2': CasestudySection2;
+      'casestudy.section-1': CasestudySection1;
+      'casestudy.conclusion': CasestudyConclusion;
+      'casestudy.case-home': CasestudyCaseHome;
+      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
+      'event.venue': EventVenue;
+      'event.speaker': EventSpeaker;
+      'event.register-form': EventRegisterForm;
+      'event.learn': EventLearn;
+      'event.internal-home': EventInternalHome;
+      'event.internal-event': EventInternalEvent;
+      'event.external-home': EventExternalHome;
+      'event.external-event': EventExternalEvent;
+      'event.event-time': EventEventTime;
+      'event.details': EventDetails;
+      'event.card': EventCard;
+      'event.featuring': EventFeaturing;
       'components.trust-card': ComponentsTrustCard;
       'components.testimonial': ComponentsTestimonial;
       'components.socials': ComponentsSocials;
@@ -2061,9 +2540,12 @@ declare module '@strapi/types' {
       'components.hoppy-banner': ComponentsHoppyBanner;
       'components.hero-card': ComponentsHeroCard;
       'components.form-side-section': ComponentsFormSideSection;
+      'components.filter-section': ComponentsFilterSection;
+      'components.filter-category': ComponentsFilterCategory;
       'components.feature': ComponentsFeature;
       'components.feature-card': ComponentsFeatureCard;
       'components.faq-item': ComponentsFaqItem;
+      'components.description-item': ComponentsDescriptionItem;
       'components.custom-feature': ComponentsCustomFeature;
       'components.content-with-image': ComponentsContentWithImage;
       'components.contact-success': ComponentsContactSuccess;

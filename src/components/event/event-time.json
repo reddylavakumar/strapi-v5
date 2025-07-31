@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_event_time_event_time",
+  "info": {
+    "displayName": "Event Date & Time",
+    "description": "Event date and time with AM/PM and timezone options"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Date": {
+      "type": "date",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Time": {
+      "type": "time",
+      "required": true
+    },
+    "Period": {
+      "type": "enumeration",
+      "enum": ["AM", "PM"],
+      "default": "AM",
+      "required": true
+    },
+    "Timezone": {
+      "type": "enumeration",
+      "enum": [
+        "PST",
+        "PDT",
+        "MST",
+        "MDT",
+        "CST",
+        "CDT",
+        "EST",
+        "EDT",
+        "IST",
+        "UTC",
+        "GMT",
+        "CET",
+        "CEST",
+        "JST",
+        "AEST",
+        "AEDT",
+        "Other"
+      ],
+      "default": "EST",
+      "required": true
+    }
+  }
+}

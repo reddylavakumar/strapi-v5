@@ -1,0 +1,60 @@
+{
+  "kind": "singleType",
+  "collectionName": "events-landing",
+  "info": {
+    "singularName": "events-landing",
+    "pluralName": "events-landings",
+    "displayName": "Events Landing Page",
+    "description": "Events landing page for displaying events"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "subtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "FilterSection": {
+      "type": "component",
+      "component": "components.filter-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Hero": {
+      "type": "component",
+      "component": "components.case-contact-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

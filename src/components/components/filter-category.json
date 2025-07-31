@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_filter_categories",
+  "info": {
+    "displayName": "Filter Category",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "categoryName": {
+      "type": "string",
+      "default": "Filter Categories"
+    },
+    "Description": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.description-item"
+    }
+  }
+}
