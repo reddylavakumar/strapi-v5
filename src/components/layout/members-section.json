@@ -12,6 +12,12 @@
     "Description": {
       "type": "text"
     },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "Members": {
       "type": "component",
       "repeatable": true,
