@@ -83,1007 +83,6 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
-export interface LayoutWhitepaperFormSection extends Schema.Component {
-  collectionName: 'components_layout_whitepaper_form_sections';
-  info: {
-    displayName: 'Whitepaper Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyName: Attribute.Component<'components.input-text-field'>;
-    WorkEmail: Attribute.Component<'components.input-text-field'>;
-    JobTitle: Attribute.Component<'components.input-text-field'>;
-    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutVsFeatureSection extends Schema.Component {
-  collectionName: 'components_layout_vs_extension_features_sections';
-  info: {
-    displayName: 'Features Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Benefits: Attribute.Component<'components.security', true>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutVsCodeHeroSection extends Schema.Component {
-  collectionName: 'components_layout_vs_code_heroes';
-  info: {
-    displayName: 'Hero Section';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Capsule: Attribute.Component<'components.capsule'>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
-    Image: Attribute.Media<'images'>;
-    VideoOrGif: Attribute.Media<'images' | 'videos'>;
-    VideoOrGifDark: Attribute.Media<'images' | 'videos'>;
-    Buttons: Attribute.Component<'components.link', true>;
-    LeftContentText: Attribute.String &
-      Attribute.DefaultTo<'14-day free trial '>;
-    MiddleContentText: Attribute.String & Attribute.DefaultTo<' | Works with'>;
-    RightContentText: Attribute.Component<'components.logo-text-pair', true> &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 3;
-        },
-        number
-      >;
-    CenterImage_Icon: Attribute.Media<'images'>;
-    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
-    Description_2: Attribute.String &
-      Attribute.DefaultTo<'No credit card needed.'>;
-    Description_3: Attribute.String &
-      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
-  };
-}
-
-export interface LayoutTrustSection extends Schema.Component {
-  collectionName: 'components_layout_trust_sections';
-  info: {
-    displayName: 'Trust Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Your data stays confidential'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'We take security, privacy, and compliance seriously.'>;
-    Cards: Attribute.Component<'components.trust-card', true>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutTestimonials extends Schema.Component {
-  collectionName: 'components_layout_testimonials';
-  info: {
-    displayName: 'Testimonials Section';
-    description: '';
-  };
-  attributes: {
-    Testimonials: Attribute.Component<'components.testimonial', true>;
-    Title: Attribute.String & Attribute.DefaultTo<'What they say about us'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutStartupFormSection extends Schema.Component {
-  collectionName: 'components_layout_startup_form_sections';
-  info: {
-    displayName: 'Startup Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<"Complete this form, If your organization qualifies for our Startup program, we'll activate your account.">;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyWebsite: Attribute.Component<'components.input-text-field'>;
-    FundingDetails: Attribute.Component<'components.input-text-field'>;
-    GitOrgName: Attribute.Component<'components.input-text-field'>;
-    JobTitle: Attribute.Component<'components.input-text-field'>;
-    Email: Attribute.Component<'components.input-text-field'>;
-    TrialCheckbox: Attribute.Component<'components.input-checkbox-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutSocFormSection extends Schema.Component {
-  collectionName: 'components_layout_soc_form_sections';
-  info: {
-    displayName: 'SOC Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Please fill out this form to request access:'>;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyName: Attribute.Component<'components.input-text-field'>;
-    WorkEmail: Attribute.Component<'components.input-text-field'>;
-    JobTitle: Attribute.Component<'components.input-text-field'>;
-    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutSimpleHero extends Schema.Component {
-  collectionName: 'components_layout_simple_heroes';
-  info: {
-    displayName: 'Simple Hero Section';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
-    Description: Attribute.Text &
-      Attribute.Required &
-      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
-    Buttons: Attribute.Component<'components.link', true>;
-    CarouselWithTooltips: Attribute.Component<'components.link', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-    CarouselWithTooltipsDark: Attribute.Component<'components.link', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-  };
-}
-
-export interface LayoutSecuritySection extends Schema.Component {
-  collectionName: 'components_layout_security_sections';
-  info: {
-    displayName: 'Security Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Securities: Attribute.Component<'components.security', true>;
-  };
-}
-
-export interface LayoutPrivacyPolicySection extends Schema.Component {
-  collectionName: 'components_layout_privacy_policy_sections';
-  info: {
-    displayName: 'Privacy Policy Section';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Our privacy policy'>;
-    Description: Attribute.RichText;
-    Questions: Attribute.Component<'components.privacy-policy-questions', true>;
-  };
-}
-
-export interface LayoutPlansSection extends Schema.Component {
-  collectionName: 'components_layout_plans_sections';
-  info: {
-    displayName: 'Plans Section';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<''>;
-    Plans: Attribute.Component<'components.plan', true>;
-  };
-}
-
-export interface LayoutPillsSection extends Schema.Component {
-  collectionName: 'components_layout_pills_sections';
-  info: {
-    displayName: 'Pills Section';
-    description: '';
-  };
-  attributes: {
-    Pills: Attribute.Component<'components.pill', true>;
-  };
-}
-
-export interface LayoutPartnershipFormSection extends Schema.Component {
-  collectionName: 'components_layout_partnership_form_sections';
-  info: {
-    displayName: 'Partnership Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyName: Attribute.Component<'components.input-text-field'>;
-    WorkEmail: Attribute.Component<'components.input-text-field'>;
-    JobTitle: Attribute.Component<'components.input-text-field'>;
-    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutNewsletterBlogSection extends Schema.Component {
-  collectionName: 'components_layout_newsletter_blog_sections';
-  info: {
-    displayName: 'Blog Newsletter Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Sign up for our Newsletter'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Don\u2019t miss out on our latest articles'>;
-    Newsletter: Attribute.Component<'components.input-text-field'>;
-  };
-}
-
-export interface LayoutMetricsSection extends Schema.Component {
-  collectionName: 'components_layout_metrics_sections';
-  info: {
-    displayName: 'Stats Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'The most installed AI App on GitHub & GitLab'>;
-    Stats: Attribute.Component<'components.metric', true>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Loved by 1000s of developers'>;
-  };
-}
-
-export interface LayoutMembersSection extends Schema.Component {
-  collectionName: 'components_layout_members_sections';
-  info: {
-    displayName: 'Members Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Image: Attribute.Media<'images'>;
-    Members: Attribute.Component<'components.member', true>;
-  };
-}
-
-export interface LayoutMarkdownCardSection extends Schema.Component {
-  collectionName: 'components_layout_markdown_card_sections';
-  info: {
-    displayName: 'Markdown Card Section';
-    icon: 'layout';
-    description: '';
-  };
-  attributes: {
-    Body: Attribute.RichText;
-  };
-}
-
-export interface LayoutLeadCaptureLayout extends Schema.Component {
-  collectionName: 'components_layout_lead_capture_layout_sections';
-  info: {
-    displayName: 'Lead Capture Section';
-  };
-  attributes: {
-    Button: Attribute.Component<'components.lead-button-banner'>;
-    Email: Attribute.Component<'components.lead-input-banner'>;
-  };
-}
-
-export interface LayoutJoinUsSection extends Schema.Component {
-  collectionName: 'components_layout_join_us_sections';
-  info: {
-    displayName: 'Join Us Section';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.String;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutHsEmbededCalendar extends Schema.Component {
-  collectionName: 'components_layout_hs_embeded_calendars';
-  info: {
-    displayName: 'HsEmbededCalendar';
-    icon: 'calendar';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    SourceUrl: Attribute.String;
-  };
-}
-
-export interface LayoutHowItWorksSection extends Schema.Component {
-  collectionName: 'components_layout_how_it_works_sections';
-  info: {
-    displayName: 'How It Works Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Steps: Attribute.Component<'components.how-it-works', true>;
-  };
-}
-
-export interface LayoutHoppyMood extends Schema.Component {
-  collectionName: 'components_layout_hoppy_mood';
-  info: {
-    displayName: 'Hoppy Quotes';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
-    Button: Attribute.Component<'components.link'>;
-    Socials: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface LayoutHoppyFanCreatives extends Schema.Component {
-  collectionName: 'components_layout_hoppy_fan_creatives';
-  info: {
-    displayName: 'Fan Creatives Section';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
-    Socials: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface LayoutHoppyComicSection extends Schema.Component {
-  collectionName: 'components_layout_hoppy_comic_section';
-  info: {
-    displayName: 'Comic Section';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
-    Image: Attribute.Media<'images'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutHero extends Schema.Component {
-  collectionName: 'components_layout_heroes';
-  info: {
-    displayName: 'Hero Section';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Capsule: Attribute.Component<'components.capsule'>;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
-    Image: Attribute.Media<'images'>;
-    VideoOrGif: Attribute.Media<'images' | 'videos'>;
-    Buttons: Attribute.Component<'components.link', true>;
-    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
-    LottieLG: Attribute.JSON;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    LottieSM: Attribute.JSON;
-    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
-    Description_2: Attribute.String &
-      Attribute.DefaultTo<'No credit card needed.'>;
-    Description_3: Attribute.String &
-      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
-    ListTitle: Attribute.String & Attribute.DefaultTo<'Why choose CodeRabbit?'>;
-    BackedBy: Attribute.String & Attribute.DefaultTo<'We\u2019re backed by'>;
-    BackedByImages: Attribute.Media<'images', true>;
-    BackedByImagesDark: Attribute.Media<'images', true>;
-  };
-}
-
-export interface LayoutHeroCardsSection extends Schema.Component {
-  collectionName: 'components_layout_hero_cards_sections';
-  info: {
-    displayName: 'Hero Cards Section';
-  };
-  attributes: {
-    Cards: Attribute.Component<'components.hero-card', true>;
-  };
-}
-
-export interface LayoutGetStarted extends Schema.Component {
-  collectionName: 'components_layout_get_starteds';
-  info: {
-    displayName: 'Get Started Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
-    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
-    Buttons: Attribute.Component<'components.link', true>;
-    TextDetails: Attribute.String &
-      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
-    Image: Attribute.Media<'images'>;
-    ImageDark: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-    Description_2: Attribute.String;
-  };
-}
-
-export interface LayoutGdprFormSection extends Schema.Component {
-  collectionName: 'components_layout_gdpr_form_sections';
-  info: {
-    displayName: 'GDPR Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Please fill out this form to request access:'>;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyName: Attribute.Component<'components.input-text-field'>;
-    WorkEmail: Attribute.Component<'components.input-text-field'>;
-    JobTitle: Attribute.Component<'components.input-text-field'>;
-    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutFeaturesSection extends Schema.Component {
-  collectionName: 'components_layout_features_sections';
-  info: {
-    displayName: 'Features Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<''>;
-    Description: Attribute.String & Attribute.DefaultTo<''>;
-    Features: Attribute.Component<'components.feature', true>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutFeatureGridSection extends Schema.Component {
-  collectionName: 'components_layout_features_grid_sections';
-  info: {
-    displayName: 'Features Grid Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<''>;
-    Features: Attribute.Component<'components.feature-card', true>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutFaq extends Schema.Component {
-  collectionName: 'components_layout_faq';
-  info: {
-    displayName: 'FAQ Section';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
-    Description: Attribute.String;
-    Faqs: Attribute.Component<'components.faq-item', true>;
-    SplitIntoTwoHalves: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface LayoutFaqSection extends Schema.Component {
-  collectionName: 'components_layout_faq_sections';
-  info: {
-    displayName: 'FAQ Section';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
-    Button: Attribute.Component<'components.link'>;
-    Faqs: Attribute.Component<'components.faq-item', true>;
-  };
-}
-
-export interface LayoutEventCard extends Schema.Component {
-  collectionName: 'components_layout_event_cards';
-  info: {
-    displayName: 'Event Card';
-    icon: 'check';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface LayoutEnterprisePlatformSection extends Schema.Component {
-  collectionName: 'components_layout_enterprise_platform_sections';
-  info: {
-    displayName: 'Enterprise Platform Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Send your reports to any Platform'>;
-    Image: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-    ImageDark: Attribute.Media<'images'>;
-    ImageSMDark: Attribute.Media<'images'>;
-  };
-}
-
-export interface LayoutEnterpriseImpactSection extends Schema.Component {
-  collectionName: 'components_layout_enterprise_impact_sections';
-  info: {
-    displayName: 'Enterprise Impact Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Proven Enterprise Impact'>;
-    Slider: Attribute.Component<'components.impact-slider', true>;
-  };
-}
-
-export interface LayoutEnterpriseHeroWithVideo extends Schema.Component {
-  collectionName: 'components_layout_enterprise_hero_with_videos';
-  info: {
-    displayName: 'Enterprise Hero With Video';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
-    Description: Attribute.Text &
-      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
-    Buttons: Attribute.Component<'components.link', true>;
-    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
-    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
-    Description_2: Attribute.String &
-      Attribute.DefaultTo<'No credit card needed.'>;
-    Description_3: Attribute.String &
-      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
-    YTVideoUrl: Attribute.String;
-  };
-}
-
-export interface LayoutCustomersSection extends Schema.Component {
-  collectionName: 'components_layout_customers_sections';
-  info: {
-    displayName: 'Customers Section';
-    description: '';
-  };
-  attributes: {
-    Customers: Attribute.Component<'components.link', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
-    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
-    CustomersDark: Attribute.Component<'components.link', true>;
-  };
-}
-
-export interface LayoutCustomFeaturesSection extends Schema.Component {
-  collectionName: 'components_layout_custom_features_sections';
-  info: {
-    displayName: 'Custom Features Section';
-    icon: 'dashboard';
-  };
-  attributes: {
-    CustomLayout: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    Features: Attribute.Component<'components.custom-feature', true>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutContactUsSection extends Schema.Component {
-  collectionName: 'components_layout_contact_us_sections';
-  info: {
-    displayName: 'Contact Us Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Still have questions?'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutContactSupportFormSection extends Schema.Component {
-  collectionName: 'components_layout_contact_support_form_sections';
-  info: {
-    displayName: 'Support Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Please complete this form so we can assist you more effectively:'>;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyName: Attribute.Component<'components.input-text-field'>;
-    WorkEmail: Attribute.Component<'components.input-text-field'>;
-    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutContactFormSection extends Schema.Component {
-  collectionName: 'components_layout_contact_form_sections';
-  info: {
-    displayName: 'Contact Form Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
-    FirstName: Attribute.Component<'components.input-text-field'>;
-    LastName: Attribute.Component<'components.input-text-field'>;
-    CompanyName: Attribute.Component<'components.input-text-field'>;
-    WorkEmail: Attribute.Component<'components.input-text-field'>;
-    JobTitle: Attribute.Component<'components.input-text-field'>;
-    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
-    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
-    Button: Attribute.Component<'components.link'>;
-  };
-}
-
-export interface LayoutCollapsibleBoxesSection extends Schema.Component {
-  collectionName: 'components_layout_collapsible_boxes_sections';
-  info: {
-    displayName: 'Collapsible Boxes Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<''>;
-    Features: Attribute.Component<'components.collapsible', true>;
-  };
-}
-
-export interface LayoutCaseStudySection extends Schema.Component {
-  collectionName: 'components_layout_case_study_sections';
-  info: {
-    displayName: 'Case Study Section';
-  };
-  attributes: {
-    Cases: Attribute.Component<'components.case-study', true> &
-      Attribute.Required;
-    Button: Attribute.Component<'components.link'> & Attribute.Required;
-  };
-}
-
-export interface LayoutBrandGuidelineHeroSection extends Schema.Component {
-  collectionName: 'components_brand-guideline_hero_sections';
-  info: {
-    displayName: 'Hero Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'CodeRabbit Brand Assets'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Feel free to use the CodeRabbit logos provided below just keep them as-is to help us stay consistent. '>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface LayoutBrandGuidelineAssetSection extends Schema.Component {
-  collectionName: 'components_asset_sections';
-  info: {
-    displayName: 'Asset Section';
-    description: '';
-  };
-  attributes: {
-    AssetCard: Attribute.Component<'components.asset-card', true>;
-  };
-}
-
-export interface LayoutBlogSliderSection extends Schema.Component {
-  collectionName: 'components_layout_blog_slider_sections';
-  info: {
-    displayName: 'Blog Slider Section';
-    description: '';
-  };
-  attributes: {
-    Slider: Attribute.Component<'components.blog-slider', true>;
-  };
-}
-
-export interface LayoutBlogHeroSection extends Schema.Component {
-  collectionName: 'components_layout_blog_hero_sections';
-  info: {
-    displayName: 'Blog Hero Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'CodeRabbit Blog'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Dig into insights about our products, use cases, and POVs.'>;
-    SearchPlaceholder: Attribute.String &
-      Attribute.DefaultTo<'Search articles'>;
-  };
-}
-
-export interface LayoutBlogBanners extends Schema.Component {
-  collectionName: 'components_layout_blog_banners';
-  info: {
-    displayName: 'Blog Banners';
-    description: '';
-  };
-  attributes: {
-    Banner: Attribute.Component<'components.blog-banner', true>;
-  };
-}
-
-export interface LayoutArchitecture extends Schema.Component {
-  collectionName: 'components_layout_architecture';
-  info: {
-    displayName: 'Architecture Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
-    Image: Attribute.Media<'images'>;
-    ImageSM: Attribute.Media<'images'>;
-    ImageDark: Attribute.Media<'images'>;
-    ImageDarkSM: Attribute.Media<'images'>;
-  };
-}
-
-export interface LayoutAlternatedContent extends Schema.Component {
-  collectionName: 'components_layout_alternated_contents';
-  info: {
-    displayName: 'Alternated Content';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    ContentWithImages: Attribute.Component<
-      'components.content-with-image',
-      true
-    >;
-  };
-}
-
-export interface CasestudyTestimonial extends Schema.Component {
-  collectionName: 'components_components_case_testimonial';
-  info: {
-    displayName: 'Testimonial Card';
-    description: '';
-  };
-  attributes: {
-    testimonial: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudyStats extends Schema.Component {
-  collectionName: 'components_components_case_studies_stats';
-  info: {
-    singularName: 'case-study-stat';
-    pluralName: 'case-studies-stats';
-    displayName: 'Stats';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Stats: Attribute.Component<'components.metric', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Brief: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection4 extends Schema.Component {
-  collectionName: 'components_components_case_section4';
-  info: {
-    displayName: 'Section 4';
-    description: '';
-  };
-  attributes: {
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection3 extends Schema.Component {
-  collectionName: 'components_components_case_section3';
-  info: {
-    displayName: 'Section 3';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface CasestudySection2 extends Schema.Component {
-  collectionName: 'components_components_case_section2';
-  info: {
-    displayName: 'Section 2';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-    Paragraph: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudySection1 extends Schema.Component {
-  collectionName: 'components_components_case_section1';
-  info: {
-    displayName: 'Section 1';
-    description: '';
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
-    Image: Attribute.Media<'images'>;
-    NameAndPosition: Attribute.String &
-      Attribute.DefaultTo<'Before CodeRabbit '>;
-    Testimonial: Attribute.RichText &
-      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
-  };
-}
-
-export interface CasestudyConclusion extends Schema.Component {
-  collectionName: 'components_components_case_conculision';
-  info: {
-    singularName: 'case-conclusion';
-    pluralName: 'case-conclusions';
-    displayName: 'Conclusion';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
-    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
-    Description: Attribute.String &
-      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
-    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
-      Attribute.SetMinMax<
-        {
-          max: 3;
-        },
-        number
-      >;
-  };
-}
-
-export interface CasestudyCaseHome extends Schema.Component {
-  collectionName: 'components_components_case_homes';
-  info: {
-    displayName: 'Case Home';
-    description: 'Home section for case studies';
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    ClientName: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum'>;
-    ClientLogo: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ClientLogoDark: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    CaseTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
-    CaseDescription: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
-    Image: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImageSM: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
-export interface CasestudyCaseConclusionCard extends Schema.Component {
-  collectionName: 'components_components_case_conclusion_card';
-  info: {
-    displayName: 'Case Conclusion Card';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
-    Bullets: Attribute.Component<'components.bullets', true>;
-  };
-}
-
 export interface EventVenue extends Schema.Component {
   collectionName: 'components_components_event_venue';
   info: {
@@ -1145,7 +144,8 @@ export interface EventVenue extends Schema.Component {
         };
       }> &
       Attribute.DefaultTo<'New York City NY 10001'>;
-    Image: Attribute.Media<'images'>;
+    googleMapsUrl: Attribute.Text;
+    coordinates: Attribute.Text;
   };
 }
 
@@ -1498,6 +498,218 @@ export interface EventFeaturing extends Schema.Component {
       }> &
       Attribute.DefaultTo<'CodeRabbit at AI Summit'>;
     Speakers: Attribute.Component<'event.speaker', true>;
+  };
+}
+
+export interface CasestudyTestimonial extends Schema.Component {
+  collectionName: 'components_components_case_testimonial';
+  info: {
+    displayName: 'Testimonial Card';
+    description: '';
+  };
+  attributes: {
+    testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyStats extends Schema.Component {
+  collectionName: 'components_components_case_studies_stats';
+  info: {
+    singularName: 'case-study-stat';
+    pluralName: 'case-studies-stats';
+    displayName: 'Stats';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Stats: Attribute.Component<'components.metric', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Brief: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection4 extends Schema.Component {
+  collectionName: 'components_components_case_section4';
+  info: {
+    displayName: 'Section 4';
+    description: '';
+  };
+  attributes: {
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection3 extends Schema.Component {
+  collectionName: 'components_components_case_section3';
+  info: {
+    displayName: 'Section 3';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 3'>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    SubHeading: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface CasestudySection2 extends Schema.Component {
+  collectionName: 'components_components_case_section2';
+  info: {
+    displayName: 'Section 2';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 2 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    Paragraph: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudySection1 extends Schema.Component {
+  collectionName: 'components_components_case_section1';
+  info: {
+    displayName: 'Section 1';
+    description: '';
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Image: Attribute.Media<'images'>;
+    NameAndPosition: Attribute.String &
+      Attribute.DefaultTo<'Before CodeRabbit '>;
+    Testimonial: Attribute.RichText &
+      Attribute.DefaultTo<'lorem ipsum dolor sit amet consectetur. Nunc porta non nunc curabitur ac. Adipiscing diam condimentum viverra cum mi mattis nunc a.'>;
+  };
+}
+
+export interface CasestudyConclusion extends Schema.Component {
+  collectionName: 'components_components_case_conculision';
+  info: {
+    singularName: 'case-conclusion';
+    pluralName: 'case-conclusions';
+    displayName: 'Conclusion';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    SectionName: Attribute.String & Attribute.DefaultTo<'Section 1 '>;
+    Title: Attribute.String & Attribute.DefaultTo<'Ways to Work Together'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Here\u2019s how teams can close the gap:'>;
+    Conclusion: Attribute.Component<'casestudy.case-conclusion-card', true> &
+      Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+  };
+}
+
+export interface CasestudyCaseHome extends Schema.Component {
+  collectionName: 'components_components_case_homes';
+  info: {
+    displayName: 'Case Home';
+    description: 'Home section for case studies';
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    ClientName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum'>;
+    ClientLogo: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ClientLogoDark: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CaseTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor '>;
+    CaseDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'>;
+    Image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImageSM: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface CasestudyCaseConclusionCard extends Schema.Component {
+  collectionName: 'components_components_case_conclusion_card';
+  info: {
+    displayName: 'Case Conclusion Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Before CodeRabbit '>;
+    Bullets: Attribute.Component<'components.bullets', true>;
   };
 }
 
@@ -2426,6 +1638,795 @@ export interface ComponentsAnnouncment extends Schema.Component {
   };
 }
 
+export interface LayoutWhitepaperFormSection extends Schema.Component {
+  collectionName: 'components_layout_whitepaper_form_sections';
+  info: {
+    displayName: 'Whitepaper Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutVsFeatureSection extends Schema.Component {
+  collectionName: 'components_layout_vs_extension_features_sections';
+  info: {
+    displayName: 'Features Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Benefits: Attribute.Component<'components.security', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutVsCodeHeroSection extends Schema.Component {
+  collectionName: 'components_layout_vs_code_heroes';
+  info: {
+    displayName: 'Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Capsule: Attribute.Component<'components.capsule'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Image: Attribute.Media<'images'>;
+    VideoOrGif: Attribute.Media<'images' | 'videos'>;
+    VideoOrGifDark: Attribute.Media<'images' | 'videos'>;
+    Buttons: Attribute.Component<'components.link', true>;
+    LeftContentText: Attribute.String &
+      Attribute.DefaultTo<'14-day free trial '>;
+    MiddleContentText: Attribute.String & Attribute.DefaultTo<' | Works with'>;
+    RightContentText: Attribute.Component<'components.logo-text-pair', true> &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 3;
+        },
+        number
+      >;
+    CenterImage_Icon: Attribute.Media<'images'>;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+  };
+}
+
+export interface LayoutTrustSection extends Schema.Component {
+  collectionName: 'components_layout_trust_sections';
+  info: {
+    displayName: 'Trust Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Your data stays confidential'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'We take security, privacy, and compliance seriously.'>;
+    Cards: Attribute.Component<'components.trust-card', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutTestimonials extends Schema.Component {
+  collectionName: 'components_layout_testimonials';
+  info: {
+    displayName: 'Testimonials Section';
+    description: '';
+  };
+  attributes: {
+    Testimonials: Attribute.Component<'components.testimonial', true>;
+    Title: Attribute.String & Attribute.DefaultTo<'What they say about us'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutStartupFormSection extends Schema.Component {
+  collectionName: 'components_layout_startup_form_sections';
+  info: {
+    displayName: 'Startup Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<"Complete this form, If your organization qualifies for our Startup program, we'll activate your account.">;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyWebsite: Attribute.Component<'components.input-text-field'>;
+    FundingDetails: Attribute.Component<'components.input-text-field'>;
+    GitOrgName: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    Email: Attribute.Component<'components.input-text-field'>;
+    TrialCheckbox: Attribute.Component<'components.input-checkbox-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutSocFormSection extends Schema.Component {
+  collectionName: 'components_layout_soc_form_sections';
+  info: {
+    displayName: 'SOC Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to request access:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutSimpleHero extends Schema.Component {
+  collectionName: 'components_layout_simple_heroes';
+  info: {
+    displayName: 'Simple Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Buttons: Attribute.Component<'components.link', true>;
+    CarouselWithTooltips: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    CarouselWithTooltipsDark: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface LayoutSecuritySection extends Schema.Component {
+  collectionName: 'components_layout_security_sections';
+  info: {
+    displayName: 'Security Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Securities: Attribute.Component<'components.security', true>;
+  };
+}
+
+export interface LayoutPrivacyPolicySection extends Schema.Component {
+  collectionName: 'components_layout_privacy_policy_sections';
+  info: {
+    displayName: 'Privacy Policy Section';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Our privacy policy'>;
+    Description: Attribute.RichText;
+    Questions: Attribute.Component<'components.privacy-policy-questions', true>;
+  };
+}
+
+export interface LayoutPlansSection extends Schema.Component {
+  collectionName: 'components_layout_plans_sections';
+  info: {
+    displayName: 'Plans Section';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
+    Plans: Attribute.Component<'components.plan', true>;
+  };
+}
+
+export interface LayoutPillsSection extends Schema.Component {
+  collectionName: 'components_layout_pills_sections';
+  info: {
+    displayName: 'Pills Section';
+    description: '';
+  };
+  attributes: {
+    Pills: Attribute.Component<'components.pill', true>;
+  };
+}
+
+export interface LayoutPartnershipFormSection extends Schema.Component {
+  collectionName: 'components_layout_partnership_form_sections';
+  info: {
+    displayName: 'Partnership Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutNewsletterBlogSection extends Schema.Component {
+  collectionName: 'components_layout_newsletter_blog_sections';
+  info: {
+    displayName: 'Blog Newsletter Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Sign up for our Newsletter'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Don\u2019t miss out on our latest articles'>;
+    Newsletter: Attribute.Component<'components.input-text-field'>;
+  };
+}
+
+export interface LayoutMetricsSection extends Schema.Component {
+  collectionName: 'components_layout_metrics_sections';
+  info: {
+    displayName: 'Stats Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'The most installed AI App on GitHub & GitLab'>;
+    Stats: Attribute.Component<'components.metric', true>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Loved by 1000s of developers'>;
+  };
+}
+
+export interface LayoutMembersSection extends Schema.Component {
+  collectionName: 'components_layout_members_sections';
+  info: {
+    displayName: 'Members Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images'>;
+    Members: Attribute.Component<'components.member', true>;
+  };
+}
+
+export interface LayoutMarkdownCardSection extends Schema.Component {
+  collectionName: 'components_layout_markdown_card_sections';
+  info: {
+    displayName: 'Markdown Card Section';
+    icon: 'layout';
+    description: '';
+  };
+  attributes: {
+    Body: Attribute.RichText;
+  };
+}
+
+export interface LayoutLeadCaptureLayout extends Schema.Component {
+  collectionName: 'components_layout_lead_capture_layout_sections';
+  info: {
+    displayName: 'Lead Capture Section';
+  };
+  attributes: {
+    Button: Attribute.Component<'components.lead-button-banner'>;
+    Email: Attribute.Component<'components.lead-input-banner'>;
+  };
+}
+
+export interface LayoutJoinUsSection extends Schema.Component {
+  collectionName: 'components_layout_join_us_sections';
+  info: {
+    displayName: 'Join Us Section';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.String;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutHsEmbededCalendar extends Schema.Component {
+  collectionName: 'components_layout_hs_embeded_calendars';
+  info: {
+    displayName: 'HsEmbededCalendar';
+    icon: 'calendar';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    SourceUrl: Attribute.String;
+  };
+}
+
+export interface LayoutHowItWorksSection extends Schema.Component {
+  collectionName: 'components_layout_how_it_works_sections';
+  info: {
+    displayName: 'How It Works Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Steps: Attribute.Component<'components.how-it-works', true>;
+  };
+}
+
+export interface LayoutHoppyMood extends Schema.Component {
+  collectionName: 'components_layout_hoppy_mood';
+  info: {
+    displayName: 'Hoppy Quotes';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Button: Attribute.Component<'components.link'>;
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface LayoutHoppyFanCreatives extends Schema.Component {
+  collectionName: 'components_layout_hoppy_fan_creatives';
+  info: {
+    displayName: 'Fan Creatives Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Socials: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface LayoutHoppyComicSection extends Schema.Component {
+  collectionName: 'components_layout_hoppy_comic_section';
+  info: {
+    displayName: 'Comic Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Meet Hoppy, Your Dev Sidekick'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Fast, smart, and always by your side \u2014 helping you level up your coding skills.'>;
+    Image: Attribute.Media<'images'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutHero extends Schema.Component {
+  collectionName: 'components_layout_heroes';
+  info: {
+    displayName: 'Hero Section';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Capsule: Attribute.Component<'components.capsule'>;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Image: Attribute.Media<'images'>;
+    VideoOrGif: Attribute.Media<'images' | 'videos'>;
+    Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
+    LottieLG: Attribute.JSON;
+    Bullets: Attribute.Component<'components.bullets', true>;
+    LottieSM: Attribute.JSON;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+    ListTitle: Attribute.String & Attribute.DefaultTo<'Why choose CodeRabbit?'>;
+    BackedBy: Attribute.String & Attribute.DefaultTo<'We\u2019re backed by'>;
+    BackedByImages: Attribute.Media<'images', true>;
+    BackedByImagesDark: Attribute.Media<'images', true>;
+  };
+}
+
+export interface LayoutHeroCardsSection extends Schema.Component {
+  collectionName: 'components_layout_hero_cards_sections';
+  info: {
+    displayName: 'Hero Cards Section';
+  };
+  attributes: {
+    Cards: Attribute.Component<'components.hero-card', true>;
+  };
+}
+
+export interface LayoutGetStarted extends Schema.Component {
+  collectionName: 'components_layout_get_starteds';
+  info: {
+    displayName: 'Get Started Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Buttons: Attribute.Component<'components.link', true>;
+    TextDetails: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+    Image: Attribute.Media<'images'>;
+    ImageDark: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+    Description_2: Attribute.String;
+  };
+}
+
+export interface LayoutGdprFormSection extends Schema.Component {
+  collectionName: 'components_layout_gdpr_form_sections';
+  info: {
+    displayName: 'GDPR Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to request access:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutFeaturesSection extends Schema.Component {
+  collectionName: 'components_layout_features_sections';
+  info: {
+    displayName: 'Features Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
+    Description: Attribute.String & Attribute.DefaultTo<''>;
+    Features: Attribute.Component<'components.feature', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutFeatureGridSection extends Schema.Component {
+  collectionName: 'components_layout_features_grid_sections';
+  info: {
+    displayName: 'Features Grid Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
+    Features: Attribute.Component<'components.feature-card', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutFaq extends Schema.Component {
+  collectionName: 'components_layout_faq';
+  info: {
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
+    Description: Attribute.String;
+    Faqs: Attribute.Component<'components.faq-item', true>;
+    SplitIntoTwoHalves: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface LayoutFaqSection extends Schema.Component {
+  collectionName: 'components_layout_faq_sections';
+  info: {
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Frequently asked questions'>;
+    Button: Attribute.Component<'components.link'>;
+    Faqs: Attribute.Component<'components.faq-item', true>;
+  };
+}
+
+export interface LayoutEventCard extends Schema.Component {
+  collectionName: 'components_layout_event_cards';
+  info: {
+    displayName: 'Event Card';
+    icon: 'check';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface LayoutEnterprisePlatformSection extends Schema.Component {
+  collectionName: 'components_layout_enterprise_platform_sections';
+  info: {
+    displayName: 'Enterprise Platform Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Send your reports to any Platform'>;
+    Image: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+    ImageDark: Attribute.Media<'images'>;
+    ImageSMDark: Attribute.Media<'images'>;
+  };
+}
+
+export interface LayoutEnterpriseImpactSection extends Schema.Component {
+  collectionName: 'components_layout_enterprise_impact_sections';
+  info: {
+    displayName: 'Enterprise Impact Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Proven Enterprise Impact'>;
+    Slider: Attribute.Component<'components.impact-slider', true>;
+  };
+}
+
+export interface LayoutEnterpriseHeroWithVideo extends Schema.Component {
+  collectionName: 'components_layout_enterprise_hero_with_videos';
+  info: {
+    displayName: 'Enterprise Hero With Video';
+    icon: '';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Cut Code Review Time & Bugs in Half'>;
+    Description: Attribute.Text &
+      Attribute.DefaultTo<'Supercharge your entire team with AI-driven contextual feedback. Supports all languages.'>;
+    Buttons: Attribute.Component<'components.link', true>;
+    Tag: Attribute.String & Attribute.DefaultTo<'Page name'>;
+    Description_1: Attribute.String & Attribute.DefaultTo<'14-day free trial '>;
+    Description_2: Attribute.String &
+      Attribute.DefaultTo<'No credit card needed.'>;
+    Description_3: Attribute.String &
+      Attribute.DefaultTo<'2-click signup with GitHub/GitLab.'>;
+    YTVideoUrl: Attribute.String;
+  };
+}
+
+export interface LayoutCustomersSection extends Schema.Component {
+  collectionName: 'components_layout_customers_sections';
+  info: {
+    displayName: 'Customers Section';
+    description: '';
+  };
+  attributes: {
+    Customers: Attribute.Component<'components.link', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Trusted by 1000+ organizations'>;
+    Grayscale: Attribute.Boolean & Attribute.DefaultTo<true>;
+    CustomersDark: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface LayoutCustomFeaturesSection extends Schema.Component {
+  collectionName: 'components_layout_custom_features_sections';
+  info: {
+    displayName: 'Custom Features Section';
+    icon: 'dashboard';
+  };
+  attributes: {
+    CustomLayout: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    Features: Attribute.Component<'components.custom-feature', true>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutContactUsSection extends Schema.Component {
+  collectionName: 'components_layout_contact_us_sections';
+  info: {
+    displayName: 'Contact Us Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Still have questions?'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutContactSupportFormSection extends Schema.Component {
+  collectionName: 'components_layout_contact_support_form_sections';
+  info: {
+    displayName: 'Support Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please complete this form so we can assist you more effectively:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutContactFormSection extends Schema.Component {
+  collectionName: 'components_layout_contact_form_sections';
+  info: {
+    displayName: 'Contact Form Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.DefaultTo<'Please fill out this form to schedule a demo:'>;
+    FirstName: Attribute.Component<'components.input-text-field'>;
+    LastName: Attribute.Component<'components.input-text-field'>;
+    CompanyName: Attribute.Component<'components.input-text-field'>;
+    WorkEmail: Attribute.Component<'components.input-text-field'>;
+    JobTitle: Attribute.Component<'components.input-text-field'>;
+    NumberOfDevelopers: Attribute.Component<'components.input-select-field'>;
+    HowCanWeHelp: Attribute.Component<'components.input-text-field'>;
+    Button: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface LayoutCollapsibleBoxesSection extends Schema.Component {
+  collectionName: 'components_layout_collapsible_boxes_sections';
+  info: {
+    displayName: 'Collapsible Boxes Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<''>;
+    Features: Attribute.Component<'components.collapsible', true>;
+  };
+}
+
+export interface LayoutCaseStudySection extends Schema.Component {
+  collectionName: 'components_layout_case_study_sections';
+  info: {
+    displayName: 'Case Study Section';
+  };
+  attributes: {
+    Cases: Attribute.Component<'components.case-study', true> &
+      Attribute.Required;
+    Button: Attribute.Component<'components.link'> & Attribute.Required;
+  };
+}
+
+export interface LayoutBrandGuidelineHeroSection extends Schema.Component {
+  collectionName: 'components_brand-guideline_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'CodeRabbit Brand Assets'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Feel free to use the CodeRabbit logos provided below just keep them as-is to help us stay consistent. '>;
+    Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface LayoutBrandGuidelineAssetSection extends Schema.Component {
+  collectionName: 'components_asset_sections';
+  info: {
+    displayName: 'Asset Section';
+    description: '';
+  };
+  attributes: {
+    AssetCard: Attribute.Component<'components.asset-card', true>;
+  };
+}
+
+export interface LayoutBlogSliderSection extends Schema.Component {
+  collectionName: 'components_layout_blog_slider_sections';
+  info: {
+    displayName: 'Blog Slider Section';
+    description: '';
+  };
+  attributes: {
+    Slider: Attribute.Component<'components.blog-slider', true>;
+  };
+}
+
+export interface LayoutBlogHeroSection extends Schema.Component {
+  collectionName: 'components_layout_blog_hero_sections';
+  info: {
+    displayName: 'Blog Hero Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'CodeRabbit Blog'>;
+    Description: Attribute.String &
+      Attribute.DefaultTo<'Dig into insights about our products, use cases, and POVs.'>;
+    SearchPlaceholder: Attribute.String &
+      Attribute.DefaultTo<'Search articles'>;
+  };
+}
+
+export interface LayoutBlogBanners extends Schema.Component {
+  collectionName: 'components_layout_blog_banners';
+  info: {
+    displayName: 'Blog Banners';
+    description: '';
+  };
+  attributes: {
+    Banner: Attribute.Component<'components.blog-banner', true>;
+  };
+}
+
+export interface LayoutArchitecture extends Schema.Component {
+  collectionName: 'components_layout_architecture';
+  info: {
+    displayName: 'Architecture Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Get started today'>;
+    Image: Attribute.Media<'images'>;
+    ImageSM: Attribute.Media<'images'>;
+    ImageDark: Attribute.Media<'images'>;
+    ImageDarkSM: Attribute.Media<'images'>;
+  };
+}
+
+export interface LayoutAlternatedContent extends Schema.Component {
+  collectionName: 'components_layout_alternated_contents';
+  info: {
+    displayName: 'Alternated Content';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    ContentWithImages: Attribute.Component<
+      'components.content-with-image',
+      true
+    >;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -2434,65 +2435,6 @@ declare module '@strapi/types' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
-      'layout.vs-feature-section': LayoutVsFeatureSection;
-      'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
-      'layout.trust-section': LayoutTrustSection;
-      'layout.testimonials': LayoutTestimonials;
-      'layout.startup-form-section': LayoutStartupFormSection;
-      'layout.soc-form-section': LayoutSocFormSection;
-      'layout.simple-hero': LayoutSimpleHero;
-      'layout.security-section': LayoutSecuritySection;
-      'layout.privacy-policy-section': LayoutPrivacyPolicySection;
-      'layout.plans-section': LayoutPlansSection;
-      'layout.pills-section': LayoutPillsSection;
-      'layout.partnership-form-section': LayoutPartnershipFormSection;
-      'layout.newsletter-blog-section': LayoutNewsletterBlogSection;
-      'layout.metrics-section': LayoutMetricsSection;
-      'layout.members-section': LayoutMembersSection;
-      'layout.markdown-card-section': LayoutMarkdownCardSection;
-      'layout.lead-capture-layout': LayoutLeadCaptureLayout;
-      'layout.join-us-section': LayoutJoinUsSection;
-      'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
-      'layout.how-it-works-section': LayoutHowItWorksSection;
-      'layout.hoppy-mood': LayoutHoppyMood;
-      'layout.hoppy-fan-creatives': LayoutHoppyFanCreatives;
-      'layout.hoppy-comic-section': LayoutHoppyComicSection;
-      'layout.hero': LayoutHero;
-      'layout.hero-cards-section': LayoutHeroCardsSection;
-      'layout.get-started': LayoutGetStarted;
-      'layout.gdpr-form-section': LayoutGdprFormSection;
-      'layout.features-section': LayoutFeaturesSection;
-      'layout.feature-grid-section': LayoutFeatureGridSection;
-      'layout.faq': LayoutFaq;
-      'layout.faq-section': LayoutFaqSection;
-      'layout.event-card': LayoutEventCard;
-      'layout.enterprise-platform-section': LayoutEnterprisePlatformSection;
-      'layout.enterprise-impact-section': LayoutEnterpriseImpactSection;
-      'layout.enterprise-hero-with-video': LayoutEnterpriseHeroWithVideo;
-      'layout.customers-section': LayoutCustomersSection;
-      'layout.custom-features-section': LayoutCustomFeaturesSection;
-      'layout.contact-us-section': LayoutContactUsSection;
-      'layout.contact-support-form-section': LayoutContactSupportFormSection;
-      'layout.contact-form-section': LayoutContactFormSection;
-      'layout.collapsible-boxes-section': LayoutCollapsibleBoxesSection;
-      'layout.case-study-section': LayoutCaseStudySection;
-      'layout.brand-guideline-hero-section': LayoutBrandGuidelineHeroSection;
-      'layout.brand-guideline-asset-section': LayoutBrandGuidelineAssetSection;
-      'layout.blog-slider-section': LayoutBlogSliderSection;
-      'layout.blog-hero-section': LayoutBlogHeroSection;
-      'layout.blog-banners': LayoutBlogBanners;
-      'layout.architecture': LayoutArchitecture;
-      'layout.alternated-content': LayoutAlternatedContent;
-      'casestudy.testimonial': CasestudyTestimonial;
-      'casestudy.stats': CasestudyStats;
-      'casestudy.section-4': CasestudySection4;
-      'casestudy.section-3': CasestudySection3;
-      'casestudy.section-2': CasestudySection2;
-      'casestudy.section-1': CasestudySection1;
-      'casestudy.conclusion': CasestudyConclusion;
-      'casestudy.case-home': CasestudyCaseHome;
-      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
       'event.venue': EventVenue;
       'event.speaker': EventSpeaker;
       'event.register-form': EventRegisterForm;
@@ -2505,6 +2447,15 @@ declare module '@strapi/types' {
       'event.details': EventDetails;
       'event.card': EventCard;
       'event.featuring': EventFeaturing;
+      'casestudy.testimonial': CasestudyTestimonial;
+      'casestudy.stats': CasestudyStats;
+      'casestudy.section-4': CasestudySection4;
+      'casestudy.section-3': CasestudySection3;
+      'casestudy.section-2': CasestudySection2;
+      'casestudy.section-1': CasestudySection1;
+      'casestudy.conclusion': CasestudyConclusion;
+      'casestudy.case-home': CasestudyCaseHome;
+      'casestudy.case-conclusion-card': CasestudyCaseConclusionCard;
       'components.trust-card': ComponentsTrustCard;
       'components.testimonial': ComponentsTestimonial;
       'components.socials': ComponentsSocials;
@@ -2566,6 +2517,56 @@ declare module '@strapi/types' {
       'components.banner-text-fields': ComponentsBannerTextFields;
       'components.asset-card': ComponentsAssetCard;
       'components.announcment': ComponentsAnnouncment;
+      'layout.whitepaper-form-section': LayoutWhitepaperFormSection;
+      'layout.vs-feature-section': LayoutVsFeatureSection;
+      'layout.vs-code-hero-section': LayoutVsCodeHeroSection;
+      'layout.trust-section': LayoutTrustSection;
+      'layout.testimonials': LayoutTestimonials;
+      'layout.startup-form-section': LayoutStartupFormSection;
+      'layout.soc-form-section': LayoutSocFormSection;
+      'layout.simple-hero': LayoutSimpleHero;
+      'layout.security-section': LayoutSecuritySection;
+      'layout.privacy-policy-section': LayoutPrivacyPolicySection;
+      'layout.plans-section': LayoutPlansSection;
+      'layout.pills-section': LayoutPillsSection;
+      'layout.partnership-form-section': LayoutPartnershipFormSection;
+      'layout.newsletter-blog-section': LayoutNewsletterBlogSection;
+      'layout.metrics-section': LayoutMetricsSection;
+      'layout.members-section': LayoutMembersSection;
+      'layout.markdown-card-section': LayoutMarkdownCardSection;
+      'layout.lead-capture-layout': LayoutLeadCaptureLayout;
+      'layout.join-us-section': LayoutJoinUsSection;
+      'layout.hs-embeded-calendar': LayoutHsEmbededCalendar;
+      'layout.how-it-works-section': LayoutHowItWorksSection;
+      'layout.hoppy-mood': LayoutHoppyMood;
+      'layout.hoppy-fan-creatives': LayoutHoppyFanCreatives;
+      'layout.hoppy-comic-section': LayoutHoppyComicSection;
+      'layout.hero': LayoutHero;
+      'layout.hero-cards-section': LayoutHeroCardsSection;
+      'layout.get-started': LayoutGetStarted;
+      'layout.gdpr-form-section': LayoutGdprFormSection;
+      'layout.features-section': LayoutFeaturesSection;
+      'layout.feature-grid-section': LayoutFeatureGridSection;
+      'layout.faq': LayoutFaq;
+      'layout.faq-section': LayoutFaqSection;
+      'layout.event-card': LayoutEventCard;
+      'layout.enterprise-platform-section': LayoutEnterprisePlatformSection;
+      'layout.enterprise-impact-section': LayoutEnterpriseImpactSection;
+      'layout.enterprise-hero-with-video': LayoutEnterpriseHeroWithVideo;
+      'layout.customers-section': LayoutCustomersSection;
+      'layout.custom-features-section': LayoutCustomFeaturesSection;
+      'layout.contact-us-section': LayoutContactUsSection;
+      'layout.contact-support-form-section': LayoutContactSupportFormSection;
+      'layout.contact-form-section': LayoutContactFormSection;
+      'layout.collapsible-boxes-section': LayoutCollapsibleBoxesSection;
+      'layout.case-study-section': LayoutCaseStudySection;
+      'layout.brand-guideline-hero-section': LayoutBrandGuidelineHeroSection;
+      'layout.brand-guideline-asset-section': LayoutBrandGuidelineAssetSection;
+      'layout.blog-slider-section': LayoutBlogSliderSection;
+      'layout.blog-hero-section': LayoutBlogHeroSection;
+      'layout.blog-banners': LayoutBlogBanners;
+      'layout.architecture': LayoutArchitecture;
+      'layout.alternated-content': LayoutAlternatedContent;
     }
   }
 }

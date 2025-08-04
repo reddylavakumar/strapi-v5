@@ -74,11 +74,11 @@
         }
       }
     },
-    "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+    "googleMapsUrl": {
+      "type": "text"
+    },
+    "coordinates": {
+      "type": "text"
     }
   }
 }
