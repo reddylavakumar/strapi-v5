@@ -1,0 +1,84 @@
+{
+  "collectionName": "components_components_event_venue",
+  "info": {
+    "displayName": "Venue",
+    "description": "Venue section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "VenueTitle": {
+      "type": "string",
+      "default": "Javits Convention Center",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "VenueName": {
+      "type": "string",
+      "default": "Javits Convention Center",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Website": {
+      "type": "string",
+      "default": "https://javitscenter.com",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "AddressTitle": {
+      "type": "string",
+      "default": "429 11th Ave",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Address": {
+      "type": "string",
+      "default": "429 11th Ave",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "City": {
+      "type": "string",
+      "default": "New York City NY 10001",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "googleMapsUrl": {
+      "type": "text"
+    },
+    "coordinates": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_event_featuring",
+  "info": {
+    "displayName": "Featuring",
+    "description": "Featuring section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Speakers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.speaker"
+    }
+  }
+}

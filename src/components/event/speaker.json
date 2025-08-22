@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_components_event_speaker",
+  "info": {
+    "displayName": "Speaker",
+    "description": "Speaker section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "default": "John Doe",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Role": {
+      "type": "string",
+      "default": "Software Engineer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

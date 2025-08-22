@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_components_event_internal_event",
+  "info": {
+    "displayName": "Internal Event",
+    "description": "Internal event section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Home": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.internal-home"
+    },
+    "Details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.learn"
+    },
+    "EventExploreCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

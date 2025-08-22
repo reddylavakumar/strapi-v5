@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_components_event_learn",
+  "info": {
+    "displayName": "Learn",
+    "description": "Learn section for events"
+  },
+  "options": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Pointers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.bullets"
+    },
+    "FeaturingTitle": {
+      "type": "string",
+      "default": "CodeRabbit at AI Summit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Speakers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.speaker"
+    }
+  }
+}

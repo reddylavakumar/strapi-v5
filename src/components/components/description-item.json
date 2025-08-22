@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_description_items",
+  "info": {
+    "displayName": "Description Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    }
+  }
+}
